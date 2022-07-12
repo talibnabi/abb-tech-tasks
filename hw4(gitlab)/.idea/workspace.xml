@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8e27c80-f87b-4847-9b14-5ca3ece4d7bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/hw4/main/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw4/util/Operation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/family/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/family/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw4(danIT)/src/family/Family.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(danIT)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(danIT)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(danIT)/src/family/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(danIT)/src/alive/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(danIT)/src/family/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(danIT)/src/alive/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(danIT)/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(danIT)/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/family/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/family/Human.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/ABB/abbTech/hw4"
+    "last_opened_file_path": "C:/ABB/abbTech/hw4(gitlab)"
   }
 }]]></component>
   <component name="RunManager">
@@ -76,6 +75,7 @@
       <updated>1657539061733</updated>
       <workItem from="1657539063339" duration="2166000" />
       <workItem from="1657569678193" duration="11945000" />
+      <workItem from="1657587246083" duration="32000" />
     </task>
     <servers />
   </component>

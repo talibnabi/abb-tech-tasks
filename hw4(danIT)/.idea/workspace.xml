@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8e27c80-f87b-4847-9b14-5ca3ece4d7bc" name="Changes" comment="" />
+    <list default="true" id="d8e27c80-f87b-4847-9b14-5ca3ece4d7bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/family/Family.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/family/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alive/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/family/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alive/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(gitlab)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(gitlab)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4(gitlab)/src/family/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4(gitlab)/src/family/Human.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/ABB/abbTech/hw4(danIT)"
+    "last_opened_file_path": "C:/ABB/abbTech/hw2"
   }
 }]]></component>
   <component name="RunManager">
@@ -69,6 +77,8 @@
       <workItem from="1657539063339" duration="2166000" />
       <workItem from="1657569678193" duration="11945000" />
       <workItem from="1657586027511" duration="45000" />
+      <workItem from="1657586354955" duration="1841000" />
+      <workItem from="1657622801911" duration="23000" />
     </task>
     <servers />
   </component>

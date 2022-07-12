@@ -46,7 +46,7 @@ public class Human {
     }
 
     public void greetPet() {
-        System.out.println("Hello," + this.getName());
+        System.out.println("Hello," + this.getPet().getNickname());
     }
 
     public void describePet() {
