@@ -3,15 +3,17 @@ package find;
 import util.Check;
 import util.Operation;
 
+import static util.Operation.*;
+
 public class FindWellKnownEvents {
 
 
     public static void findEvent() {
-        int randomNumber = Operation.random.nextInt(Operation.event.length);
-        Operation.getText("Let the game begin!");
-        System.out.println(Operation.event[randomNumber][1]);
-        Operation.answer = Integer.parseInt(Operation.event[randomNumber][0]);
-        Check.checkNums(Operation.getTextEvent());
+        int randomNumber = random.nextInt(event.length);
+        getText("Let the game begin!");
+        getText(event[randomNumber][1]);
+        answer = Integer.parseInt(event[randomNumber][0]);
+        Check.checkNums(getTextEvent());
         System.exit(0);
     }
 }

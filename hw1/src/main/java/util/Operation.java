@@ -58,17 +58,17 @@ public class Operation {
     public static int inputChecker(String type) {
         switch (type) {
             case "number":
-                Operation.getText("Guess a number between 1 and 100: ");
+                getText("Guess a number between 1 and 100: ");
                 break;
             case "event":
-                Operation.getText("Guess a number between 1800 and 2022: ");
+                getText("Guess a number between 1800 and 2022: ");
                 break;
             case "input":
-                Operation.getText("Which game do you want to play? (Please,enter game's number (1 or 2)): ");
+                getText("Which game do you want to play? (Please,enter game's number (1 or 2)): ");
         }
 
 
-        String guess = Operation.scanner.nextLine();
+        String guess = scanner.nextLine();
         int guessNumber = 0;
         boolean convertableType = true;
         for (int i = 0; i < guess.length(); i++) {
@@ -82,12 +82,12 @@ public class Operation {
         if (convertableType) {
             guessNumber = Integer.parseInt(guess);
         } else {
-            if (type.equals(Operation.getTextNumber())) {
-                return inputChecker(Operation.getTextNumber());
-            } else if (type.equals(Operation.getTextEvent())) {
-                return inputChecker(Operation.getTextEvent());
+            if (type.equals(getTextNumber())) {
+                return inputChecker(getTextNumber());
+            } else if (type.equals(getTextEvent())) {
+                return inputChecker(getTextEvent());
             } else {
-                return inputChecker(Operation.getTextInput());
+                return inputChecker(getTextInput());
             }
 
         }
@@ -99,8 +99,8 @@ public class Operation {
     }
 
     public static void recognition() {
-        Operation.getText("Please,enter your name: ");
-        Operation.name = scanner.nextLine();
+        getText("Please,enter your name: ");
+        name = scanner.nextLine();
     }
 
     public static String getTextNumber() {

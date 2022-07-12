@@ -1,15 +1,16 @@
 package find;
 
 import util.Check;
-import util.Operation;
+
+import static util.Operation.*;
 
 
 public class FindNumber {
 
     public static void findNum() {
-        Operation.answer = Operation.random.nextInt(100) + 1;
-        Operation.getText("Let the game begin!");
-        Check.checkNums(Operation.getTextNumber());
+        answer = random.nextInt(100) + 1;
+        getText("Let the game begin!");
+        Check.checkNums(getTextNumber());
         System.exit(0);
     }
 
