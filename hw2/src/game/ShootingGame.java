@@ -1,25 +1,33 @@
 package game;
 
-import static util.Operation.*;
+import static util.OperationUtil.*;
+import static util.ShootingGameUtil.*;
 
 public class ShootingGame {
+
+
     public static void shootingGame() {
+        symbolSize = inputChecker("field");
+        allSymbol = new String[symbolSize][symbolSize];
+        fillArr();
         calculateRandomNums();
         getText("All set. Get ready to rumble!");
         showAllTarget();
         while (true) {
-            int lineForFire = inputChecker("lineForFire");
-            int shootingBar = inputChecker("shootingBar");
-            if (lineForFire == randomArr[0] && shootingBar == randomArr[1]) {
-                allSymbol[shootingBar - 1][lineForFire - 1] = "x";
+            arr[0] = getInputForLine();
+            arr[1] = getInputForShoot();
+            if (arr[0] == randomArr[0] && arr[1] == randomArr[1]) {
+                allSymbol[arr[1] - 1][arr[0] - 1] = "x";
                 getText("You have won!");
                 showAllTarget();
                 System.exit(0);
             } else {
-                allSymbol[shootingBar - 1][lineForFire - 1] = "*";
+                allSymbol[arr[1] - 1][arr[0] - 1] = "*";
                 showAllTarget();
                 getText("Try again...");
             }
         }
     }
+
+
 }
