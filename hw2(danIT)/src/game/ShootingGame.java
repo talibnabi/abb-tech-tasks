@@ -7,8 +7,6 @@ public class ShootingGame {
 
 
     public static void shootingGame() {
-        symbolSize = inputChecker("field");
-        allSymbol = new String[symbolSize][symbolSize];
         fillArr();
         calculateRandomNums();
         getText("All set. Get ready to rumble!");

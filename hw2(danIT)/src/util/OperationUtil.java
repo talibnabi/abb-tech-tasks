@@ -10,10 +10,11 @@ public class OperationUtil {
 
 
     public static int size = 0;
-    public static int symbolSize;
-    public static String[][] allSymbol;
+    public static int symbolSize = 5;
+    public static String[][] allSymbol = new String[symbolSize][symbolSize];
+    ;
     public static int[] randomArr = new int[2];
-    public static int[][] randomArrAdvanced = new int[3][2];
+
 
     public static void fillArr() {
         for (String[] strings : allSymbol) {
@@ -57,7 +58,6 @@ public class OperationUtil {
         switch (inputType) {
             case "lineForFire" -> getText("Enter a line for fire: (" + 1 + "-" + symbolSize + ")");
             case "shootingBar" -> getText("Enter a shooting bar: (" + 1 + "-" + symbolSize + ")");
-            case "field" -> getText("Enter game field size: ");
             case "gameType" -> getText("Which game do you want to play? :");
         }
         String guess = scanner.nextLine();
@@ -80,8 +80,6 @@ public class OperationUtil {
                     return inputChecker("lineForFire");
                 case "shootingBar":
                     return inputChecker("shootingBar");
-                case "field":
-                    return inputChecker("field");
                 case "gameType":
                     return inputChecker("gameType");
             }
@@ -94,8 +92,6 @@ public class OperationUtil {
                     return inputChecker("lineForFire");
                 case "shootingBar":
                     return inputChecker("shootingBar");
-                case "field":
-                    return inputChecker("field");
                 case "gameType":
                     return inputChecker("gameType");
             }
