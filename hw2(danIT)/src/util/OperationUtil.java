@@ -12,7 +12,6 @@ public class OperationUtil {
     public static int size = 0;
     public static int symbolSize = 5;
     public static String[][] allSymbol = new String[symbolSize][symbolSize];
-    ;
     public static int[] randomArr = new int[2];
 
 

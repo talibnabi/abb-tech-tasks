@@ -15,12 +15,12 @@ public class ShootingGame {
             arr[0] = getInputForLine();
             arr[1] = getInputForShoot();
             if (arr[0] == randomArr[0] && arr[1] == randomArr[1]) {
-                allSymbol[arr[1] - 1][arr[0] - 1] = "x";
+                allSymbol[arr[0] - 1][arr[1] - 1] = "x";
                 getText("You have won!");
                 showAllTarget();
                 System.exit(0);
             } else {
-                allSymbol[arr[1] - 1][arr[0] - 1] = "*";
+                allSymbol[arr[0] - 1][arr[1] - 1] = "*";
                 showAllTarget();
                 getText("Try again...");
             }
