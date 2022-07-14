@@ -75,7 +75,7 @@ public class Operation {
                 } else {
                     for (String[] strings : schedule) {
                         if (input.equalsIgnoreCase(strings[0])) {
-                            getText(strings[1]);
+                            getText("Your tasks for " + strings[0] + ": " + strings[1]);
                             return inputHandler("update");
                         }
                     }
