@@ -71,7 +71,7 @@ public class Human {
                 check = false;
             }
         } else {
-            System.exit(0);
+            return false;
         }
         return check;
     }
