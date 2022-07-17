@@ -22,9 +22,7 @@ public class Pet {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
-        if (trickLevel1 >= 1 && trickLevel1 <= 100) {
-            this.trickLevel1 = trickLevel1;
-        }
+        this.trickLevel1 = trickLevel1;
         this.habits = habits;
     }
 
@@ -42,10 +40,14 @@ public class Pet {
 
     @Override
     public String toString() {
+        Integer trickLevel = null;
+        if (this.trickLevel1 >= 1 && this.trickLevel1 <= 100) {
+            trickLevel = this.trickLevel1;
+        }
         return this.species + "{" +
                 "nickname='" + nickname + '\'' +
                 ", age=" + age +
-                ", trickLevel1=" + trickLevel1 +
+                ", trickLevel1=" + trickLevel +
                 ", habits=" + Arrays.toString(habits) +
                 '}';
     }
