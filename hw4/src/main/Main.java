@@ -76,5 +76,8 @@ public class Main {
         String[][] schedule = {{"Monday", "go to gym"}, {"Wednesday", "go to swimming"}};
         Human child = new Human("Salman", "Alberto", 2001, 90, pet, father, mother, schedule);
         System.out.println(child.toString());
+
+        boolean b=child.feedPet(true);
+        System.out.println(b);
     }
 }
