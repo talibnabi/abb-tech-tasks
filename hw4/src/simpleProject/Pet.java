@@ -1,4 +1,6 @@
-package simpleProject.alive;
+package simpleProject;
+
+import java.util.Arrays;
 
 public class Pet {
     String species;
@@ -17,5 +19,15 @@ public class Pet {
 
     void foul() {
         System.out.println("I need to cover it up");
+    }
+
+    @Override
+    public String toString() {
+        return this.species + "{" +
+                "nickname='" + nickname + '\'' +
+                ", age=" + age +
+                ", trickLevel1=" + trickLevel1 +
+                ", habits=" + Arrays.toString(habits) +
+                '}';
     }
 }
