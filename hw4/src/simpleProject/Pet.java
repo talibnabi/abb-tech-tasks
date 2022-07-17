@@ -9,6 +9,23 @@ public class Pet {
     Integer trickLevel1;
     String[] habits;
 
+    Pet() {
+
+    }
+
+    Pet(String species, String nickname) {
+        this.species = species;
+        this.nickname = nickname;
+    }
+
+    Pet(String species, String nickname, Integer age, Integer trickLevel1, String[] habits) {
+        this.species = species;
+        this.nickname = nickname;
+        this.age = age;
+        this.trickLevel1 = trickLevel1;
+        this.habits = habits;
+    }
+
     void eat() {
         System.out.println("I am eating");
     }
