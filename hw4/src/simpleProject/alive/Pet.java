@@ -1,7 +1,7 @@
 package simpleProject.alive;
 
 public class Pet {
-    String species;
+    public String species;
     String nickname;
     Integer age;
     Integer trickLevel1;
