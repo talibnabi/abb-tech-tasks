@@ -41,8 +41,10 @@ public class Pet {
     @Override
     public String toString() {
         Integer trickLevel = null;
-        if (this.trickLevel1 >= 1 && this.trickLevel1 <= 100) {
-            trickLevel = this.trickLevel1;
+        if (this.trickLevel1 != null) {
+            if (this.trickLevel1 >= 1 && this.trickLevel1 <= 100) {
+                trickLevel = this.trickLevel1;
+            }
         }
         return this.species + "{" +
                 "nickname='" + nickname + '\'' +
