@@ -22,7 +22,9 @@ public class Pet {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
-        this.trickLevel1 = trickLevel1;
+        if (trickLevel1 >= 1 && trickLevel1 <= 100) {
+            this.trickLevel1 = trickLevel1;
+        }
         this.habits = habits;
     }
 
