@@ -1,8 +1,11 @@
 package util;
 
+import org.intellij.lang.annotations.Pattern;
+
 import java.util.Scanner;
 
 public class Operation {
+    private static Pattern RTRIM = Pattern.compile("\\s+$");
     public static String[][] schedule = new String[7][2];
     public static Scanner scanner = new Scanner(System.in);
 
@@ -55,7 +58,8 @@ public class Operation {
         } else {
             if (inputType.equals("text")) {
                 getText("Please, input the day of the week: (Type 'exit' to stop).");//This was not required,but I think it is needed
-                input = scanner.nextLine().trim();
+                input = scanner.nextLine();
+                String s=RTRIM.macher(input).replaceAll("");
                 if (input.equalsIgnoreCase("exit")) {
                     System.exit(0);
                 } else {
