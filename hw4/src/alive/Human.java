@@ -1,27 +1,27 @@
-package simpleProject;
+package alive;
 
 import java.util.Arrays;
 
 public class Human {
-    String name;
-    String surname;
-    Integer year;
-    Integer iq;
-    Pet pet;
-    Human mother;
-    Human father;
-    String[][] schedule;// [day of the week] x [type of the activity]
+    public String name;
+    public String surname;
+    public Integer year;
+    public Integer iq;
+    public Pet pet;
+    public Human mother;
+    public Human father;
+    public String[][] schedule;// [day of the week] x [type of the activity]
 
-    Human() {
+    public Human() {
     }
 
-    Human(String name, String surname, Integer year) {
+    public Human(String name, String surname, Integer year) {
         this.name = name;
         this.surname = surname;
         this.year = year;
     }
 
-    Human(String name, String surname, Integer year, Pet pet, Human father, Human mother) {
+    public Human(String name, String surname, Integer year, Pet pet, Human father, Human mother) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -30,7 +30,7 @@ public class Human {
         this.mother = mother;
     }
 
-    Human(String name, String surname, Integer year, Integer iq, Pet pet, Human father, Human mother, String[][] schedule) {
+    public Human(String name, String surname, Integer year, Integer iq, Pet pet, Human father, Human mother, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -41,11 +41,11 @@ public class Human {
         this.schedule = schedule;
     }
 
-    void greetPet() {
+    public void greetPet() {
         System.out.println("Hello," + this.pet.nickname);
     }
 
-    void describePet() {
+    public void describePet() {
         StringBuilder slyLevel = new StringBuilder("");
         if (this.pet.trickLevel1 > 50) {
             slyLevel.append("very sly");
@@ -77,8 +77,6 @@ public class Human {
                 ", habits=" + Arrays.toString(this.pet.habits) +
                 '}' +
                 ", mother=" + mother.name + " " + mother.surname +
-                ", father=" + father.name + " " + mother.surname +
-                ", schedule=" + Arrays.toString(schedule) +
-                '}';
+                ", father=" + father.name + " " + mother.surname + "}";
     }
 }

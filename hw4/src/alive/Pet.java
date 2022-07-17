@@ -1,24 +1,24 @@
-package simpleProject;
+package alive;
 
 import java.util.Arrays;
 
 public class Pet {
-    String species;
-    String nickname;
-    Integer age;
-    Integer trickLevel1;
-    String[] habits;
+    public String species;
+    public String nickname;
+    public Integer age;
+    public Integer trickLevel1;
+    public String[] habits;
 
-    Pet() {
+    public Pet() {
 
     }
 
-    Pet(String species, String nickname) {
+    public Pet(String species, String nickname) {
         this.species = species;
         this.nickname = nickname;
     }
 
-    Pet(String species, String nickname, Integer age, Integer trickLevel1, String[] habits) {
+    public Pet(String species, String nickname, Integer age, Integer trickLevel1, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -26,15 +26,15 @@ public class Pet {
         this.habits = habits;
     }
 
-    void eat() {
+    public void eat() {
         System.out.println("I am eating");
     }
 
-    void respond() {
+    public void respond() {
         System.out.println("Hello, owner. I am " + this.nickname + ". I miss you!");
     }
 
-    void foul() {
+    public void foul() {
         System.out.println("I need to cover it up");
     }
 
