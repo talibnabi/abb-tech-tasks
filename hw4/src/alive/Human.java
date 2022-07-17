@@ -1,6 +1,7 @@
 package alive;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Human {
     public String name;
@@ -55,6 +56,24 @@ public class Human {
             slyLevel.append("sly");
         }
         System.out.println("I have a " + this.pet.species + ",he is " + this.pet.age + " years old,he is " + slyLevel);
+    }
+
+    //advanced complexity
+    public boolean feedPet(boolean check) {
+        Random random = new Random();
+        int randomTrickLevel = random.nextInt(100) + 1;
+        if (this.pet.trickLevel1 != null && this.pet.nickname != null) {
+            if (randomTrickLevel > this.pet.trickLevel1) {
+                System.out.println("Hm... I will feed " + this.pet.nickname);
+                check = true;
+            } else {
+                System.out.println("I think " + this.pet.nickname + " is not hungry.");
+                check = false;
+            }
+        } else {
+            System.exit(0);
+        }
+        return check;
     }
 
     @Override
