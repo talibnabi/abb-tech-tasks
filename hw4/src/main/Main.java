@@ -159,13 +159,13 @@ public class Main {
 //        pet.foul();
 //        pet.respond();
         Human father = new Human();
-        father.name = "Ramos";
-        father.surname = "Suarez";
+        father.name = "Arif";
+        father.surname = "Rahibov";
         Human mother = new Human();
         mother.name = "Jasmin";
-        mother.surname = "Suarez";
+        mother.surname = "Rahibov";
         String[][] schedule = {{"Monday", "go to gym"}};
-        Human child = new Human("Teresa", "Suarez", 2001);
+        Human child = new Human("Teresa", "Rahibovv", 2001);
         child.pet = pet;
         child.father = father;
         child.mother = mother;
