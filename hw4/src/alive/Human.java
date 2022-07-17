@@ -95,7 +95,7 @@ public class Human {
                 ", trickLevel1=" + this.pet.trickLevel1 +
                 ", habits=" + Arrays.toString(this.pet.habits) +
                 '}' +
-                ", mother=" + mother.name + " " + mother.surname +
-                ", father=" + father.name + " " + mother.surname + "}";
+                ", mother=" + father.name + " " + father.surname +
+                ", father=" + mother.name + " " + mother.surname + "}";
     }
 }
