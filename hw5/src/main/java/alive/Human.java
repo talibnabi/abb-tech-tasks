@@ -13,7 +13,6 @@ public class Human {
     private String[][] schedule;// [day of the week] x [type of the activity]
     private Family family;
 
-
     public Human() {
     }
 
@@ -81,6 +80,21 @@ public class Human {
         this.family = family;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object)
+            return true;
+        if (object == null)
+            return false;
+        if (getClass() != object.getClass())
+            return false;
+        Human human = (Human) object;
+        return Objects.equals(name, human.name)
+                && Objects.equals(surname, human.surname)
+                && Objects.equals(year, human.year)
+                && Objects.equals(family.getFather().name, human.getFamily().getFather().getName())
+                && Objects.equals(family.getFather().surname, human.getFamily().getFather().getSurname());
+    }
 
     @Override
     public String toString() {

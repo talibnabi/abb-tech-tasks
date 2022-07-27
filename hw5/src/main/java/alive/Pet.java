@@ -1,5 +1,7 @@
 package alive;
 
+import family.Family;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -79,7 +81,19 @@ public class Pet {
         System.out.println("I need to cover it up");
     }
 
-
+    @Override
+    public boolean equals(Object object) {
+        if (this == object)
+            return true;
+        if (object == null)
+            return false;
+        if (getClass() != object.getClass())
+            return false;
+        Pet pet = (Pet) object;
+        return Objects.equals(nickname, pet.nickname)
+                && Objects.equals(trickLevel1, pet.trickLevel1)
+                && Objects.equals(species, pet.species);
+    }
 
     @Override
     public String toString() {

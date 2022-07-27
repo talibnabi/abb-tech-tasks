@@ -57,7 +57,7 @@ public class Family {
 
     public void addChild(Human child) {
         if (children.length == size) {
-            Human[] children2 = new Human[children.length+1];
+            Human[] children2 = new Human[children.length + 1];
             System.arraycopy(children, 0, children2, 0, children.length);
             children = children2;
         }
@@ -129,6 +129,19 @@ public class Family {
         return check;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object)
+            return true;
+        if (object == null)
+            return false;
+        if (getClass() != object.getClass())
+            return false;
+        Family family = (Family) object;
+        return Objects.equals(father, family.father)
+                && Objects.equals(mother, family.mother)
+                && Arrays.equals(children, family.children);
+    }
 
     @Override
     public String toString() {
