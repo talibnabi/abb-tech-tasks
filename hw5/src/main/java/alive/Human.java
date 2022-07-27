@@ -10,8 +10,8 @@ public class Human {
     private String surname;
     private Integer year;
     private Integer iq;
-    private Family family;
     private String[][] schedule;// [day of the week] x [type of the activity]
+    private Family family;
 
 
     public Human() {
@@ -23,6 +23,7 @@ public class Human {
         this.year = year;
     }
 
+
     public Human(String name, String surname, Integer year, Integer iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
@@ -30,16 +31,6 @@ public class Human {
         this.iq = iq;
         this.schedule = schedule;
     }
-
-    public Human(String name, String surname, Integer year, Integer iq, Family family, String[][] schedule) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-        this.family = family;
-        this.schedule = schedule;
-    }
-
 
     public String getName() {
         return name;
@@ -73,13 +64,6 @@ public class Human {
         this.iq = iq;
     }
 
-    public Family getFamily() {
-        return family;
-    }
-
-    public void setFamily(Family family) {
-        this.family = family;
-    }
 
     public String[][] getSchedule() {
         return schedule;
@@ -89,72 +73,95 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Human human)) return false;
-        return getName().equals(human.getName()) && getSurname().equals(human.getSurname()) && getYear().equals(human.getYear()) && getIq().equals(human.getIq()) && getFamily().equals(human.getFamily()) && Arrays.equals(getSchedule(), human.getSchedule());
+        if (!(o instanceof Human)) return false;
+        Human human = (Human) o;
+        return getName().equals(human.getName()) && getSurname().equals(human.getSurname()) && getYear().equals(human.getYear());
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getName(), getSurname(), getYear(), getIq(), getFamily());
-        result = 31 * result + Arrays.deepHashCode(getSchedule());
-        return result;
+        return Objects.hash(getName(), getSurname(), getYear());
     }
 
     @Override
     public String toString() {
         Integer iqLevel = null;
-        if (this.getIq() != null) {
-            if (this.getIq() >= 1 && this.getIq() <= 100) {
-                iqLevel = this.getIq();
+        if (this.iq != null) {
+            if (this.iq >= 1 && this.iq <= 100) {
+                iqLevel = this.iq;
             }
+        } else {
+            iq = 0;
         }
         if (name == null || surname == null) {
-            return "no result.";
-        } else if (year == null && iq != null && schedule != null) {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", iq=" + iqLevel +
-                    ", schedule=" + Arrays.toString(schedule) +
-                    '}';
-        } else if (iq == null && year != null && schedule != null) {
+            return "There is no information.";
+        } else if (year == null || year == 0) {
+            if (iq == 0 && schedule != null) {
+                return "Human{" +
+                        "name='" + name + '\'' +
+                        ", surname='" + surname + '\'' +
+                        ", schedule=" + Arrays.deepToString(schedule) + '}';
+            } else if (schedule == null) {
+                if (iq != 0) {
+                    return "Human{" +
+                            "name='" + name + '\'' +
+                            ", surname='" + surname + '\'' +
+                            ", iq=" + iq + '}';
+                } else {
+                    return "Human{" +
+                            "name='" + name + '\'' +
+                            ", surname='" + surname + '\'' +
+                            '}';
+                }
+            } else {
+                return "Human{" +
+                        "name='" + name + '\'' +
+                        ", surname='" + surname + '\'' +
+                        ", iq=" + iq +
+                        ", schedule=" + Arrays.deepToString(schedule) + '}';
+            }
+        } else if (iq == 0) {
+            if (schedule == null) {
+                return "Human{" +
+                        "name='" + name + '\'' +
+                        ", surname='" + surname + '\'' +
+                        ", year=" + year +
+                        '}';
+            } else {
+                return "Human{" +
+                        "name='" + name + '\'' +
+                        ", surname='" + surname + '\'' +
+                        ", year=" + year +
+                        ", schedule=" + Arrays.deepToString(schedule) + '}';
+            }
+
+        } else if (schedule == null) {
             return "Human{" +
                     "name='" + name + '\'' +
                     ", surname='" + surname + '\'' +
                     ", year=" + year +
-                    ", schedule=" + Arrays.toString(schedule) +
-                    '}';
-        } else if (schedule == null && year != null && iq != null) {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", year=" + year +
-                    ", iq=" + iqLevel +
-                    '}';
-        } else if ((year == null && iq == null) && schedule != null) {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", schedule=" + Arrays.toString(schedule) +
-                    '}';
-        } else if (schedule == null && year == null && iq != null) {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", iq=" + iqLevel +
-                    '}';
+                    ", iq=" + iq + '}';
         } else {
             return "Human{" +
                     "name='" + name + '\'' +
                     ", surname='" + surname + '\'' +
                     ", year=" + year +
-                    ", iq=" + iqLevel +
-                    ", schedule=" + Arrays.toString(schedule) +
-                    '}';
+                    ", iq=" + iq +
+                    ", schedule=" + Arrays.deepToString(schedule) + '}';
         }
 
     }
 }
+
+

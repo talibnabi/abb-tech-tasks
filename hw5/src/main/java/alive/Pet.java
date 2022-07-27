@@ -67,30 +67,31 @@ public class Pet {
         this.habits = habits;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pet pet)) return false;
-        return getSpecies().equals(pet.getSpecies()) && getNickname().equals(pet.getNickname()) && getAge().equals(pet.getAge()) && getTrickLevel1().equals(pet.getTrickLevel1()) && Arrays.equals(getHabits(), pet.getHabits());
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getSpecies(), getNickname(), getAge(), getTrickLevel1());
-        result = 31 * result + Arrays.hashCode(getHabits());
-        return result;
-    }
-
     public void eat() {
         System.out.println("I am eating");
     }
 
     public void respond() {
-        System.out.println("Hello, owner. I am " + this.getNickname() + ". I miss you!");
+        System.out.println("Hello, owner. I am " + this.nickname + ". I miss you!");
     }
 
     public void foul() {
         System.out.println("I need to cover it up");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet)) return false;
+        Pet pet = (Pet) o;
+        return getSpecies().equals(pet.getSpecies()) && getNickname().equals(pet.getNickname()) && getAge().equals(pet.getAge()) && Arrays.equals(getHabits(), pet.getHabits());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getSpecies(), getNickname(), getAge());
+        result = 31 * result + Arrays.hashCode(getHabits());
+        return result;
     }
 
     @Override
@@ -100,12 +101,88 @@ public class Pet {
             if (this.getTrickLevel1() >= 1 && this.getTrickLevel1() <= 100) {
                 trickLevel = this.getTrickLevel1();
             }
+        } else {
+            trickLevel1 = 0;
         }
-        return this.species + "{" +
-                "nickname='" + getNickname() + '\'' +
-                ", age=" + getAge() +
+        if (nickname == null) {
+            return "There is no information.";
+        } else if (species == null) {
+            if ((age == null || age == 0) && trickLevel1 == 0 && habits != null) {
+                return "Pet{" +
+                        ", nickname='" + nickname + '\'' +
+                        ", habits=" + Arrays.deepToString(habits) +
+                        '}';
+            } else if ((age == null || age == 0) && trickLevel1 != 0 && habits != null) {
+                return "Pet{" +
+                        ", nickname='" + nickname + '\'' +
+                        ", trickLevel1=" + trickLevel +
+                        ", habits=" + Arrays.deepToString(habits) +
+                        '}';
+            } else if ((age == null || age == 0) && trickLevel1 == 0) {
+                return "Pet{" +
+                        ", nickname='" + nickname + '\'' +
+                        '}';
+            } else if ((age == null || age == 0)) {
+                return "Pet{" +
+                        ", nickname='" + nickname + '\'' +
+                        ", trickLevel1=" + trickLevel +
+                        '}';
+            } else {
+                return "Pet{" +
+                        ", nickname='" + nickname + '\'' +
+                        ", age=" + age +
+                        ", trickLevel1=" + trickLevel +
+                        ", habits=" + Arrays.deepToString(habits) +
+                        '}';
+            }
+        } else if ((age == null || age == 0)) {
+            if (trickLevel1 == 0 && habits == null) {
+                return "Pet{" +
+                        "species='" + species + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        '}';
+            } else if (trickLevel1 == 0) {
+                return "Pet{" +
+                        "species='" + species + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        ", habits=" + Arrays.deepToString(habits) +
+                        '}';
+            } else {
+                return "Pet{" +
+                        "species='" + species + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        ", trickLevel1=" + trickLevel +
+                        ", habits=" + Arrays.deepToString(habits) +
+                        '}';
+            }
+        } else if (trickLevel1 == 0) {
+            if (habits == null) {
+                return "Pet{" +
+                        "species='" + species + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        ", age=" + age +
+                        '}';
+            }
+            return "Pet{" +
+                    "species='" + species + '\'' +
+                    ", nickname='" + nickname + '\'' +
+                    ", age=" + age +
+                    ", habits=" + Arrays.deepToString(habits) +
+                    '}';
+        } else if (habits == null) {
+            return "Pet{" +
+                    "species='" + species + '\'' +
+                    ", nickname='" + nickname + '\'' +
+                    ", age=" + age +
+                    ", trickLevel1=" + trickLevel +
+                    '}';
+        }
+        return "Pet{" +
+                "species='" + species + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", age=" + age +
                 ", trickLevel1=" + trickLevel +
-                ", habits=" + Arrays.toString(getHabits()) +
+                ", habits=" + Arrays.deepToString(habits) +
                 '}';
     }
 }
