@@ -79,20 +79,7 @@ public class Pet {
         System.out.println("I need to cover it up");
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pet)) return false;
-        Pet pet = (Pet) o;
-        return getSpecies().equals(pet.getSpecies()) && getNickname().equals(pet.getNickname()) && getAge().equals(pet.getAge()) && Arrays.equals(getHabits(), pet.getHabits());
-    }
 
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getSpecies(), getNickname(), getAge());
-        result = 31 * result + Arrays.hashCode(getHabits());
-        return result;
-    }
 
     @Override
     public String toString() {

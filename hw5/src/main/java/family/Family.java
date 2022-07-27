@@ -17,6 +17,10 @@ public class Family {
     public Family(Human father, Human mother) {
         this.father = father;
         this.mother = mother;
+        this.children = new Human[0];
+        this.pet = new Pet();
+        father.setFamily(this);
+        mother.setFamily(this);
     }
 
     public Human getMother() {
@@ -52,14 +56,12 @@ public class Family {
     }
 
     public void addChild(Human child) {
-        if (children == null) {
-            children = new Human[1];
-        }
         if (children.length == size) {
-            Human[] children2 = new Human[children.length + 1];
+            Human[] children2 = new Human[children.length+1];
             System.arraycopy(children, 0, children2, 0, children.length);
             children = children2;
         }
+        child.setFamily(this);
         children[size++] = child;
     }
 
@@ -127,20 +129,6 @@ public class Family {
         return check;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Family)) return false;
-        Family family = (Family) o;
-        return getMother().equals(family.getMother()) && getFather().equals(family.getFather()) && Arrays.equals(getChildren(), family.getChildren());
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getMother(), getFather());
-        result = 31 * result + Arrays.hashCode(getChildren());
-        return result;
-    }
 
     @Override
     public String toString() {

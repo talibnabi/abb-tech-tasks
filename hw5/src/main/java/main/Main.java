@@ -24,7 +24,7 @@ public class Main {
         Family family = new Family(mother, father);
         Human child = new Human();
         child.setName("talib");
-        child.setSurname("nabi");
+        child.setSurname("nabiyev");
         child.setSchedule(new String[][]{{"monday"}, {"go to gym"}});
         child.setYear(200);
 
@@ -35,9 +35,8 @@ public class Main {
         child2.setYear(200);
         family.addChild(child);
         family.addChild(child2);
-        family.deleteChild(1);
         System.out.println(family);
-        System.out.println(family.countFamily());
+//        System.out.println(family.countFamily());
 //        boolean b=family.deleteChild(1);
 //        System.out.println(b);
 //        family.setPet(pet);

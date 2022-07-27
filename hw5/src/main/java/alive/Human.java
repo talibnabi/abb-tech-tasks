@@ -81,18 +81,6 @@ public class Human {
         this.family = family;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Human)) return false;
-        Human human = (Human) o;
-        return getName().equals(human.getName()) && getSurname().equals(human.getSurname()) && getYear().equals(human.getYear());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getYear());
-    }
 
     @Override
     public String toString() {
