@@ -96,6 +96,11 @@ public class Pet {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(getSpecies(), getNickname(), getAge(), getTrickLevel1());
+    }
+
+    @Override
     public String toString() {
         Integer trickLevel = null;
         if (this.getTrickLevel1() != null) {

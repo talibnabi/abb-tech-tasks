@@ -144,6 +144,13 @@ public class Family {
     }
 
     @Override
+    public int hashCode() {
+        int result = Objects.hash(getMother(), getFather());
+        result = 31 * result + Arrays.hashCode(getChildren());
+        return result;
+    }
+
+    @Override
     public String toString() {
         if ((mother == null || mother.getName() == null) || (father == null || father.getName() == null)) {
             return "There is no information.";

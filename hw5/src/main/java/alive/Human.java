@@ -97,6 +97,11 @@ public class Human {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getSurname(), getYear(), getFamily().getFather().getName(), getFamily().getFather().getSurname());
+    }
+
+    @Override
     public String toString() {
         Integer iqLevel = null;
         if (this.iq != null) {
