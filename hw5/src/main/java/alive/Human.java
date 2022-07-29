@@ -31,6 +31,15 @@ public class Human {
         this.schedule = schedule;
     }
 
+    //Advanced complexity
+    static {
+        System.out.println("Class is being loaded: " + Human.class.getName());
+    }
+
+    {
+        System.out.println("Object is created: " + getClass().getName());
+    }
+
     public String getName() {
         return name;
     }

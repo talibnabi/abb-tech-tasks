@@ -3,6 +3,7 @@ package family;
 import alive.Human;
 import alive.Pet;
 
+import java.sql.Struct;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
@@ -21,6 +22,15 @@ public class Family {
         this.pet = new Pet();
         father.setFamily(this);
         mother.setFamily(this);
+    }
+
+    //    Advanced complexity
+    static {
+        System.out.println("Class is being loaded: " + Family.class.getName());
+    }
+
+    {
+        System.out.println("Object is created: " + getClass().getName());
     }
 
     public Human getMother() {
@@ -65,26 +75,79 @@ public class Family {
         children[size++] = child;
     }
 
+    //Advanced complexity
+    public boolean deleteChild(Human child) {
+        boolean result = false;
+        if (children == null || children.length == 0 || child == null) {
+            return false;
+        }
+        Human[] newChild = new Human[children.length - 1];
+        for (int i = 0; i <=children.length-1; i++) {
+            if (!child.equals(children[i]) && child.hashCode() != children[i].hashCode()) {
+                return false;
+            } else {
+                if (child.equals(children[i]) && child.hashCode() == children[i].hashCode()) {
+                    if (i == children.length-1) {
+                        children[i].setFamily(null);
+                        for (int j = 0; j < newChild.length; j++) {
+                            newChild[j] = children[j];
+                            result = true;
+                        }
+                        children = newChild;
+                    } else if (i == 0) {
+                        children[i].setFamily(null);
+                        for (int j = 1; j <= newChild.length; j++) {
+                            newChild[j - 1] = children[j];
+                            result = true;
+                        }
+                        children = newChild;
+                    } else if (i <= children.length - 2) {
+                        children[i].setFamily(null);
+                        System.arraycopy(children, 0, newChild, 0, i);
+                        if (children.length - 1 - i >= 0)
+                            System.arraycopy(children, i + 1, newChild, i, children.length - 1 - i);
+                        children = newChild;
+                        result = true;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     public boolean deleteChild(int index) {
         boolean result = false;
         if (children == null) {
             return false;
         } else {
-            if (children.length == 0 || index != children.length - 1) {
+            if (children.length == 0 || index > children.length - 1) {
                 return false;
             }
             Human[] newChild = new Human[children.length - 1];
-            for (int i = 0; i < newChild.length; i++) {
-                if (i == index) {
-                    newChild[i] = children[i + 1];
+            if (index == children.length - 1) {
+                children[index].setFamily(null);
+                for (int i = 0; i < newChild.length; i++) {
+                    newChild[i] = children[i];
+                    result = true;
                 }
-                newChild[i] = children[i];
+                children = newChild;
+            } else if (index == 0) {
+                children[index].setFamily(null);
+                for (int i = 1; i <= newChild.length; i++) {
+                    newChild[i - 1] = children[i];
+                    result = true;
+                }
+                children = newChild;
+            } else if (index >= 1 && index <= children.length - 2) {
+                children[index].setFamily(null);
+                System.arraycopy(children, 0, newChild, 0, index);
+                if (children.length - 1 - index >= 0)
+                    System.arraycopy(children, index + 1, newChild, index, children.length - 1 - index);
+                children = newChild;
                 result = true;
             }
-            children = newChild;
-            return result;
         }
-
+        return result;
     }
 
     public int countFamily() {

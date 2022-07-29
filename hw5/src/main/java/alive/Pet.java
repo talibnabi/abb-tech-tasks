@@ -29,6 +29,15 @@ public class Pet {
         this.habits = habits;
     }
 
+    //Advanced complexity
+    static {
+        System.out.println("Class is being loaded: " + Pet.class.getName());
+    }
+
+    {
+        System.out.println("Object is created: " + getClass().getName());
+    }
+
     public String getSpecies() {
         return species;
     }

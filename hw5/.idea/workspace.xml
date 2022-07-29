@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1f3e85-dadd-49fe-bf24-d52c11182878" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alive/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/family/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/family/Family.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alive/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alive/Human.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alive/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alive/Pet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/family/Family.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/family/Family.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/abbTech/hw5",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/abbTech/hw5&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\spring-framework-learning-examples\homework5\src\main\java" />
@@ -67,7 +73,7 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="homework5" />
+      <module name="hw5" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
@@ -110,7 +116,9 @@
       <workItem from="1658907562717" duration="2074000" />
       <workItem from="1658909669000" duration="18231000" />
       <workItem from="1658938850734" duration="2000000" />
-      <workItem from="1658944418364" duration="329000" />
+      <workItem from="1658944418364" duration="668000" />
+      <workItem from="1658995619813" duration="16358000" />
+      <workItem from="1659019755395" duration="2158000" />
     </task>
     <servers />
   </component>
