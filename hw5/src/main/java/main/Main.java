@@ -52,5 +52,6 @@ public class Main {
         family.addChild(child4);
         family.deleteChild(child4);
         System.out.println(family);
+        System.out.println();
     }
 }

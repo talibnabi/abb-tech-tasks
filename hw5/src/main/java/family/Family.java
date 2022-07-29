@@ -3,7 +3,7 @@ package family;
 import alive.Human;
 import alive.Pet;
 
-import java.sql.Struct;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
