@@ -12,6 +12,7 @@ public class Main {
         humanDoIt2();
         humanDoIt3();
         humanDoIt4();
+        System.out.println();
     }
 
 

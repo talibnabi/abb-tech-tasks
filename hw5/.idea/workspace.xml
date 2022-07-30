@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1f3e85-dadd-49fe-bf24-d52c11182878" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/family/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/family/Family.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alive/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alive/Human.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alive/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alive/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/family/Family.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/family/Family.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +112,7 @@
       <workItem from="1658944418364" duration="668000" />
       <workItem from="1658995619813" duration="16358000" />
       <workItem from="1659019755395" duration="2158000" />
+      <workItem from="1659085501127" duration="204000" />
     </task>
     <servers />
   </component>
