@@ -2,11 +2,15 @@ package family;
 
 import alive.Human;
 import alive.Pet;
+import org.testng.annotations.Test;
 
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class Family {
     private static int size = 0;
@@ -73,46 +77,6 @@ public class Family {
         }
         child.setFamily(this);
         children[size++] = child;
-    }
-
-    //Advanced complexity
-    public boolean deleteChild(Human child) {
-        boolean result = false;
-        if (children == null || children.length == 0 || child == null) {
-            return false;
-        }
-        Human[] newChild = new Human[children.length - 1];
-        for (int i = 0; i <=children.length-1; i++) {
-            if (!child.equals(children[i]) && child.hashCode() != children[i].hashCode()) {
-                return false;
-            } else {
-                if (child.equals(children[i]) && child.hashCode() == children[i].hashCode()) {
-                    if (i == children.length-1) {
-                        children[i].setFamily(null);
-                        for (int j = 0; j < newChild.length; j++) {
-                            newChild[j] = children[j];
-                            result = true;
-                        }
-                        children = newChild;
-                    } else if (i == 0) {
-                        children[i].setFamily(null);
-                        for (int j = 1; j <= newChild.length; j++) {
-                            newChild[j - 1] = children[j];
-                            result = true;
-                        }
-                        children = newChild;
-                    } else if (i <= children.length - 2) {
-                        children[i].setFamily(null);
-                        System.arraycopy(children, 0, newChild, 0, i);
-                        if (children.length - 1 - i >= 0)
-                            System.arraycopy(children, i + 1, newChild, i, children.length - 1 - i);
-                        children = newChild;
-                        result = true;
-                    }
-                }
-            }
-        }
-        return result;
     }
 
     public boolean deleteChild(int index) {

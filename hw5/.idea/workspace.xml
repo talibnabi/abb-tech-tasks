@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1f3e85-dadd-49fe-bf24-d52c11182878" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alive/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/family/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/family/Family.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +47,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Workspace/abbTech/hw4",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -50,20 +58,7 @@
       <recent name="C:\Workspace\spring-framework-learning-examples\homework5\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Human" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="alive.Human" />
-      <module name="homework5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alive.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.FamilyTest.feedPetTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="hw5" />
@@ -77,24 +72,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="family.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="family.Main" />
-      <module name="homework5" />
+    <configuration name="FamilyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw5" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="family.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="family" />
+      <option name="MAIN_CLASS_NAME" value="family.FamilyTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FamilyTest.countFamilyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="family.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="family" />
+      <option name="MAIN_CLASS_NAME" value="family.FamilyTest" />
+      <option name="METHOD_NAME" value="countFamilyTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FamilyTest.describePetTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="family.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="family" />
+      <option name="MAIN_CLASS_NAME" value="family.FamilyTest" />
+      <option name="METHOD_NAME" value="describePetTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FamilyTest.feedPetTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="family.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="family" />
+      <option name="MAIN_CLASS_NAME" value="family.FamilyTest" />
+      <option name="METHOD_NAME" value="feedPetTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.FamilyTest.feedPetTest" />
+        <item itemvalue="TestNG.FamilyTest" />
+        <item itemvalue="TestNG.FamilyTest.countFamilyTest" />
+        <item itemvalue="TestNG.FamilyTest.describePetTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.family.Main" />
-        <item itemvalue="Application.Human" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +168,7 @@
       <workItem from="1658995619813" duration="16358000" />
       <workItem from="1659019755395" duration="2158000" />
       <workItem from="1659085501127" duration="204000" />
-      <workItem from="1659181479177" duration="422000" />
+      <workItem from="1659181479177" duration="7128000" />
     </task>
     <servers />
   </component>

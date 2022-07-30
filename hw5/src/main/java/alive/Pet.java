@@ -1,7 +1,5 @@
 package alive;
 
-import family.Family;
-
 import java.util.Arrays;
 import java.util.Objects;
 

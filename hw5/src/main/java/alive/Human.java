@@ -12,7 +12,7 @@ public class Human {
     private Integer iq;
     private String[][] schedule;// [day of the week] x [type of the activity]
     private Family family;
-    
+
 
     public Human() {
     }
