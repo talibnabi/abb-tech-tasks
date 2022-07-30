@@ -47,4 +47,14 @@ public class FamilyTest {
         boolean check=family.deleteChild(0);
         assertEquals(true,check);
     }
+    @Test
+    void deleteChildTest2() {
+        Family family = new Family(new Human(), new Human());
+        Human child = new Human();
+        child.setName("Narmina");
+        child.setSurname("Aslan");
+        family.addChild(child);
+        boolean check=family.deleteChild(child);
+        assertEquals(true,check);
+    }
 }
