@@ -111,6 +111,26 @@ public class Family {
         return result;
     }
 
+    //    Advanced complexity
+    public boolean deleteChild(Human human) {
+        boolean result = false;
+        if (human == null || children == null || children.length == 0) {
+            return false;
+        } else {
+            Human[] newChild = new Human[children.length - 1];
+            for (int i = 0; i < children.length; i++) {
+                if (children[i].equals(human) && children[i].hashCode() == human.hashCode()) {
+                    children[i].setFamily(null);
+                    System.arraycopy(children, 0, newChild, 0, i);
+                    System.arraycopy(children, i + 1, newChild, i, newChild.length - i);
+                    result = true;
+                }
+            }
+            children = newChild;
+        }
+        return result;
+    }
+
     public int countFamily() {
         if (this.children != null) {
             return 2 + this.getChildren().length;
