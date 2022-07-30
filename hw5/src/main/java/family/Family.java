@@ -2,15 +2,12 @@ package family;
 
 import alive.Human;
 import alive.Pet;
-import org.testng.annotations.Test;
 
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class Family {
     private static int size = 0;
@@ -92,16 +89,16 @@ public class Family {
                 children[index].setFamily(null);
                 for (int i = 0; i < newChild.length; i++) {
                     newChild[i] = children[i];
-                    result = true;
                 }
                 children = newChild;
+                result = true;
             } else if (index == 0) {
                 children[index].setFamily(null);
                 for (int i = 1; i <= newChild.length; i++) {
                     newChild[i - 1] = children[i];
-                    result = true;
                 }
                 children = newChild;
+                result = true;
             } else if (index >= 1 && index <= children.length - 2) {
                 children[index].setFamily(null);
                 System.arraycopy(children, 0, newChild, 0, index);

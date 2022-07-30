@@ -103,7 +103,7 @@ public class Main {
         family.addChild(child3);
         family.addChild(child4);
         family.setPet(pet);
-        family.deleteChild(2);
+        System.out.println(family.deleteChild(4));
 
         family.greetPet();
 

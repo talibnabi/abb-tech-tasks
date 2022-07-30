@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1f3e85-dadd-49fe-bf24-d52c11182878" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alive/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alive/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/family/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/family/Family.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/family/Family.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/family/Family.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/family/FamilyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/family/FamilyTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <recent name="C:\Workspace\spring-framework-learning-examples\homework5\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FamilyTest.feedPetTest">
+  <component name="RunManager" selected="TestNG.FamilyTest.deleteChildTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="hw5" />
@@ -107,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FamilyTest.describePetTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FamilyTest.deleteChildTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="hw5" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +117,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="family" />
       <option name="MAIN_CLASS_NAME" value="family.FamilyTest" />
-      <option name="METHOD_NAME" value="describePetTest" />
+      <option name="METHOD_NAME" value="deleteChildTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.FamilyTest.deleteChildTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="TestNG.FamilyTest.feedPetTest" />
         <item itemvalue="TestNG.FamilyTest" />
         <item itemvalue="TestNG.FamilyTest.countFamilyTest" />
-        <item itemvalue="TestNG.FamilyTest.describePetTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +168,7 @@
       <workItem from="1658995619813" duration="16358000" />
       <workItem from="1659019755395" duration="2158000" />
       <workItem from="1659085501127" duration="204000" />
-      <workItem from="1659181479177" duration="7128000" />
+      <workItem from="1659181479177" duration="9216000" />
     </task>
     <servers />
   </component>
