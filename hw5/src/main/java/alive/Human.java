@@ -13,6 +13,10 @@ public class Human {
     private String[][] schedule;// [day of the week] x [type of the activity]
     private Family family;
 
+    public static void main(String[] args) {
+        
+    }
+
     public Human() {
     }
 
