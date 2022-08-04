@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1f3e85-dadd-49fe-bf24-d52c11182878" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/family/FamilyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/src/main/java/alive/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/src/main/java/alive/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/src/main/java/family/Family.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw6/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/family/Family.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/family/Family.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/abbTech/hw4",
+    "last_opened_file_path": "C:/Workspace/abbTech/hw5",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -52,7 +65,7 @@
       <recent name="C:\Workspace\spring-framework-learning-examples\homework5\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FamilyTest.deleteChildTest2">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="hw5" />
@@ -139,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FamilyTest.deleteChildTest2" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="TestNG.FamilyTest.deleteChildTest2" />
         <item itemvalue="TestNG.FamilyTest.deleteChildTest" />
         <item itemvalue="TestNG.FamilyTest.feedPetTest" />
         <item itemvalue="TestNG.FamilyTest" />
@@ -162,7 +175,10 @@
       <workItem from="1658995619813" duration="16358000" />
       <workItem from="1659019755395" duration="2158000" />
       <workItem from="1659085501127" duration="204000" />
-      <workItem from="1659181479177" duration="10867000" />
+      <workItem from="1659181479177" duration="11023000" />
+      <workItem from="1659196223605" duration="161000" />
+      <workItem from="1659212073647" duration="43000" />
+      <workItem from="1659604240394" duration="593000" />
     </task>
     <servers />
   </component>

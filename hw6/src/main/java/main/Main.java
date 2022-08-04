@@ -3,20 +3,36 @@ package main;
 
 import alive.Human;
 import alive.Pet;
+import days.DayOfWeek;
 import family.Family;
+import species.Species;
+
+import java.util.Arrays;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
 //        petDescription();
 //        humanDescription();
-        familyDescription();
+//        familyDescription();
+//        Main main=new Main();
+//        main.finalize();
+        Human human = new Human();
+        human.setSchedule(new String[][]{{DayOfWeek.MONDAY.name(), "Go to gym"}, {DayOfWeek.WEDNESDAY.name(), "Go to sport"}});
+        Arrays.stream(human.getSchedule()).forEach(x -> Arrays.stream(x).forEach(System.out::println));
+    }
+
+    protected void finalize() throws Throwable {
+        System.out.println("Inside finalize method of " + getClass().getName() + " Class");
+        System.out.println("Calling finalize method of the Object class");
+        // Calling finalize() of Object class
+        super.finalize();
     }
 
     private static void petDescription() {
         Pet pet = new Pet();
         pet.setNickname("Alisa");
-        pet.setSpecies("Dog");
+        pet.setSpecies(Species.DOG);
         pet.setAge(3);
         pet.setTrickLevel1(60);
         pet.setHabits(new String[]{"Swimming", "Go to gym"});
@@ -93,7 +109,7 @@ public class Main {
 
         Pet pet = new Pet();
         pet.setNickname("Turtle");
-        pet.setSpecies("dog");
+        pet.setSpecies(Species.DOG);
         pet.setHabits(new String[]{"go to gym", "swimming"});
         pet.setAge(2);
         pet.setTrickLevel1(40);
