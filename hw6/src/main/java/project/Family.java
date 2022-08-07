@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class Family {
     private static int size = 0;
+
     private Human mother;
     private Human father;
     private Human[] children;
@@ -62,7 +63,8 @@ public class Family {
         this.pet = pet;
     }
 
-    public void addChild(Human child) {
+    public boolean addChild(Human child) {
+        int len = children.length;
         if (children.length == size) {
             Human[] children2 = new Human[children.length + 1];
             System.arraycopy(children, 0, children2, 0, children.length);
@@ -70,61 +72,56 @@ public class Family {
         }
         child.setFamily(this);
         children[size++] = child;
+        return len == children.length - 1;
     }
 
     public boolean deleteChild(int index) {
-        boolean result = false;
+        int len;
         if (children == null) {
             return false;
         } else {
+            len = children.length;
             if (children.length == 0 || index > children.length - 1) {
                 return false;
             }
             Human[] newChild = new Human[children.length - 1];
             if (index == children.length - 1) {
                 children[index].setFamily(null);
-                for (int i = 0; i < newChild.length; i++) {
-                    newChild[i] = children[i];
-                }
+                System.arraycopy(children, 0, newChild, 0, newChild.length);
                 children = newChild;
-                result = true;
             } else if (index == 0) {
                 children[index].setFamily(null);
-                for (int i = 1; i <= newChild.length; i++) {
-                    newChild[i - 1] = children[i];
-                }
+                System.arraycopy(children, 1, newChild, 0, newChild.length);
                 children = newChild;
-                result = true;
             } else if (index >= 1 && index <= children.length - 2) {
                 children[index].setFamily(null);
                 System.arraycopy(children, 0, newChild, 0, index);
                 if (children.length - 1 - index >= 0)
                     System.arraycopy(children, index + 1, newChild, index, children.length - 1 - index);
                 children = newChild;
-                result = true;
             }
         }
-        return result;
+        return len == children.length + 1;
     }
 
     //    Advanced complexity
     public boolean deleteChild(Human human) {
-        boolean result = false;
+        int len;
         if (human == null || children == null || children.length == 0) {
             return false;
         } else {
+            len = children.length;
             Human[] newChild = new Human[children.length - 1];
             for (int i = 0; i < children.length; i++) {
                 if (children[i].equals(human) && children[i].hashCode() == human.hashCode()) {
                     children[i].setFamily(null);
                     System.arraycopy(children, 0, newChild, 0, i);
                     System.arraycopy(children, i + 1, newChild, i, newChild.length - i);
-                    result = true;
                 }
             }
             children = newChild;
         }
-        return result;
+        return len == children.length + 1;
     }
 
     public int countFamily() {
@@ -189,6 +186,7 @@ public class Family {
         result = 31 * result + Arrays.hashCode(getChildren());
         return result;
     }
+
 
     protected void finalize() throws Throwable {
         System.out.println("Inside finalize method of " + getClass().getName() + " Class");

@@ -9,19 +9,21 @@ public class Main {
 //        petDescription();
 //        humanDescription();
 //        familyDescription();
-//        Main main=new Main();
-//        main.finalize();
-        Human human = new Human();
-        human.setSchedule(new String[][]{{DayOfWeek.MONDAY.name(), "Go to gym"}, {DayOfWeek.WEDNESDAY.name(), "Go to sport"}});
-        Arrays.stream(human.getSchedule()).forEach(x -> Arrays.stream(x).forEach(System.out::println));
+//        humanEnumShow();
+//        detectFinalize();
+    }
+    private static void humanEnumShow(){
+            Human human = new Human();
+            human.setSchedule(new String[][]{{DayOfWeek.MONDAY.name(), "Go to gym"}, {DayOfWeek.WEDNESDAY.name(), "Go to sport"}});
+            Arrays.stream(human.getSchedule()).forEach(x -> Arrays.stream(x).forEach(System.out::println));
+        }
+
+    private static void detectFinalize() throws Throwable {
+        for(int i=10000;i<10000000;i++){
+            Human human=new Human();
+        }
     }
 
-    protected void finalize() throws Throwable {
-        System.out.println("Inside finalize method of " + getClass().getName() + " Class");
-        System.out.println("Calling finalize method of the Object class");
-        // Calling finalize() of Object class
-        super.finalize();
-    }
 
     private static void petDescription() {
         Pet pet = new Pet();
