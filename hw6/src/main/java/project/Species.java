@@ -1,4 +1,4 @@
-package species;
+package project;
 
 public enum Species {
     CAT(false, true, 4),

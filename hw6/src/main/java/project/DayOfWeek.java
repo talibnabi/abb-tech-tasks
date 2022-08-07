@@ -1,4 +1,4 @@
-package days;
+package project;
 
 public enum DayOfWeek {
     MONDAY(),

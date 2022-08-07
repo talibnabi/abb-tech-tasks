@@ -1,7 +1,4 @@
-package family;
-
-import alive.Human;
-import alive.Pet;
+package project;
 
 import java.util.Arrays;
 import java.util.Objects;

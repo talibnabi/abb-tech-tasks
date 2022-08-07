@@ -1,11 +1,5 @@
-package main;
+package project;
 
-
-import alive.Human;
-import alive.Pet;
-import days.DayOfWeek;
-import family.Family;
-import species.Species;
 
 import java.util.Arrays;
 

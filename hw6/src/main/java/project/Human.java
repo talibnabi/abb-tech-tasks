@@ -1,6 +1,4 @@
-package alive;
-
-import family.Family;
+package project;
 
 import java.util.Arrays;
 import java.util.Objects;
