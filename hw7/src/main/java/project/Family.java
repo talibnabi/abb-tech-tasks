@@ -201,34 +201,18 @@ public class Family {
     public String toString() {
         if ((mother == null || mother.getName() == null) || (father == null || father.getName() == null)) {
             return "There is no information.";
-        } else if (children == null) {
-            if (pet == null) {
-                return "Family{" +
-                        "mother=" + mother.getName() +
-                        ", father=" + father.getName() +
-                        '}';
-            } else {
-                return "Family{" +
-                        "mother=" + mother.getName() +
-                        ", father=" + father.getName() +
-                        ", pet=" + pet.toString() +
-                        '}';
-            }
-        } else if (pet == null) {
-            return "Family{" +
-                    "mother=" + mother.getName() +
-                    ", father=" + father.getName() +
-                    ", children=" + Arrays.deepToString(children) +
-                    '}';
         } else {
-            return "Family{" +
-                    "mother=" + mother.getName() +
-                    ", father=" + father.getName() +
-                    ", children=" + Arrays.deepToString(children) +
-                    ", pet=" + pet.toString() +
-                    '}';
-        }
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1));
+            stringBuilder.append('{');
+            stringBuilder.append("mother=").append(mother);
+            stringBuilder.append(", father=").append(father);
+            if (children != null) stringBuilder.append(", children=").append(Arrays.toString(children));
+            if (pet != null) stringBuilder.append(", pet=").append(pet);
+            stringBuilder.append('}');
 
+            return stringBuilder.toString();
+        }
     }
 
 }

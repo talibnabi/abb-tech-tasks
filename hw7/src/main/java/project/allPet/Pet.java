@@ -17,7 +17,7 @@ public abstract class Pet {
     }
 
     public Pet(String nickname) {
-        this.species =Species.UNKNOWN;
+        this.species = Species.UNKNOWN;
         this.nickname = nickname;
     }
 
@@ -78,12 +78,11 @@ public abstract class Pet {
         this.habits = habits;
     }
 
-    public  void eat(){
+    public void eat() {
         System.out.println("I am eating");
     }
 
     public abstract void respond();
-
 
 
     @Override
@@ -122,85 +121,23 @@ public abstract class Pet {
         } else {
             trickLevel1 = 0;
         }
-        if (nickname == null) {
-            return "There is no information.";
-        } else if (species == null) {
-            if ((age == null || age == 0) && trickLevel1 == 0 && habits != null) {
-                return "Pet{" +
-                        ", nickname='" + nickname + '\'' +
-                        ", habits=" + Arrays.deepToString(habits) +
-                        '}';
-            } else if ((age == null || age == 0) && trickLevel1 != 0 && habits != null) {
-                return "Pet{" +
-                        ", nickname='" + nickname + '\'' +
-                        ", trickLevel1=" + trickLevel +
-                        ", habits=" + Arrays.deepToString(habits) +
-                        '}';
-            } else if ((age == null || age == 0) && trickLevel1 == 0) {
-                return "Pet{" +
-                        ", nickname='" + nickname + '\'' +
-                        '}';
-            } else if ((age == null || age == 0)) {
-                return "Pet{" +
-                        ", nickname='" + nickname + '\'' +
-                        ", trickLevel1=" + trickLevel +
-                        '}';
-            } else {
-                return "Pet{" +
-                        ", nickname='" + nickname + '\'' +
-                        ", age=" + age +
-                        ", trickLevel1=" + trickLevel +
-                        ", habits=" + Arrays.deepToString(habits) +
-                        '}';
-            }
-        } else if ((age == null || age == 0)) {
-            if (trickLevel1 == 0 && habits == null) {
-                return "Pet{" +
-                        "species='" + species.name() + '\'' +
-                        ", nickname='" + nickname + '\'' +
-                        '}';
-            } else if (trickLevel1 == 0) {
-                return "Pet{" +
-                        "species='" + species.name() + '\'' +
-                        ", nickname='" + nickname + '\'' +
-                        ", habits=" + Arrays.deepToString(habits) +
-                        '}';
-            } else {
-                return "Pet{" +
-                        "species='" + species.name() + '\'' +
-                        ", nickname='" + nickname + '\'' +
-                        ", trickLevel1=" + trickLevel +
-                        ", habits=" + Arrays.deepToString(habits) +
-                        '}';
-            }
-        } else if (trickLevel1 == 0) {
-            if (habits == null) {
-                return "Pet{" +
-                        "species='" + species.name() + '\'' +
-                        ", nickname='" + nickname + '\'' +
-                        ", age=" + age +
-                        '}';
-            }
-            return "Pet{" +
-                    "species='" + species.name() + '\'' +
-                    ", nickname='" + nickname + '\'' +
-                    ", age=" + age +
-                    ", habits=" + Arrays.deepToString(habits) +
-                    '}';
-        } else if (habits == null) {
-            return "Pet{" +
-                    "species='" + species.name() + '\'' +
-                    ", nickname='" + nickname + '\'' +
-                    ", age=" + age +
-                    ", trickLevel1=" + trickLevel +
-                    '}';
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if (species == null) return "";
+        else {
+            String speciesName = species.name().charAt(0) + species.name().substring(1).toLowerCase();
+            stringBuilder.append(speciesName).append("{");
+            stringBuilder.append(speciesName).append(species.isCanFly() ? " can fly. " : " cannot fly. ");
+            stringBuilder.append(speciesName).append(String.format(" has %d legs. ", (Integer) species.getNumberOfLegs()));
+            stringBuilder.append(speciesName).append(species.isHasFur() ? " has fur. " : " has not fur. ");
+
         }
-        return "Pet{" +
-                "species='" + species.name() + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", age=" + age +
-                ", trickLevel1=" + trickLevel +
-                ", habits=" + Arrays.deepToString(habits) +
-                '}';
+        if (nickname == null) return stringBuilder.append('}').toString();
+        else stringBuilder.append("nickname='").append(nickname).append('\'');
+        if (age != null) stringBuilder.append(", age=").append(age);
+        if (trickLevel != null) stringBuilder.append(", trickLevel=").append(trickLevel);
+        if (habits != null) stringBuilder.append(", habits=").append(Arrays.toString(habits));
+        stringBuilder.append('}');
+        return stringBuilder.toString();
     }
 }

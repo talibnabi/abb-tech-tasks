@@ -19,4 +19,17 @@ public enum Species {
     Species() {
 
     }
+
+    public boolean isCanFly() {
+        return canFly;
+    }
+
+    public boolean isHasFur() {
+        return hasFur;
+    }
+
+    public int getNumberOfLegs() {
+        return numberOfLegs;
+    }
+
 }

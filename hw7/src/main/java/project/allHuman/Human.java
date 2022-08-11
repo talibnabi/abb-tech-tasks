@@ -134,63 +134,20 @@ public class Human {
         } else {
             iq = 0;
         }
-        if (name == null || surname == null) {
-            return "There is no information.";
-        } else if (year == null || year == 0) {
-            if (iq == 0 && schedule != null) {
-                return "Human{" +
-                        "name='" + name + '\'' +
-                        ", surname='" + surname + '\'' +
-                        ", schedule=" + Arrays.deepToString(schedule) + '}';
-            } else if (schedule == null) {
-                if (iq != 0) {
-                    return "Human{" +
-                            "name='" + name + '\'' +
-                            ", surname='" + surname + '\'' +
-                            ", iq=" + iq + '}';
-                } else {
-                    return "Human{" +
-                            "name='" + name + '\'' +
-                            ", surname='" + surname + '\'' +
-                            '}';
-                }
-            } else {
-                return "Human{" +
-                        "name='" + name + '\'' +
-                        ", surname='" + surname + '\'' +
-                        ", iq=" + iq +
-                        ", schedule=" + Arrays.deepToString(schedule) + '}';
-            }
-        } else if (iq == 0) {
-            if (schedule == null) {
-                return "Human{" +
-                        "name='" + name + '\'' +
-                        ", surname='" + surname + '\'' +
-                        ", year=" + year +
-                        '}';
-            } else {
-                return "Human{" +
-                        "name='" + name + '\'' +
-                        ", surname='" + surname + '\'' +
-                        ", year=" + year +
-                        ", schedule=" + Arrays.deepToString(schedule) + '}';
-            }
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1));
+        stringBuilder.append('{');
 
-        } else if (schedule == null) {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", year=" + year +
-                    ", iq=" + iq + '}';
-        } else {
-            return "Human{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", year=" + year +
-                    ", iq=" + iq +
-                    ", schedule=" + Arrays.deepToString(schedule) + '}';
-        }
+        if (name == null) return stringBuilder.append('}').toString();
+        else stringBuilder.append("name='").append(name).append('\'');
 
+        if (surname != null) stringBuilder.append(", surname='").append(surname).append('\'');
+        if (year != null) stringBuilder.append(", year=").append(year);
+        if (iq != null) stringBuilder.append(", iq=").append(iqLevel);
+        if (schedule != null) stringBuilder.append(", schedule=").append(Arrays.deepToString(schedule));
+        stringBuilder.append('}');
+
+        return stringBuilder.toString();
     }
 }
 
