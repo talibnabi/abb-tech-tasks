@@ -1,11 +1,11 @@
 package project;
 
 public enum Species {
-    CAT(false, true, 4),
+    DOMESTICCAT(false, true, 4),
     DOG(false, true, 4),
-    PARROT(true, false, 2),
+    ROBOCAT(false, false, 4),
     FISH(false, false, 0),
-    HAMSTER(false, true, 4);
+    UNKNOWN;
     private boolean canFly;
     private boolean hasFur;
     private int numberOfLegs;
@@ -14,5 +14,9 @@ public enum Species {
         this.canFly = canFly;
         this.hasFur = hasFur;
         this.numberOfLegs = numberOfLegs;
+    }
+
+    Species() {
+
     }
 }

@@ -1,4 +1,7 @@
-package project;
+package project.allHuman;
+
+import project.Family;
+import project.allPet.Pet;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -10,6 +13,7 @@ public class Human {
     private Integer iq;
     private String[][] schedule;// [day of the week] x [type of the activity]
     private Family family;
+    private Pet pet;
 
 
     public Human() {
@@ -86,6 +90,10 @@ public class Human {
 
     public void setFamily(Family family) {
         this.family = family;
+    }
+
+    public void greetPet() {
+        System.out.println("Hello," + this.pet.getNickname());
     }
 
     @Override

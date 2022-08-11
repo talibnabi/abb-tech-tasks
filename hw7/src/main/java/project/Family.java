@@ -1,5 +1,8 @@
 package project;
 
+import project.allHuman.Human;
+import project.allPet.Pet;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
@@ -17,7 +20,6 @@ public class Family {
         this.father = father;
         this.mother = mother;
         this.children = new Human[0];
-        this.pet = new Pet();
         father.setFamily(this);
         mother.setFamily(this);
     }
@@ -228,4 +230,5 @@ public class Family {
         }
 
     }
+
 }

@@ -1,9 +1,11 @@
-package project;
+package project.allPet;
+
+import project.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Pet {
+public abstract class Pet {
     private Species species;
     private String nickname;
     private Integer age;
@@ -14,13 +16,13 @@ public class Pet {
 
     }
 
-    public Pet(Species species, String nickname) {
-        this.species = species;
+    public Pet(String nickname) {
+        this.species =Species.UNKNOWN;
         this.nickname = nickname;
     }
 
-    public Pet(Species species, String nickname, Integer age, Integer trickLevel1, String[] habits) {
-        this.species = species;
+    public Pet(String nickname, Integer age, Integer trickLevel1, String[] habits) {
+        this.species = Species.UNKNOWN;
         this.nickname = nickname;
         this.age = age;
         this.trickLevel1 = trickLevel1;
@@ -76,17 +78,13 @@ public class Pet {
         this.habits = habits;
     }
 
-    public void eat() {
+    public  void eat(){
         System.out.println("I am eating");
     }
 
-    public void respond() {
-        System.out.println("Hello, owner. I am " + this.nickname + ". I miss you!");
-    }
+    public abstract void respond();
 
-    public void foul() {
-        System.out.println("I need to cover it up");
-    }
+
 
     @Override
     public boolean equals(Object object) {
