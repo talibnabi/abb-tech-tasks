@@ -16,4 +16,8 @@ public final class Woman extends Human {
     public void greetPet() {
         System.out.println("Hello," + getFamily().getPet().getNickname());
     }
+
+    public void makeup() {
+
+    }
 }
