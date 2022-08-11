@@ -223,11 +223,11 @@ public class Family implements HumanCreator {
         int iq = (mother.getIq() + father.getIq()) / 2;
         if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
             AllWomanName allWomanName = new AllWomanName();
-            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), iq);
+            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), null, iq, null);
             this.addChild(childWoman);
         } else {
             AllManName allManName = new AllManName();
-            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), iq);
+            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), null, iq, null);
             this.addChild(childMan);
         }
     }
