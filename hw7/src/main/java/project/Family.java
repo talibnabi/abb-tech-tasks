@@ -1,6 +1,7 @@
 package project;
 
 import project.allHuman.Human;
+import project.allHuman.HumanCreator;
 import project.allPet.Pet;
 
 import java.util.Arrays;
@@ -8,7 +9,7 @@ import java.util.Objects;
 import java.util.Random;
 
 
-public class Family {
+public class Family implements HumanCreator {
     private static int size = 0;
 
     private Human mother;
@@ -215,4 +216,8 @@ public class Family {
         }
     }
 
+    @Override
+    public void bornChild() {
+
+    }
 }

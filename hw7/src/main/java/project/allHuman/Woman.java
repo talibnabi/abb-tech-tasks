@@ -18,6 +18,6 @@ public final class Woman extends Human {
     }
 
     public void makeup() {
-
+        System.out.println("I will make up.");
     }
 }
