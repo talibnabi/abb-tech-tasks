@@ -1,7 +1,6 @@
 package project;
 
-import project.allHuman.Human;
-import project.allHuman.HumanCreator;
+import project.allHuman.*;
 import project.allPet.Pet;
 
 import java.util.Arrays;
@@ -10,6 +9,7 @@ import java.util.Random;
 
 
 public class Family implements HumanCreator {
+    private static final Random random = new Random();
     private static int size = 0;
 
     private Human mother;
@@ -218,6 +218,14 @@ public class Family implements HumanCreator {
 
     @Override
     public void bornChild() {
-
+        int randomNum = random.nextInt(100) + 1;
+        int iq = (mother.getIq() + father.getIq()) / 2;
+        if (randomNum > 50) {
+            AllWomanName allWomanName = new AllWomanName();
+            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), iq);
+            this.addChild(childWoman);
+        } else if (randomNum < 50) {
+            AllManName allManName = new AllManName();
+        }
     }
 }
