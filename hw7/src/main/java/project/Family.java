@@ -231,9 +231,4 @@ public class Family implements HumanCreator {
             this.addChild(childMan);
         }
     }
-
-    public static void main(String[] args) {
-        int randomNumForSex = random.nextInt(2) + 1;
-        System.out.println(randomNumForSex);
-    }
 }
