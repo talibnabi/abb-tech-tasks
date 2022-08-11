@@ -1,6 +1,7 @@
-package project;
+package project.main;
 
 
+import project.allEnum.DayOfWeek;
 import project.allHuman.Human;
 import project.allHuman.Man;
 import project.allHuman.Woman;

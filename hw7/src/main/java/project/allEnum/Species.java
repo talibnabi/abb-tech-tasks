@@ -1,4 +1,4 @@
-package project;
+package project.allEnum;
 
 public enum Species {
     DOMESTICCAT(false, true, 4),

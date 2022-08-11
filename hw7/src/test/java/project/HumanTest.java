@@ -2,6 +2,7 @@ package project;
 
 import org.testng.annotations.Test;
 import project.allHuman.Human;
+import project.main.Family;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,6 +1,6 @@
 package project.allHuman;
 
-import project.Family;
+import project.main.Family;
 import project.allPet.Pet;
 
 import java.util.Arrays;

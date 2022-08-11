@@ -1,4 +1,4 @@
-package project;
+package project.main;
 
 import project.allHuman.*;
 import project.allPet.Pet;

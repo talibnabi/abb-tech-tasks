@@ -1,6 +1,6 @@
 package project.allPet;
 
-import project.Species;
+import project.allEnum.Species;
 
 import java.util.Arrays;
 import java.util.Objects;

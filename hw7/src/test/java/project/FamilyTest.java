@@ -2,9 +2,8 @@ package family;
 
 
 import org.testng.annotations.Test;
-import project.Family;
+import project.main.Family;
 import project.allHuman.Human;
-import project.allPet.Pet;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

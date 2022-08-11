@@ -1,6 +1,6 @@
 package project.allPet;
 
-import project.Species;
+import project.allEnum.Species;
 
 public class Dog extends Pet implements Unpleasant {
     public Dog() {

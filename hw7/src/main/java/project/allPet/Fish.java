@@ -1,6 +1,6 @@
 package project.allPet;
 
-import project.Species;
+import project.allEnum.Species;
 
 public class Fish extends Pet {
     public Fish() {
