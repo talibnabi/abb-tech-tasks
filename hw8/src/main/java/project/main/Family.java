@@ -11,7 +11,7 @@ public class Family implements HumanCreator {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private Pet pet;
+    private Set<Pet> pets;
 
     public Family(Human father, Human mother) {
         this.father = father;
@@ -55,12 +55,12 @@ public class Family implements HumanCreator {
         this.children = children;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 
     public void addChild(Human child) {
@@ -84,31 +84,44 @@ public class Family implements HumanCreator {
     }
 
     public void greetPet() {
-        System.out.println("Hello," + this.getPet().getNickname());
+        Set<Pet> pets1 = this.getPets();
+        for (Pet pet : pets1) {
+            System.out.println(pet.getNickname());
+        }
     }
 
     public void describePet() {
+        Pet pets1 = null;
+        for (Pet pet : this.getPets()) {
+            pets1 = pet;
+        }
         StringBuilder slyLevel = new StringBuilder("");
-        if (this.getPet().getTrickLevel1() > 50) {
+        assert pets1 != null;
+        if (pets1.getTrickLevel1() > 50) {
             slyLevel.append("very sly");
-        } else if (this.getPet().getTrickLevel1() < 50) {
+        } else if (pets1.getTrickLevel1() < 50) {
             slyLevel.append("almost not sly");
         } else {
             slyLevel.append("sly");
         }
-        System.out.println("I have a " + this.getPet().getSpecies() + ",he is " + this.getPet().getAge() + " years old,he is " + slyLevel);
+        System.out.println("I have a " + pets1.getSpecies() + ",he is " + pets1.getAge() + " years old,he is " + slyLevel);
     }
 
 
     public boolean feedPet(boolean check) {
+        Pet pets1 = null;
+        for (Pet pet : this.getPets()) {
+            pets1 = pet;
+        }
         Random random = new Random();
         int randomTrickLevel = random.nextInt(100) + 1;
-        if (this.getPet().getTrickLevel1() != null && this.getPet().getNickname() != null) {
-            if (randomTrickLevel > this.getPet().getTrickLevel1()) {
-                System.out.println("Hm... I will feed " + this.getPet().getNickname());
+        assert pets1 != null;
+        if (pets1.getTrickLevel1() != null && pets1.getNickname() != null) {
+            if (randomTrickLevel > pets1.getTrickLevel1()) {
+                System.out.println("Hm... I will feed " + pets1.getNickname());
                 check = true;
             } else {
-                System.out.println("I think " + this.getPet().getNickname() + " is not hungry.");
+                System.out.println("I think " + pets1.getNickname() + " is not hungry.");
                 check = false;
             }
         } else {
@@ -148,7 +161,7 @@ public class Family implements HumanCreator {
             stringBuilder.append("mother=").append(mother);
             stringBuilder.append(", father=").append(father);
             if (children != null) stringBuilder.append(", children=").append(children);
-            if (pet != null) stringBuilder.append(", pet=").append(pet);
+            if (pets != null) stringBuilder.append(", pet=").append(pets);
             stringBuilder.append('}');
 
             return stringBuilder.toString();
