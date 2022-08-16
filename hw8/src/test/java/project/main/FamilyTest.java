@@ -1,5 +1,6 @@
 package project.main;
 
+import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
 import project.allHuman.Human;
@@ -8,7 +9,6 @@ import project.allHuman.Woman;
 import project.allPet.Dog;
 import project.allPet.Pet;
 
-import java.awt.event.PaintEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -84,7 +84,15 @@ public class FamilyTest {
 
     @Test
     void addChildTest() {
+        Man father = new Man("Anar", "Nasibov", 2001, 100,
+                null);
+        Woman mother = new Woman("Alisa", "Nasibov", 1999, 100,
+                null);
 
+        Family family1 = new Family(father, mother);
+        List<Human> child = new ArrayList<>();
+        family1.bornChild();
+        Assertions.assertNotNull(child);
     }
 
     @Test
@@ -104,7 +112,9 @@ public class FamilyTest {
 
     @Test
     void hashCodeTest() {
-        assertNotEquals(family.hashCode(), family2.hashCode());
+        family=new Family(new Human(),new Human());
+        family2 =new Family(new Human(),new Human());
+        assertEquals(family.hashCode(), family2.hashCode());
     }
 
 }
