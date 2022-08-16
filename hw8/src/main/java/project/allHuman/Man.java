@@ -1,7 +1,10 @@
 package project.allHuman;
 
+import project.allPet.Pet;
+
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public final class Man extends Human {
     public Man() {
@@ -17,7 +20,12 @@ public final class Man extends Human {
 
     @Override
     public void greetPet() {
-        System.out.println("Hello," + getFamily().getPet().getNickname());
+        Pet pets1 = null;
+        for (Pet pet : getFamily().getPets()) {
+            pets1 = pet;
+        }
+        assert pets1 != null;
+        System.out.println("Hello," + pets1.getNickname());
     }
 
     public void repairCar() {

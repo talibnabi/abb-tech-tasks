@@ -6,8 +6,8 @@ import project.allHuman.Human;
 import project.allHuman.Man;
 import project.allHuman.Woman;
 import project.allPet.DomesticCat;
+import project.allPet.Pet;
 
-import javax.print.attribute.HashAttributeSet;
 import java.util.*;
 
 
@@ -27,7 +27,9 @@ public class Main {
         Woman mother = new Woman("Jasmin", "Sergio", 1998);
         mother.setIq(88);
         Family family = new Family(father, mother);
-        family.setPet(domesticCat);
+        Set<Pet> pets = new HashSet<>();
+        pets.add(domesticCat);
+        family.setPets(pets);
         mother.makeup();
         father.repairCar();
         family.bornChild();
@@ -36,10 +38,10 @@ public class Main {
 
     private static void humanEnumShow() {
         Human human = new Human();
-        Map<String,String> schedule = new HashMap<>();
-        schedule.put(DayOfWeek.MONDAY.name(),"Go to gym");
-        schedule.put(DayOfWeek.WEDNESDAY.name(),"Go to sport");
-        for (String name: schedule.keySet()) {
+        Map<String, String> schedule = new HashMap<>();
+        schedule.put(DayOfWeek.MONDAY.name(), "Go to gym");
+        schedule.put(DayOfWeek.WEDNESDAY.name(), "Go to sport");
+        for (String name : schedule.keySet()) {
             String key = name.toString();
             String value = schedule.get(name).toString();
             System.out.println(key + " " + value);
