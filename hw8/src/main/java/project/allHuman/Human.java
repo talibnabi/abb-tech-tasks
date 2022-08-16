@@ -2,9 +2,6 @@ package project.allHuman;
 
 import project.main.Family;
 import project.allPet.Pet;
-
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
