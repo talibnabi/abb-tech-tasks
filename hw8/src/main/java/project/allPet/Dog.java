@@ -2,6 +2,8 @@ package project.allPet;
 
 import project.allEnum.Species;
 
+import java.util.List;
+
 public class Dog extends Pet implements Unpleasant {
     public Dog() {
         super.setSpecies(Species.UNKNOWN);
@@ -12,7 +14,7 @@ public class Dog extends Pet implements Unpleasant {
         super.setSpecies(Species.UNKNOWN);
     }
 
-    public Dog(String nickname, Integer age, Integer trickLevel1, String[] habits) {
+    public Dog(String nickname, Integer age, Integer trickLevel1, List<String> habits) {
         super(nickname, age, trickLevel1, habits);
         super.setSpecies(Species.UNKNOWN);
     }

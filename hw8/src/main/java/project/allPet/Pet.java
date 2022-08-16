@@ -2,7 +2,7 @@ package project.allPet;
 
 import project.allEnum.Species;
 
-import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Pet {
@@ -10,7 +10,7 @@ public abstract class Pet {
     private String nickname;
     private Integer age;
     private Integer trickLevel1;
-    private String[] habits;
+    private List<String> habits;
 
     public Pet() {
 
@@ -21,7 +21,7 @@ public abstract class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(String nickname, Integer age, Integer trickLevel1, String[] habits) {
+    public Pet(String nickname, Integer age, Integer trickLevel1, List<String> habits) {
         this.species = Species.UNKNOWN;
         this.nickname = nickname;
         this.age = age;
@@ -70,11 +70,11 @@ public abstract class Pet {
         this.trickLevel1 = trickLevel1;
     }
 
-    public String[] getHabits() {
+    public List<String> getHabits() {
         return habits;
     }
 
-    public void setHabits(String[] habits) {
+    public void setHabits(List<String> habits) {
         this.habits = habits;
     }
 
@@ -136,7 +136,7 @@ public abstract class Pet {
         else stringBuilder.append("nickname='").append(nickname).append('\'');
         if (age != null) stringBuilder.append(", age=").append(age);
         if (trickLevel != null) stringBuilder.append(", trickLevel=").append(trickLevel);
-        if (habits != null) stringBuilder.append(", habits=").append(Arrays.toString(habits));
+        if (habits != null) stringBuilder.append(", habits=").append(habits.toString());
         stringBuilder.append('}');
         return stringBuilder.toString();
     }

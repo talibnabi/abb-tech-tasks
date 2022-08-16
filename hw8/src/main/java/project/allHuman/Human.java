@@ -4,6 +4,7 @@ import project.main.Family;
 import project.allPet.Pet;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Human {
@@ -11,7 +12,7 @@ public class Human {
     private String surname;
     private Integer year;
     private Integer iq;
-    private String[][] schedule;// [day of the week] x [type of the activity]
+    private List<List<String>> schedule;// [day of the week] x [type of the activity]
     private Family family;
     private Pet pet;
 
@@ -26,7 +27,7 @@ public class Human {
     }
 
 
-    public Human(String name, String surname, Integer year, Integer iq, String[][] schedule) {
+    public Human(String name, String surname, Integer year, Integer iq, List<List<String>> schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -76,11 +77,11 @@ public class Human {
     }
 
 
-    public String[][] getSchedule() {
+    public List<List<String>> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(List<List<String>> schedule) {
         this.schedule = schedule;
     }
 
@@ -144,7 +145,7 @@ public class Human {
         if (surname != null) stringBuilder.append(", surname='").append(surname).append('\'');
         if (year != null) stringBuilder.append(", year=").append(year);
         if (iq != null) stringBuilder.append(", iq=").append(iqLevel);
-        if (schedule != null) stringBuilder.append(", schedule=").append(Arrays.deepToString(schedule));
+        if (schedule != null) stringBuilder.append(", schedule=").append(schedule.toString());
         stringBuilder.append('}');
 
         return stringBuilder.toString();

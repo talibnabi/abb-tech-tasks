@@ -1,5 +1,7 @@
 package project.allHuman;
 
+import java.util.List;
+
 public final class Man extends Human {
     public Man() {
     }
@@ -8,7 +10,7 @@ public final class Man extends Human {
         super(name, surname, year);
     }
 
-    public Man(String name, String surname, Integer year, Integer iq, String[][] schedule) {
+    public Man(String name, String surname, Integer year, Integer iq, List<List<String>> schedule) {
         super(name, surname, year, iq, schedule);
     }
 
