@@ -4,13 +4,14 @@ import project.allEnum.Species;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public abstract class Pet {
     private Species species;
     private String nickname;
     private Integer age;
     private Integer trickLevel1;
-    private List<String> habits;
+    private Set<String> habits;
 
     public Pet() {
 
@@ -21,7 +22,7 @@ public abstract class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(String nickname, Integer age, Integer trickLevel1, List<String> habits) {
+    public Pet(String nickname, Integer age, Integer trickLevel1, Set<String> habits) {
         this.species = Species.UNKNOWN;
         this.nickname = nickname;
         this.age = age;
@@ -70,11 +71,11 @@ public abstract class Pet {
         this.trickLevel1 = trickLevel1;
     }
 
-    public List<String> getHabits() {
+    public Set<String> getHabits() {
         return habits;
     }
 
-    public void setHabits(List<String> habits) {
+    public void setHabits(Set<String> habits) {
         this.habits = habits;
     }
 

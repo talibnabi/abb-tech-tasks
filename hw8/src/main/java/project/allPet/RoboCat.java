@@ -3,6 +3,7 @@ package project.allPet;
 import project.allEnum.Species;
 
 import java.util.List;
+import java.util.Set;
 
 public class RoboCat extends Pet implements Unpleasant {
     public RoboCat() {
@@ -14,7 +15,7 @@ public class RoboCat extends Pet implements Unpleasant {
         super.setSpecies(Species.UNKNOWN);
     }
 
-    public RoboCat(String nickname, Integer age, Integer trickLevel1, List<String> habits) {
+    public RoboCat(String nickname, Integer age, Integer trickLevel1, Set<String> habits) {
         super(nickname, age, trickLevel1, habits);
         super.setSpecies(Species.UNKNOWN);
     }

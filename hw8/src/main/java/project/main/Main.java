@@ -7,21 +7,20 @@ import project.allHuman.Man;
 import project.allHuman.Woman;
 import project.allPet.DomesticCat;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javax.print.attribute.HashAttributeSet;
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-//        humanEnumShow();
+        humanEnumShow();
         DomesticCat domesticCat = new DomesticCat();
         domesticCat.setNickname("Alisa");
         domesticCat.setAge(2);
-        List<String> list = new ArrayList<>();
-        list.add("Gym");
-        list.add("Swimming");
-        domesticCat.setHabits(list);
+        Set<String> set = new HashSet<>();
+        set.add("Gym");
+        set.add("Swimming");
+        domesticCat.setHabits(set);
         domesticCat.setTrickLevel1(89);
         Man father = new Man("Ramos", "Sergio", 1997);
         father.setIq(99);
@@ -37,17 +36,14 @@ public class Main {
 
     private static void humanEnumShow() {
         Human human = new Human();
-        List<List<String>> list = new ArrayList<>();
-        List<String> list1 = new ArrayList<>();
-        list1.add(DayOfWeek.MONDAY.name());
-        list1.add("Go to gym");
-        List<String> list2 = new ArrayList<>();
-        list2.add(DayOfWeek.WEDNESDAY.name());
-        list2.add("Go to sport");
-        list.add(list1);
-        list.add(list2);
-        human.setSchedule(list);
-        list.forEach(System.out::println);
+        Map<String,String> schedule = new HashMap<>();
+        schedule.put(DayOfWeek.MONDAY.name(),"Go to gym");
+        schedule.put(DayOfWeek.WEDNESDAY.name(),"Go to sport");
+        for (String name: schedule.keySet()) {
+            String key = name.toString();
+            String value = schedule.get(name).toString();
+            System.out.println(key + " " + value);
+        }
     }
 
     private static void detectFinalize() throws Throwable {

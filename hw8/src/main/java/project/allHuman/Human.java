@@ -5,6 +5,7 @@ import project.allPet.Pet;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class Human {
@@ -12,7 +13,7 @@ public class Human {
     private String surname;
     private Integer year;
     private Integer iq;
-    private List<List<String>> schedule;// [day of the week] x [type of the activity]
+    private Map<String,String> schedule;// [day of the week] x [type of the activity]
     private Family family;
     private Pet pet;
 
@@ -27,7 +28,7 @@ public class Human {
     }
 
 
-    public Human(String name, String surname, Integer year, Integer iq, List<List<String>> schedule) {
+    public Human(String name, String surname, Integer year, Integer iq, Map<String,String> schedule ) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -77,11 +78,11 @@ public class Human {
     }
 
 
-    public List<List<String>> getSchedule() {
+    public Map<String, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(List<List<String>> schedule) {
+    public void setSchedule(Map<String, String> schedule) {
         this.schedule = schedule;
     }
 

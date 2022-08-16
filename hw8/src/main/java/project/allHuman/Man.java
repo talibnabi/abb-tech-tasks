@@ -1,6 +1,7 @@
 package project.allHuman;
 
 import java.util.List;
+import java.util.Map;
 
 public final class Man extends Human {
     public Man() {
@@ -10,7 +11,7 @@ public final class Man extends Human {
         super(name, surname, year);
     }
 
-    public Man(String name, String surname, Integer year, Integer iq, List<List<String>> schedule) {
+    public Man(String name, String surname, Integer year, Integer iq, Map<String,String> schedule) {
         super(name, surname, year, iq, schedule);
     }
 
