@@ -31,7 +31,7 @@ public class Main {
         mother.makeup();
         father.repairCar();
         family.bornChild();
-        System.out.println(Arrays.toString(family.getChildren()));
+        System.out.println(family.getChildren());
     }
 
     private static void humanEnumShow() {

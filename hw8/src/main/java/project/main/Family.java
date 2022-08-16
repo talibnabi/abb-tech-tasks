@@ -3,24 +3,20 @@ package project.main;
 import project.allHuman.*;
 import project.allPet.Pet;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 
 public class Family implements HumanCreator {
     private static final Random random = new Random();
-    private static int size = 0;
-
     private Human mother;
     private Human father;
-    private Human[] children;
+    private List<Human> children;
     private Pet pet;
 
     public Family(Human father, Human mother) {
         this.father = father;
         this.mother = mother;
-        this.children = new Human[0];
+        this.children = new ArrayList<>();
         father.setFamily(this);
         mother.setFamily(this);
     }
@@ -50,11 +46,12 @@ public class Family implements HumanCreator {
         this.father = father;
     }
 
-    public Human[] getChildren() {
+    public List<Human> getChildren() {
+
         return children;
     }
 
-    public void setChildren(Human[] children) {
+    public void setChildren(List<Human> children) {
         this.children = children;
     }
 
@@ -66,73 +63,24 @@ public class Family implements HumanCreator {
         this.pet = pet;
     }
 
-    public boolean addChild(Human child) {
-        int len = children.length;
-        if (children.length == size) {
-            Human[] children2 = new Human[children.length + 1];
-            System.arraycopy(children, 0, children2, 0, children.length);
-            children = children2;
-        }
+    public void addChild(Human child) {
+        children.add(child);
         child.setFamily(this);
-        children[size++] = child;
-        return len == children.length - 1;
     }
 
-    public boolean deleteChild(int index) {
-        int len;
-        if (children == null) {
-            return false;
-        } else {
-            len = children.length;
-            if (children.length == 0 || index > children.length - 1) {
-                return false;
-            }
-            Human[] newChild = new Human[children.length - 1];
-            if (index == children.length - 1) {
-                children[index].setFamily(null);
-                System.arraycopy(children, 0, newChild, 0, newChild.length);
-                children = newChild;
-            } else if (index == 0) {
-                children[index].setFamily(null);
-                System.arraycopy(children, 1, newChild, 0, newChild.length);
-                children = newChild;
-            } else if (index >= 1 && index <= children.length - 2) {
-                children[index].setFamily(null);
-                System.arraycopy(children, 0, newChild, 0, index);
-                if (children.length - 1 - index >= 0)
-                    System.arraycopy(children, index + 1, newChild, index, children.length - 1 - index);
-                children = newChild;
-            }
-        }
-        return len == children.length + 1;
+    public void deleteChild(int index) {
+        children.remove(index);
+        children.get(index).setFamily(null);
     }
 
     //    Advanced complexity
-    public boolean deleteChild(Human human) {
-        int len;
-        if (human == null || children == null || children.length == 0) {
-            return false;
-        } else {
-            len = children.length;
-            Human[] newChild = new Human[children.length - 1];
-            for (int i = 0; i < children.length; i++) {
-                if (children[i].equals(human) && children[i].hashCode() == human.hashCode()) {
-                    children[i].setFamily(null);
-                    System.arraycopy(children, 0, newChild, 0, i);
-                    System.arraycopy(children, i + 1, newChild, i, newChild.length - i);
-                }
-            }
-            children = newChild;
-        }
-        return len == children.length + 1;
+    public void deleteChild(Human human) {
+        children.remove(human);
+        human.setFamily(null);
     }
 
     public int countFamily() {
-        if (this.children != null) {
-            return 2 + this.getChildren().length;
-        } else {
-            return 2;
-        }
+        return 2 + children.size();
     }
 
     public void greetPet() {
@@ -169,27 +117,18 @@ public class Family implements HumanCreator {
         return check;
     }
 
+
     @Override
-    public boolean equals(Object object) {
-        if (this == object)
-            return true;
-        if (object == null)
-            return false;
-        if (getClass() != object.getClass())
-            return false;
-        Family family = (Family) object;
-        return Objects.equals(father, family.father)
-                && Objects.equals(mother, family.mother)
-                && Arrays.equals(children, family.children);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Family family)) return false;
+        return getMother().equals(family.getMother()) && getFather().equals(family.getFather()) && getChildren().equals(family.getChildren());
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getMother(), getFather());
-        result = 31 * result + Arrays.hashCode(getChildren());
-        return result;
+        return Objects.hash(getMother(), getFather(), getChildren());
     }
-
 
     protected void finalize() throws Throwable {
         System.out.println("Inside finalize method of " + getClass().getName() + " Class");
@@ -208,7 +147,7 @@ public class Family implements HumanCreator {
             stringBuilder.append('{');
             stringBuilder.append("mother=").append(mother);
             stringBuilder.append(", father=").append(father);
-            if (children != null) stringBuilder.append(", children=").append(Arrays.toString(children));
+            if (children != null) stringBuilder.append(", children=").append(children);
             if (pet != null) stringBuilder.append(", pet=").append(pet);
             stringBuilder.append('}');
 
