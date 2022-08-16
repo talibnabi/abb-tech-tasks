@@ -116,5 +116,16 @@ public class FamilyTest {
         family2 =new Family(new Human(),new Human());
         assertEquals(family.hashCode(), family2.hashCode());
     }
-
+    @Test
+    void feedPetTest(){
+        family=new Family(new Human(),new Human());
+        Set<Pet> pets=new HashSet<>();
+        Pet pet=new Dog();
+        pet.setAge(1);
+        pet.setNickname("alisa");
+        pet.setTrickLevel1(23);
+        pets.add(pet);
+        family.setPets(pets);
+        assertTrue(family.feedPet(true));
+    }
 }
