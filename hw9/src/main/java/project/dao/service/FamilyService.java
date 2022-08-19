@@ -60,5 +60,9 @@ public class FamilyService {
         Family family = new Family(mother, father);
         this.familyDao.saveFamily(family);
     }
-    
+
+    public void deleteFamilyByIndex(int index) {
+        
+    }
+
 }
