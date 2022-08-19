@@ -83,4 +83,9 @@ public class FamilyService {
         return this.familyDao.saveFamily(family);
     }
 
+    public Family adoptChild(Family family, Human child) {
+        family.addChild(child);
+        return this.familyDao.saveFamily(family);
+    }
+    
 }
