@@ -6,8 +6,6 @@ import project.dao.inter.FamilyDao;
 import project.main.Family;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
 import static project.util.FamilyUtil.date;
 import static project.util.FamilyUtil.random;
 
@@ -106,5 +104,9 @@ public class FamilyService {
 
     public int count() {
         return this.familyDao.getAllFamilies().size();
+    }
+
+    public Family getFamilyById() {
+        return null;
     }
 }
