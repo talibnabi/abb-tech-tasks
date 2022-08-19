@@ -7,6 +7,7 @@ import project.main.Family;
 
 import java.util.List;
 
+import static project.util.FamilyUtil.date;
 import static project.util.FamilyUtil.random;
 
 public class FamilyService {
@@ -87,5 +88,16 @@ public class FamilyService {
         family.addChild(child);
         return this.familyDao.saveFamily(family);
     }
-    
+
+    public List<Family> deleteAllChildrenOlderThen(int age) {
+        int currentYear = date.getYear() + 1900;
+        return this.familyDao
+                .getAllFamilies()
+                .stream()
+                .filter(family ->
+                        family
+                                .getChildren()
+                                .removeIf(human -> (currentYear - human.getYear()) > age))
+                .map(this.familyDao::saveFamily).toList();
+    }
 }
