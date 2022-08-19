@@ -5,9 +5,10 @@ import project.allPet.Pet;
 
 import java.util.*;
 
+import static project.util.FamilyUtil.random;
+
 
 public class Family implements HumanCreator {
-    private static final Random random = new Random();
     private Human mother;
     private Human father;
     private List<Human> children;

@@ -7,6 +7,8 @@ import project.main.Family;
 
 import java.util.List;
 
+import static project.util.FamilyUtil.random;
+
 public class FamilyService {
     private final FamilyDao familyDao;
 
@@ -62,7 +64,14 @@ public class FamilyService {
     }
 
     public void deleteFamilyByIndex(int index) {
-        
+        this.familyDao.deleteFamily(index);
+    }
+
+    public Family bornChild(Family family, String masculine, String feminine) {
+        int randomNumForSex = random.nextInt(2) + 1;
+        int randomNum = random.nextInt(100) + 1;
+        int iq = (family.getMother().getIq() + family.getFather().getIq()) / 2;
+        return null;
     }
 
 }
