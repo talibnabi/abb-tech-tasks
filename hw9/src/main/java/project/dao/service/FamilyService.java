@@ -115,5 +115,9 @@ public class FamilyService {
     public List<Pet> getPets(int index) {
         return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
     }
-    
+
+    public void addPet(int index, Pet pet) {
+        this.familyDao.getAllFamilies().get(index).getPets().add(pet);
+        this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
+    }
 }
