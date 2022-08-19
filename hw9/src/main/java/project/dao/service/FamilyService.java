@@ -1,6 +1,6 @@
 package project.dao.service;
 
-import project.allHuman.Human;
+import project.allHuman.*;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 import project.main.Family;
@@ -71,7 +71,16 @@ public class FamilyService {
         int randomNumForSex = random.nextInt(2) + 1;
         int randomNum = random.nextInt(100) + 1;
         int iq = (family.getMother().getIq() + family.getFather().getIq()) / 2;
-        return null;
+        if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
+            AllWomanName allWomanName = new AllWomanName();
+            Woman woman = new Woman(feminine, family.getFather().getSurname(), null, iq, null);
+            family.addChild(woman);
+        } else {
+            AllManName allManName = new AllManName();
+            Man man = new Man(masculine, family.getFather().getSurname(), null, iq, null);
+            family.addChild(man);
+        }
+        return this.familyDao.saveFamily(family);
     }
 
 }
