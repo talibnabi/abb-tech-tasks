@@ -35,5 +35,14 @@ public class FamilyService {
         System.out.println(familiesBiggerThan);
         return familiesBiggerThan;
     }
-    
+
+    public List<Family> getFamiliesLessThan(int size) {
+        List<Family> familiesLessThan = this.familyDao
+                .getAllFamilies()
+                .stream()
+                .filter(family -> family.countFamily() < size)
+                .toList();
+        System.out.println(familiesLessThan);
+        return familiesLessThan;
+    }
 }
