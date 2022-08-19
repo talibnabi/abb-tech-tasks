@@ -68,4 +68,8 @@ public class FamilyController {
     public List<Pet> getPets(int index) {
         return this.familyService.getPets(index);
     }
+
+    public void addPet(int index, Pet pet) {
+        this.familyService.addPet(index, pet);
+    }
 }
