@@ -1,10 +1,13 @@
 package project.dao.controller;
 
-import project.allHuman.Human;
+import project.allHuman.*;
 import project.dao.service.FamilyService;
 import project.main.Family;
 
 import java.util.List;
+
+import static project.util.FamilyUtil.date;
+import static project.util.FamilyUtil.random;
 
 public class FamilyController {
     private final FamilyService familyService;
@@ -39,6 +42,18 @@ public class FamilyController {
 
     public void deleteFamilyByIndex(int index) {
         this.familyService.deleteFamilyByIndex(index);
+    }
+
+    public Family bornChild(Family family, String masculine, String feminine) {
+        return this.familyService.bornChild(family, masculine, feminine);
+    }
+
+    public Family adoptChild(Family family, Human child) {
+        return this.familyService.adoptChild(family, child);
+    }
+
+    public void deleteAllChildrenOlderThen(int age) {
+        this.familyService.deleteAllChildrenOlderThen(age);
     }
 
 }
