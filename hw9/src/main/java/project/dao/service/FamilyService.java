@@ -6,6 +6,7 @@ import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 import project.main.Family;
 
+import java.util.HashSet;
 import java.util.List;
 
 import static project.util.FamilyUtil.date;
@@ -62,6 +63,7 @@ public class FamilyService {
 
     public void createNewFamily(Human mother, Human father) {
         Family family = new Family(mother, father);
+        family.setPets(new HashSet<>());
         this.familyDao.saveFamily(family);
     }
 
@@ -113,7 +115,12 @@ public class FamilyService {
     }
 
     public List<Pet> getPets(int index) {
-        return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
+        try {
+            return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return null;
+        }
     }
 
     public void addPet(int index, Pet pet) {
