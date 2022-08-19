@@ -1,6 +1,7 @@
 package project.dao.service;
 
 import project.allHuman.*;
+import project.allPet.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 import project.main.Family;
@@ -109,6 +110,10 @@ public class FamilyService {
 
     public Family getFamilyById(int index) {
         return this.familyDao.getAllFamilies().get(index);
+    }
+
+    public List<Pet> getPets(int index) {
+        return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
     }
     
 }
