@@ -1,6 +1,7 @@
 package project.dao.controller;
 
 import project.allHuman.*;
+import project.allPet.Pet;
 import project.dao.service.FamilyService;
 import project.main.Family;
 
@@ -56,4 +57,15 @@ public class FamilyController {
         this.familyService.deleteAllChildrenOlderThen(age);
     }
 
+    public int count() {
+        return this.familyService.count();
+    }
+
+    public Family getFamilyById(int index) {
+        return this.familyService.getFamilyById(index);
+    }
+
+    public List<Pet> getPets(int index) {
+        return this.familyService.getPets(index);
+    }
 }
