@@ -64,7 +64,13 @@ public class FamilyServiceTest {
 
     @Test
     void bornChildTest() {
-
+        FamilyService familyService = new FamilyService(new CollectionFamilyDao());
+        Human mother = new Human();
+        mother.setIq(10);
+        Human father = new Human();
+        father.setIq(42);
+        Family family = new Family(mother, father);
+        familyService.bornChild(family, "Alis", "Alisa");
     }
 
     @Test
