@@ -5,6 +5,7 @@ import project.allHuman.Human;
 import project.allPet.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.main.Family;
+
 import java.util.List;
 
 public class FamilyServiceTest {
@@ -79,7 +80,7 @@ public class FamilyServiceTest {
 
     @Test
     void deleteAllChildrenOlderThenTest() {
-
+        familyService.deleteAllChildrenOlderThen(32);
     }
 
     @Test
@@ -90,7 +91,11 @@ public class FamilyServiceTest {
 
     @Test
     void getFamilyByIdTest() {
-
+        Human father = new Human();
+        Human mother = new Human();
+        familyService.createNewFamily(mother, father);
+        Family family = familyService.getFamilyById(0);
+        System.out.println(family);
     }
 
     @Test
