@@ -8,7 +8,6 @@ import project.allHuman.Man;
 import project.allHuman.Woman;
 import project.allPet.Dog;
 import project.allPet.Pet;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
