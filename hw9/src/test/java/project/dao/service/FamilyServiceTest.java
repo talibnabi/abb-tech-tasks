@@ -2,9 +2,9 @@ package project.dao.service;
 
 import org.testng.annotations.Test;
 import project.allHuman.Human;
+import project.allPet.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.main.Family;
-
 import java.util.List;
 
 public class FamilyServiceTest {
@@ -79,12 +79,13 @@ public class FamilyServiceTest {
 
     @Test
     void deleteAllChildrenOlderThenTest() {
-        
+
     }
 
     @Test
     void countTest() {
-
+        int count = familyService.count();
+        System.out.println(count);
     }
 
     @Test
@@ -94,6 +95,10 @@ public class FamilyServiceTest {
 
     @Test
     void getPetsTest() {
-
+        Human father = new Human();
+        Human mother = new Human();
+        familyService.createNewFamily(mother, father);
+        List<Pet> petList = familyService.getPets(0);
+        petList.forEach(System.out::println);
     }
 }
