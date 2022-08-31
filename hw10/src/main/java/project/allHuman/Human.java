@@ -3,6 +3,7 @@ package project.allHuman;
 import project.main.Family;
 import project.allPet.Pet;
 
+import java.util.Calendar;
 import java.util.Map;
 import java.util.Objects;
 
@@ -94,6 +95,19 @@ public class Human {
 
     public void greetPet() {
         System.out.println("Hello," + this.pet.getNickname());
+    }
+
+    public String describeAge() {
+        StringBuilder stringBuilder = new StringBuilder();
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(birthDate * 1000);
+        int year = cal.get(Calendar.YEAR) - 1970;
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        stringBuilder.append(year);
+        stringBuilder.append(month);
+        stringBuilder.append(day);
+        return stringBuilder.toString();
     }
 
     @Override
