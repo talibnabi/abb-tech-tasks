@@ -38,6 +38,9 @@ public class Main {
         father2.setIq(35);
         familyController.createNewFamily(mother2, father2);
         Human mother3 = new Human();
+        mother3.setBirthDate(1220227200);
+        System.out.println("Birth Date: ");
+        System.out.println(mother3.describeAge());
         mother3.setName("Narmin3");
         mother3.setSurname("Anar");
         mother3.setIq(93);

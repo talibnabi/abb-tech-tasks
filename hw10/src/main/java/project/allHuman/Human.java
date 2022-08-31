@@ -100,13 +100,17 @@ public class Human {
     public String describeAge() {
         StringBuilder stringBuilder = new StringBuilder();
         Calendar cal = Calendar.getInstance();
-        cal.setTimeInMillis(birthDate * 1000);
+        long birthDateSecond = cal.getTimeInMillis() - this.birthDate;
+        cal.setTimeInMillis(birthDateSecond);
         int year = cal.get(Calendar.YEAR) - 1970;
         int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH) - 1;
         stringBuilder.append(year);
+        stringBuilder.append("-year. ");
         stringBuilder.append(month);
+        stringBuilder.append("-month. ");
         stringBuilder.append(day);
+        stringBuilder.append("-day. ");
         return stringBuilder.toString();
     }
 
