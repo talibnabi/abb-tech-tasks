@@ -1,5 +1,7 @@
 package project.allHuman;
 
+import java.text.ParseException;
+
 public interface HumanCreator {
-    void bornChild();
+    void bornChild() throws ParseException;
 }

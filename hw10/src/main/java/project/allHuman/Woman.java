@@ -2,6 +2,8 @@ package project.allHuman;
 
 import project.allPet.Pet;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -9,11 +11,11 @@ public final class Woman extends Human {
     public Woman() {
     }
 
-    public Woman(String name, String surname, long birthDate) {
+    public Woman(String name, String surname, String birthDate) throws ParseException {
         super(name, surname, birthDate);
     }
 
-    public Woman(String name, String surname, long birthDate, Integer iq, Map<String, String> schedule) {
+    public Woman(String name, String surname, String birthDate, Integer iq, Map<String, String> schedule) throws ParseException {
         super(name, surname, birthDate, iq, schedule);
     }
 

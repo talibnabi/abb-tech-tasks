@@ -3,17 +3,18 @@ package project.allHuman;
 import project.allPet.Pet;
 
 
+import java.text.ParseException;
 import java.util.Map;
 
 public final class Man extends Human {
     public Man() {
     }
 
-    public Man(String name, String surname, long birthDate) {
+    public Man(String name, String surname, String birthDate) throws ParseException {
         super(name, surname, birthDate);
     }
 
-    public Man(String name, String surname, long birthDate, Integer iq, Map<String,String> schedule) {
+    public Man(String name, String surname, String birthDate, Integer iq, Map<String,String> schedule) throws ParseException {
         super(name, surname, birthDate, iq, schedule);
     }
 

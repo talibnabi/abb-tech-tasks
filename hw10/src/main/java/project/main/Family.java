@@ -3,6 +3,7 @@ package project.main;
 import project.allHuman.*;
 import project.allPet.Pet;
 
+import java.text.ParseException;
 import java.util.*;
 
 import static project.util.FamilyUtil.random;
@@ -170,17 +171,17 @@ public class Family implements HumanCreator {
     }
 
     @Override
-    public void bornChild() {
+    public void bornChild() throws ParseException {
         int randomNumForSex = random.nextInt(2) + 1;
         int randomNum = random.nextInt(100) + 1;
         int iq = (mother.getIq() + father.getIq()) / 2;
         if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
             AllWomanName allWomanName = new AllWomanName();
-            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), 0, iq, null);
+            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), "", iq, null);
             this.addChild(childWoman);
         } else {
             AllManName allManName = new AllManName();
-            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), 0, iq, null);
+            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), "", iq, null);
             this.addChild(childMan);
         }
     }

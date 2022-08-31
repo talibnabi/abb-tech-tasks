@@ -3,9 +3,14 @@ package project.allHuman;
 import project.main.Family;
 import project.allPet.Pet;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
+
+import static project.util.FamilyUtil.sdf;
 
 public class Human {
     private String name;
@@ -17,20 +22,31 @@ public class Human {
     private Pet pet;
 
 
+
     public Human() {
     }
 
-    public Human(String name, String surname, long birthDate) {
+    public Human(String name, String surname, String birthDate) throws ParseException {
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
+        Date date = sdf.parse(birthDate);
+        this.birthDate = date.getTime();
+    }
+
+    public Human(String name, String surname, String birthDate, Integer iq) throws ParseException {
+        this.name = name;
+        this.surname = surname;
+        Date date = sdf.parse(birthDate);
+        this.birthDate = date.getTime();
+        this.iq = iq;
     }
 
 
-    public Human(String name, String surname, long birthDate, Integer iq, Map<String, String> schedule) {
+    public Human(String name, String surname, String birthDate, Integer iq, Map<String, String> schedule) throws ParseException {
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
+        Date date = sdf.parse(birthDate);
+        this.birthDate = date.getTime();
         this.iq = iq;
         this.schedule = schedule;
     }

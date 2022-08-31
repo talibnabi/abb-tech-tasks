@@ -6,6 +6,7 @@ import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 import project.main.Family;
 
+import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
 
@@ -71,17 +72,17 @@ public class FamilyService {
         this.familyDao.deleteFamily(index);
     }
 
-    public Family bornChild(Family family, String masculine, String feminine) {
+    public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
         int randomNumForSex = random.nextInt(2) + 1;
         int randomNum = random.nextInt(100) + 1;
         int iq = (family.getMother().getIq() + family.getFather().getIq()) / 2;
         if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
             AllWomanName allWomanName = new AllWomanName();
-            Woman woman = new Woman(feminine, family.getFather().getSurname(), 0, iq, null);
+            Woman woman = new Woman(feminine, family.getFather().getSurname(), "0/0/0", iq, null);
             family.addChild(woman);
         } else {
             AllManName allManName = new AllManName();
-            Man man = new Man(masculine, family.getFather().getSurname(), 0, iq, null);
+            Man man = new Man(masculine, family.getFather().getSurname(), "0/0/0", iq, null);
             family.addChild(man);
         }
         return this.familyDao.saveFamily(family);

@@ -5,6 +5,7 @@ import project.allPet.Pet;
 import project.dao.service.FamilyService;
 import project.main.Family;
 
+import java.text.ParseException;
 import java.util.List;
 
 import static project.util.FamilyUtil.date;
@@ -45,7 +46,7 @@ public class FamilyController {
         this.familyService.deleteFamilyByIndex(index);
     }
 
-    public Family bornChild(Family family, String masculine, String feminine) {
+    public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
         return this.familyService.bornChild(family, masculine, feminine);
     }
 
