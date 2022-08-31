@@ -5,9 +5,10 @@ import project.allPet.Pet;
 
 import java.util.*;
 
+import static project.util.FamilyUtil.random;
+
 
 public class Family implements HumanCreator {
-    private static final Random random = new Random();
     private Human mother;
     private Human father;
     private List<Human> children;
@@ -175,11 +176,11 @@ public class Family implements HumanCreator {
         int iq = (mother.getIq() + father.getIq()) / 2;
         if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
             AllWomanName allWomanName = new AllWomanName();
-            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), null, iq, null);
+            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), 0, iq, null);
             this.addChild(childWoman);
         } else {
             AllManName allManName = new AllManName();
-            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), null, iq, null);
+            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), 0, iq, null);
             this.addChild(childMan);
         }
     }

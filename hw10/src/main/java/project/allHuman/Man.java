@@ -2,20 +2,19 @@ package project.allHuman;
 
 import project.allPet.Pet;
 
-import java.util.List;
+
 import java.util.Map;
-import java.util.Set;
 
 public final class Man extends Human {
     public Man() {
     }
 
-    public Man(String name, String surname, Integer year) {
-        super(name, surname, year);
+    public Man(String name, String surname, long birthDate) {
+        super(name, surname, birthDate);
     }
 
-    public Man(String name, String surname, Integer year, Integer iq, Map<String,String> schedule) {
-        super(name, surname, year, iq, schedule);
+    public Man(String name, String surname, long birthDate, Integer iq, Map<String,String> schedule) {
+        super(name, surname, birthDate, iq, schedule);
     }
 
     @Override

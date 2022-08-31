@@ -7,17 +7,17 @@ import java.util.Set;
 
 public class Fish extends Pet {
     public Fish() {
-        super.setSpecies(Species.UNKNOWN);
+        super.setSpecies(Species.FISH);
     }
 
     public Fish(String nickname) {
         super(nickname);
-        super.setSpecies(Species.UNKNOWN);
+        super.setSpecies(Species.FISH);
     }
 
     public Fish(String nickname, Integer age, Integer trickLevel1, Set<String> habits) {
         super(nickname, age, trickLevel1, habits);
-        super.setSpecies(Species.UNKNOWN);
+        super.setSpecies(Species.FISH);
     }
 
     @Override

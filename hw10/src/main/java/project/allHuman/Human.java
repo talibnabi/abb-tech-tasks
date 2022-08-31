@@ -2,15 +2,16 @@ package project.allHuman;
 
 import project.main.Family;
 import project.allPet.Pet;
+
 import java.util.Map;
 import java.util.Objects;
 
 public class Human {
     private String name;
     private String surname;
-    private Integer year;
+    private long birthDate;
     private Integer iq;
-    private Map<String,String> schedule;// [day of the week] x [type of the activity]
+    private Map<String, String> schedule;// [day of the week] x [type of the activity]
     private Family family;
     private Pet pet;
 
@@ -18,17 +19,17 @@ public class Human {
     public Human() {
     }
 
-    public Human(String name, String surname, Integer year) {
+    public Human(String name, String surname, long birthDate) {
         this.name = name;
         this.surname = surname;
-        this.year = year;
+        this.birthDate = birthDate;
     }
 
 
-    public Human(String name, String surname, Integer year, Integer iq, Map<String,String> schedule ) {
+    public Human(String name, String surname, long birthDate, Integer iq, Map<String, String> schedule) {
         this.name = name;
         this.surname = surname;
-        this.year = year;
+        this.birthDate = birthDate;
         this.iq = iq;
         this.schedule = schedule;
     }
@@ -58,12 +59,12 @@ public class Human {
         this.surname = surname;
     }
 
-    public Integer getYear() {
-        return year;
+    public long getBirthDate() {
+        return birthDate;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setBirthDate(long birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Integer getIq() {
@@ -106,14 +107,14 @@ public class Human {
         Human human = (Human) object;
         return Objects.equals(name, human.name)
                 && Objects.equals(surname, human.surname)
-                && Objects.equals(year, human.year)
+                && Objects.equals(birthDate, human.birthDate)
                 && Objects.equals(family.getFather().name, human.getFamily().getFather().getName())
                 && Objects.equals(family.getFather().surname, human.getFamily().getFather().getSurname());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getYear(), getFamily().getFather().getName(), getFamily().getFather().getSurname());
+        return Objects.hash(getName(), getSurname(), getBirthDate(), getFamily().getFather().getName(), getFamily().getFather().getSurname());
     }
 
     protected void finalize() throws Throwable {
@@ -141,8 +142,8 @@ public class Human {
         else stringBuilder.append("name='").append(name).append('\'');
 
         if (surname != null) stringBuilder.append(", surname='").append(surname).append('\'');
-        if (year != null) stringBuilder.append(", year=").append(year);
-        if (iq != null) stringBuilder.append(", iq=").append(iqLevel);
+        if (birthDate != 0) stringBuilder.append(", year=").append(birthDate);
+        stringBuilder.append(", iq=").append(iqLevel);
         if (schedule != null) stringBuilder.append(", schedule=").append(schedule.toString());
         stringBuilder.append('}');
 
