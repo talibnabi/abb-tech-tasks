@@ -3,12 +3,12 @@ package project.main;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
-import project.allHuman.Human;
-import project.allHuman.Man;
-import project.allHuman.Woman;
-import project.allPet.Dog;
-import project.allPet.Pet;
-
+import project.model.human.Family;
+import project.model.human.Human;
+import project.model.human.Man;
+import project.model.human.Woman;
+import project.model.pet.Dog;
+import project.model.pet.Pet;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
