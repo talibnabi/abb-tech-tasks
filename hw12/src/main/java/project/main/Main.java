@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedMap;
 
 import static project.util.FamilyUtil.scanner;
 
@@ -53,6 +54,12 @@ public class Main {
                     families1.forEach(System.out::println);
                     break;
                 case "5":
+                    System.out.println("Enter number: ");
+                    int numberCount = scanner.nextInt();
+                    List<Family> families2 = familyController.countFamiliesWithMemberNumber(numberCount);
+                    families2.forEach(System.out::println);
+                    break;
+                case "6":
                     
             }
         }
