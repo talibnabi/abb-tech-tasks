@@ -1,10 +1,8 @@
-package project.allHuman;
+package project.model.human;
 
-import project.allPet.Pet;
+import project.model.pet.Pet;
 
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public final class Man extends Human {
     public Man() {

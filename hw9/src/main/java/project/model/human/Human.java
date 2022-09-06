@@ -1,7 +1,7 @@
-package project.allHuman;
+package project.model.human;
 
-import project.main.Family;
-import project.allPet.Pet;
+import project.model.pet.Pet;
+
 import java.util.Map;
 import java.util.Objects;
 

@@ -1,8 +1,7 @@
-package project.allPet;
+package project.model.pet;
 
-import project.allEnum.Species;
+import project.model.enumeration.Species;
 
-import java.util.List;
 import java.util.Set;
 
 public class Fish extends Pet {

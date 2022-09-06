@@ -1,13 +1,14 @@
 package project.main;
 
 
-import project.allEnum.DayOfWeek;
-import project.allHuman.Human;
-import project.allPet.DomesticCat;
-import project.allPet.Pet;
-import project.dao.controller.FamilyController;
+import project.model.enumeration.DayOfWeek;
+import project.model.human.Family;
+import project.model.human.Human;
+import project.model.pet.DomesticCat;
+import project.model.pet.Pet;
+import project.controller.FamilyController;
 import project.dao.data.CollectionFamilyDao;
-import project.dao.service.FamilyService;
+import project.service.FamilyService;
 
 import java.util.*;
 

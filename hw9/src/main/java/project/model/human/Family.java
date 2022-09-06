@@ -1,7 +1,7 @@
-package project.main;
+package project.model.human;
 
-import project.allHuman.*;
-import project.allPet.Pet;
+import project.human.*;
+import project.model.pet.Pet;
 
 import java.util.*;
 

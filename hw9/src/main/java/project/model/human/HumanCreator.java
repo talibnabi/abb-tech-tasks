@@ -1,4 +1,4 @@
-package project.allHuman;
+package project.model.human;
 
 public interface HumanCreator {
     void bornChild();
