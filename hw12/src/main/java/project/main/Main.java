@@ -7,13 +7,12 @@ import project.model.enumeration.DayOfWeek;
 import project.model.human.Family;
 import project.model.human.Human;
 import project.service.FamilyService;
-import project.util.FamilyUtil;
 
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.SortedMap;
+
 
 import static project.util.FamilyUtil.scanner;
 import static project.util.MenuUtil.father;
@@ -67,7 +66,15 @@ public class Main {
                     familyController.createNewFamily(mother, father);
                     break;
                 case "7":
-                    
+                    break;
+                case "8":
+                    break;
+                case "9":
+                    break;
+                case "10":
+                    System.exit(0);
+                default:
+                    System.out.println("Pls enter correct value.");
             }
         }
     }
