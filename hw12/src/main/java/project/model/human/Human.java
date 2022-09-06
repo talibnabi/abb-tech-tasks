@@ -182,8 +182,8 @@ public class Human {
     }
 
     public String prettyFormat() {
-        return "{" + "name=" + "" + name + ", " + "surname=" + "" + surname + ", "
-                + "birthDate=" + sdf.format(this.birthDate) + ", " + "iq=" + iq
+        return "{" + "name=" + "" + this.name + ", " + "surname=" + "" + this.surname + ", "
+                + "birthDate=" + sdf.format(this.birthDate) + ", " + "iq=" + this.iq
                 + ", " + "schedule=" + this.schedule + "}";
     }
 }

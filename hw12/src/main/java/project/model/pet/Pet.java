@@ -5,6 +5,8 @@ import project.model.enumeration.Species;
 import java.util.Objects;
 import java.util.Set;
 
+import static project.util.FamilyUtil.sdf;
+
 public abstract class Pet {
     private Species species;
     private String nickname;
@@ -136,8 +138,14 @@ public abstract class Pet {
         else stringBuilder.append("nickname='").append(nickname).append('\'');
         if (age != null) stringBuilder.append(", age=").append(age);
         if (trickLevel != null) stringBuilder.append(", trickLevel=").append(trickLevel);
-        if (habits != null) stringBuilder.append(", habits=").append(habits.toString());
+        if (habits != null) stringBuilder.append(", habits=").append(habits);
         stringBuilder.append('}');
         return stringBuilder.toString();
+    }
+
+    public String prettyFormat() {
+        return "{" + "species=" + "" + this.species + ", " + "nickname=" + "" + this.nickname + ", "
+                + "age=" + this.age + ", " + "trickLevel=" + this.trickLevel1
+                + ", " + "habits=" + this.habits + "}";
     }
 }
