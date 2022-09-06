@@ -66,6 +66,8 @@ public class Main {
                     Human father = father();
                     familyController.createNewFamily(mother, father);
                     break;
+                case "7":
+                    
             }
         }
     }

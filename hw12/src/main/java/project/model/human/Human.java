@@ -179,7 +179,7 @@ public class Human {
         else stringBuilder.append("name='").append(name).append('\'');
 
         if (surname != null) stringBuilder.append(", surname='").append(surname).append('\'');
-        if (birthDate != 0) stringBuilder.append(", year=").append(birthDate);
+        if (birthDate != 0) stringBuilder.append(", year=").append(this.getBirthDate());
         stringBuilder.append(", iq=").append(iqLevel);
         if (schedule != null) stringBuilder.append(", schedule=").append(schedule.toString());
         stringBuilder.append('}');
