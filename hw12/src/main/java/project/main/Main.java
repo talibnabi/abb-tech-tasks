@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.SortedMap;
 
 import static project.util.FamilyUtil.scanner;
+import static project.util.MenuUtil.father;
+import static project.util.MenuUtil.mother;
 
 
 public class Main {
@@ -60,14 +62,10 @@ public class Main {
                     families2.forEach(System.out::println);
                     break;
                 case "6":
-                    Human mother = new Human();
-                    System.out.println("Enter mother's name: ");
-                    String motherName = scanner.nextLine();
-                    System.out.println("Enter mother's last name: ");
-                    String motherLastName = scanner.nextLine();
-                    System.out.println("Enter mother's birth year: (dd/MM/yyyy)");
-                    String motherBirth = scanner.nextLine();
-
+                    Human mother = mother();
+                    Human father = father();
+                    familyController.createNewFamily(mother, father);
+                    break;
             }
         }
     }
@@ -83,6 +81,7 @@ public class Main {
             System.out.println(key + " " + value);
         }
     }
+
 
     private static void detectFinalize() throws Throwable {
         for (int i = 10000; i < 10000000; i++) {
