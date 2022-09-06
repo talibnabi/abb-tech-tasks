@@ -5,8 +5,6 @@ import project.model.enumeration.Species;
 import java.util.Objects;
 import java.util.Set;
 
-import static project.util.FamilyUtil.sdf;
-
 public abstract class Pet {
     private Species species;
     private String nickname;
