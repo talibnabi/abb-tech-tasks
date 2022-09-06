@@ -4,6 +4,7 @@ package project.main;
 import java.text.ParseException;
 
 
+import static project.util.FamilyUtil.familyController;
 import static project.util.FamilyUtil.scanner;
 import static project.util.MenuUtil.*;
 
@@ -37,11 +38,13 @@ public class Main {
                     createNewFamily();
                     break;
                 case "7":
-
+                    deleteFamilyByIndex();
                     break;
                 case "8":
+
                     break;
                 case "9":
+
                     break;
                 case "10":
                     System.exit(0);

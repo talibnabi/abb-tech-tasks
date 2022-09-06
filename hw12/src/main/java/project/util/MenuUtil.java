@@ -12,6 +12,13 @@ import static project.util.FamilyUtil.familyController;
 import static project.util.FamilyUtil.scanner;
 
 public class MenuUtil {
+    public static void deleteFamilyByIndex() {
+        System.out.println("Enter number: ");
+        int index = scanner.nextInt();
+        familyController.deleteFamilyByIndex(index);
+        System.out.println("Deleted.");
+    }
+
     public static void createNewFamily() throws ParseException {
         Human mother = mother();
         Human father = father();
