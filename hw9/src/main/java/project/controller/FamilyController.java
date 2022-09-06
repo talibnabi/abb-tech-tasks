@@ -1,6 +1,5 @@
 package project.controller;
 
-import project.human.*;
 import project.model.pet.Pet;
 import project.model.human.Human;
 import project.service.FamilyService;
