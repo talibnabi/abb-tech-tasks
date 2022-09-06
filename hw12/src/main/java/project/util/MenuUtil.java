@@ -22,7 +22,7 @@ public class MenuUtil {
     public static void createNewFamily() throws ParseException {
         Human mother = mother();
         Human father = father();
-        familyController.createNewFamily(mother, father);
+        familyController.createNewFamily(father, mother);
     }
 
     public static void countFamiliesWithMemberNumber() {
