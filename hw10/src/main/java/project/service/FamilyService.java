@@ -1,6 +1,5 @@
 package project.service;
 
-import project.human.*;
 import project.model.human.*;
 import project.model.pet.Pet;
 import project.dao.data.CollectionFamilyDao;
