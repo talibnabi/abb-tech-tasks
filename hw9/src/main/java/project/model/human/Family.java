@@ -1,6 +1,5 @@
 package project.model.human;
 
-import project.human.*;
 import project.model.pet.Pet;
 
 import java.util.*;
