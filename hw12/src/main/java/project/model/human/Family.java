@@ -152,6 +152,22 @@ public class Family implements HumanCreator {
     }
 
     @Override
+    public void bornChild() throws ParseException {
+        int randomNumForSex = random.nextInt(2) + 1;
+        int randomNum = random.nextInt(100) + 1;
+        int iq = (mother.getIq() + father.getIq()) / 2;
+        if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
+            AllWomanName allWomanName = new AllWomanName();
+            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), "", iq, null);
+            this.addChild(childWoman);
+        } else {
+            AllManName allManName = new AllManName();
+            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), "", iq, null);
+            this.addChild(childMan);
+        }
+    }
+
+    @Override
     public String toString() {
         if ((mother == null || mother.getName() == null) || (father == null || father.getName() == null)) {
             return "There is no information.";
@@ -169,19 +185,7 @@ public class Family implements HumanCreator {
         }
     }
 
-    @Override
-    public void bornChild() throws ParseException {
-        int randomNumForSex = random.nextInt(2) + 1;
-        int randomNum = random.nextInt(100) + 1;
-        int iq = (mother.getIq() + father.getIq()) / 2;
-        if ((randomNumForSex == 1 && randomNum == 50) || randomNum > 50) {
-            AllWomanName allWomanName = new AllWomanName();
-            Woman childWoman = new Woman(allWomanName.getRandomListElement(), father.getSurname(), "", iq, null);
-            this.addChild(childWoman);
-        } else {
-            AllManName allManName = new AllManName();
-            Man childMan = new Man(allManName.getRandomListElement(), father.getSurname(), "", iq, null);
-            this.addChild(childMan);
-        }
+    public String prettyFormat() {
+        return null;
     }
 }

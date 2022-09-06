@@ -20,7 +20,6 @@ public class Human {
     private Pet pet;
 
 
-
     public Human() {
     }
 
@@ -180,6 +179,12 @@ public class Human {
         stringBuilder.append('}');
 
         return stringBuilder.toString();
+    }
+
+    public String prettyFormat() {
+        return "{" + "name=" + "" + name + ", " + "surname=" + "" + surname + ", "
+                + "birthDate=" + sdf.format(this.birthDate) + ", " + "iq=" + iq
+                + ", " + "schedule=" + this.schedule + "}";
     }
 }
 
