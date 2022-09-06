@@ -39,6 +39,21 @@ public class Main {
                     break;
                 case "2":
                     familyController.displayAllFamilies();
+                    break;
+                case "3":
+                    System.out.println("Enter number: ");
+                    int numberBig = scanner.nextInt();
+                    List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
+                    families.forEach(System.out::println);
+                    break;
+                case "4":
+                    System.out.println("Enter number: ");
+                    int numberLess = scanner.nextInt();
+                    List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
+                    families1.forEach(System.out::println);
+                    break;
+                case "5":
+                    
             }
         }
     }
