@@ -4,12 +4,14 @@ package project.main;
 import project.controller.FamilyController;
 import project.dao.data.CollectionFamilyDao;
 import project.model.enumeration.DayOfWeek;
+import project.model.human.Family;
 import project.model.human.Human;
 import project.service.FamilyService;
 import project.util.FamilyUtil;
 
 import java.text.ParseException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static project.util.FamilyUtil.scanner;
@@ -36,9 +38,8 @@ public class Main {
                     familyController.createNewFamily(tahmina, hunar);
                     break;
                 case "2":
-                    
+                    familyController.displayAllFamilies();
             }
-            System.exit(0);
         }
     }
 

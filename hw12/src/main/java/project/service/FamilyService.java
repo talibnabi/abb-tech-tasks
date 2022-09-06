@@ -28,8 +28,8 @@ public class FamilyService {
         this.familyDao
                 .getAllFamilies()
                 .forEach(family ->
-                        System.out.printf("%d %s \n", getAllFamilies()
-                                .indexOf(family), family));
+                        System.out.printf("%d %s \n",
+                                getAllFamilies().indexOf(family) + 1, family));
     }
 
     public List<Family> getFamiliesBiggerThan(int size) {
