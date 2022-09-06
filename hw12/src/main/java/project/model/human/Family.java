@@ -4,6 +4,7 @@ import project.model.pet.Pet;
 
 import java.text.ParseException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static project.util.FamilyUtil.random;
 
@@ -186,10 +187,15 @@ public class Family implements HumanCreator {
     }
 
     public String prettyFormat() {
+        List<Human> children = this.children;
+        StringBuilder allInfo = new StringBuilder();
+        for (Human info : children) {
+            allInfo.append(info.toString()).append("\n");
+        }
         return "family:\n"
-                + "mother: " + this.mother.prettyFormat() + "\n" +
-                "father: " + this.father.prettyFormat() + "\n" +
-                "children:\n" +
-                children.toString();
+                + "   mother: " + this.mother.prettyFormat() + "\n" +
+                "   father: " + this.father.prettyFormat() + "\n" +
+                "   children:\n" +
+                "           " + allInfo;
     }
 }

@@ -5,19 +5,30 @@ import project.model.enumeration.DayOfWeek;
 import project.model.human.Family;
 import project.model.human.Human;
 import project.model.human.Man;
+import project.model.human.Woman;
 
 import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-        Human human = new Man();
-        human.setName("Anar");
-        human.setSurname("Anar");
+
+        Family family = new Family(new Human(), new Human());
+        Human human = new Woman();
+        human.setName("Alisa");
+        human.setSurname("Aslan");
         human.setFamily(new Family(new Human(), new Human()));
         human.setIq(23);
         human.setBirthDate("12/2/2001");
-        System.out.println(human);
+        Human human1 = new Man();
+        human1.setName("Amin");
+        human1.setSurname("Rahimov");
+        human1.setFamily(new Family(new Human(), new Human()));
+        human1.setIq(24);
+        human1.setBirthDate("12/2/2001");
+        family.addChild(human);
+        family.addChild(human1);
+        System.out.println(family.prettyFormat());
     }
 
     private static void humanEnumShow() {

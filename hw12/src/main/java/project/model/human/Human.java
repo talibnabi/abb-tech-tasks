@@ -167,7 +167,12 @@ public class Human {
             iq = 0;
         }
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1));
+
+        if (getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1).equals("Man")) {
+            stringBuilder.append("boy: ");
+        } else if (getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1).equals("Woman")) {
+            stringBuilder.append("girl: ");
+        }
         stringBuilder.append('{');
 
         if (name == null) return stringBuilder.append('}').toString();
