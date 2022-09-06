@@ -60,7 +60,14 @@ public class Main {
                     families2.forEach(System.out::println);
                     break;
                 case "6":
-                    
+                    Human mother = new Human();
+                    System.out.println("Enter mother's name: ");
+                    String motherName = scanner.nextLine();
+                    System.out.println("Enter mother's last name: ");
+                    String motherLastName = scanner.nextLine();
+                    System.out.println("Enter mother's birth year: (dd/MM/yyyy)");
+                    String motherBirth = scanner.nextLine();
+
             }
         }
     }

@@ -33,33 +33,27 @@ public class FamilyService {
     }
 
     public List<Family> getFamiliesBiggerThan(int size) {
-        List<Family> familiesBiggerThan = this.familyDao
+        return this.familyDao
                 .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() > size)
                 .toList();
-        System.out.println(familiesBiggerThan);
-        return familiesBiggerThan;
     }
 
     public List<Family> getFamiliesLessThan(int size) {
-        List<Family> familiesLessThan = this.familyDao
+        return this.familyDao
                 .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() < size)
                 .toList();
-        System.out.println(familiesLessThan);
-        return familiesLessThan;
     }
 
     public List<Family> countFamiliesWithMemberNumber(int size) {
-        List<Family> familiesLessThan = this.familyDao
+        return this.familyDao
                 .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() == size)
                 .toList();
-        System.out.println(familiesLessThan);
-        return familiesLessThan;
     }
 
     public void createNewFamily(Human mother, Human father) {
