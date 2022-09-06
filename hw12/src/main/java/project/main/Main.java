@@ -27,6 +27,7 @@ public class Main {
         human1.setIq(24);
         human1.setBirthDate("12/2/2001");
         family.addChild(human);
+        family.setPets(new HashSet<>());
         family.addChild(human1);
         System.out.println(family.prettyFormat());
     }

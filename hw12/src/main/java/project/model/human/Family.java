@@ -188,14 +188,19 @@ public class Family implements HumanCreator {
 
     public String prettyFormat() {
         List<Human> children = this.children;
-        StringBuilder allInfo = new StringBuilder();
-        for (Human info : children) {
-            allInfo.append(info.toString()).append("\n");
+        StringBuilder allChildrenInfo = new StringBuilder();
+        for (Human human : children) {
+            if (children.get(children.size() - 1).equals(human)) {
+                allChildrenInfo.append(human.toString()).append("\n   ");
+            } else {
+                allChildrenInfo.append(human.toString()).append("\n           ");
+            }
         }
         return "family:\n"
                 + "   mother: " + this.mother.prettyFormat() + "\n" +
                 "   father: " + this.father.prettyFormat() + "\n" +
                 "   children:\n" +
-                "           " + allInfo;
+                "           " + allChildrenInfo +
+                "pets:" + this.pets;
     }
 }
