@@ -1,8 +1,7 @@
 package project.main;
 
 
-
-import static project.util.MenuUtil.*;
+import static project.main.Menu.*;
 
 
 public class Main {
