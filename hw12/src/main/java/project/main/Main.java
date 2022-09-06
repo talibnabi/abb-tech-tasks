@@ -12,24 +12,24 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-
-        Family family = new Family(new Human(), new Human());
-        Human human = new Woman();
-        human.setName("Alisa");
-        human.setSurname("Aslan");
-        human.setFamily(new Family(new Human(), new Human()));
-        human.setIq(23);
-        human.setBirthDate("12/2/2001");
-        Human human1 = new Man();
-        human1.setName("Amin");
-        human1.setSurname("Rahimov");
-        human1.setFamily(new Family(new Human(), new Human()));
-        human1.setIq(24);
-        human1.setBirthDate("12/2/2001");
-        family.addChild(human);
-        family.setPets(new HashSet<>());
-        family.addChild(human1);
-        System.out.println(family.prettyFormat());
+        System.out.println(Menu.menu());
+//        Family family = new Family(new Human(), new Human());
+//        Human human = new Woman();
+//        human.setName("Alisa");
+//        human.setSurname("Aslan");
+//        human.setFamily(new Family(new Human(), new Human()));
+//        human.setIq(23);
+//        human.setBirthDate("12/2/2001");
+//        Human human1 = new Man();
+//        human1.setName("Amin");
+//        human1.setSurname("Rahimov");
+//        human1.setFamily(new Family(new Human(), new Human()));
+//        human1.setIq(24);
+//        human1.setBirthDate("12/2/2001");
+//        family.addChild(human);
+//        family.setPets(new HashSet<>());
+//        family.addChild(human1);
+//        System.out.println(family.prettyFormat());
     }
 
     private static void humanEnumShow() {
