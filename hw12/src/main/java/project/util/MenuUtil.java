@@ -1,5 +1,7 @@
 package project.util;
 
+import project.exception.FamilyOverflowException;
+import project.main.Menu;
 import project.model.human.Family;
 import project.model.human.Human;
 
@@ -12,6 +14,93 @@ import static project.util.FamilyUtil.familyController;
 import static project.util.FamilyUtil.scanner;
 
 public class MenuUtil {
+    public static void showMenu() throws ParseException {
+        menu();
+    }
+
+    public static void menu() throws ParseException {
+        while (true) {
+            System.out.println(Menu.menu());
+            String selectedItem = scanner.next();
+            switch (selectedItem) {
+                case "1" -> createFamilyUtil();
+                case "2" -> displayAllFamilies();
+                case "3" -> getFamiliesBiggerThan();
+                case "4" -> getFamiliesLessThan();
+                case "5" -> countFamiliesWithMemberNumber();
+                case "6" -> createNewFamily();
+                case "7" -> deleteFamilyByIndex();
+                case "8" -> edit();
+                case "9" -> deleteAllChildrenOlderThen();
+                case "10" -> System.exit(0);
+                default -> System.out.println("Pls enter correct value.");
+            }
+        }
+    }
+
+    public static void deleteAllChildrenOlderThen() {
+        System.out.println("Enter age: ");
+        int age = scanner.nextInt();
+        familyController.deleteAllChildrenOlderThen(age);
+        System.out.println("Removed.");
+    }
+
+    public static void edit() throws ParseException {
+        System.out.println(Menu.forEdit());
+        String selectedItemForEdit = scanner.next();
+        boolean check = true;
+        while (check) {
+            switch (selectedItemForEdit) {
+                case "1":
+                    bornChild();
+                    break;
+                case "2":
+                    adoptChild();
+                    break;
+                case "3":
+                    check = false;
+                    showMenu();
+                default:
+                    System.out.println("Pls enter correct value.");
+            }
+        }
+    }
+
+    public static void bornChild() {
+        try {
+            System.out.println("Enter id: ");
+            int id = scanner.nextInt();
+            Family familyById = familyController.getFamilyById(id);
+            System.out.println("Enter boy name: ");
+            String boy = scanner.next();
+            System.out.println("Enter girl name: ");
+            String girl = scanner.next();
+            familyController.bornChild(familyById, boy, girl);
+        } catch (Exception exception) {
+            System.out.println("Pls enter correct value");
+        }
+    }
+
+    public static void adoptChild() {
+        try {
+            System.out.println("Enter id: ");
+            int id = scanner.nextInt();
+            Family familyById = familyController.getFamilyById(id);
+            System.out.println("Enter name: ");
+            String name = scanner.next();
+            System.out.println("Enter surname: ");
+            String surname = scanner.next();
+            System.out.println("Enter birth. (dd/MM/yyy): ");
+            String birth = scanner.next();
+            System.out.println("Enter iq: ");
+            int iq = scanner.nextInt();
+            Human human = new Human(name, surname, birth, iq);
+            familyController.adoptChild(familyById, human);
+        } catch (Exception exception) {
+            System.out.println("Pls enter correct value");
+        }
+    }
+
     public static void deleteFamilyByIndex() {
         System.out.println("Enter number: ");
         int index = scanner.nextInt();
@@ -40,10 +129,14 @@ public class MenuUtil {
     }
 
     public static void getFamiliesBiggerThan() {
-        System.out.println("Enter number: ");
-        int numberBig = scanner.nextInt();
-        List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
-        families.forEach(System.out::println);
+        try {
+            System.out.println("Enter number: ");
+            int numberBig = scanner.nextInt();
+            List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
+            families.forEach(System.out::println);
+        } catch (FamilyOverflowException familyOverflowException) {
+            System.out.println("Exception");
+        }
     }
 
     public static void displayAllFamilies() {
@@ -95,7 +188,7 @@ public class MenuUtil {
             int fatherBirthDay = scanner.nextInt();
             System.out.println("Enter father's iq: ");
             int fatherIq = scanner.nextInt();
-            String birth = String.valueOf(fatherBirthDay) + "/" + String.valueOf(fatherBirthMonth) + "/" + String.valueOf(fatherBirthYear);
+            String birth = fatherBirthDay + "/" + fatherBirthMonth + "/" + fatherBirthYear;
             return new Human(fatherName, fatherLastName, birth, fatherIq);
         } catch (InputMismatchException inputMismatchException) {
             System.out.println("Pls enter correct value.");
