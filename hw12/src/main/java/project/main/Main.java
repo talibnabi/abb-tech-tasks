@@ -1,35 +1,45 @@
 package project.main;
 
 
+import project.controller.FamilyController;
+import project.dao.data.CollectionFamilyDao;
 import project.model.enumeration.DayOfWeek;
-import project.model.human.Family;
 import project.model.human.Human;
-import project.model.human.Man;
-import project.model.human.Woman;
+import project.service.FamilyService;
+import project.util.FamilyUtil;
 
-import java.util.*;
+import java.text.ParseException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static project.util.FamilyUtil.scanner;
 
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-        System.out.println(Menu.menu());
-//        Family family = new Family(new Human(), new Human());
-//        Human human = new Woman();
-//        human.setName("Alisa");
-//        human.setSurname("Aslan");
-//        human.setFamily(new Family(new Human(), new Human()));
-//        human.setIq(23);
-//        human.setBirthDate("12/2/2001");
-//        Human human1 = new Man();
-//        human1.setName("Amin");
-//        human1.setSurname("Rahimov");
-//        human1.setFamily(new Family(new Human(), new Human()));
-//        human1.setIq(24);
-//        human1.setBirthDate("12/2/2001");
-//        family.addChild(human);
-//        family.setPets(new HashSet<>());
-//        family.addChild(human1);
-//        System.out.println(family.prettyFormat());
+        selectedMenu();
+    }
+
+    private static void selectedMenu() throws ParseException {
+        FamilyController familyController = new FamilyController(new FamilyService(new CollectionFamilyDao()));
+        while (true) {
+            System.out.println(Menu.menu());
+            String selectedItem = scanner.next();
+            switch (selectedItem) {
+                case "1":
+                    Human alisa = new Human("Alisa", "Aliqummatov", "12/02/2001", 15, new HashMap<>());
+                    Human shirali = new Human("shirali", "Aliqummatov", "11/02/2001", 100, new HashMap<>());
+
+                    Human tahmina = new Human("Tahmina", "Muzaffar", "10/02/2001", 99, new HashMap<>());
+                    Human hunar = new Human("Hunar", "Muzaffar", "11/02/1996", 88, new HashMap<>());
+                    familyController.createNewFamily(alisa, shirali);
+                    familyController.createNewFamily(tahmina, hunar);
+                    break;
+                case "2":
+                    
+            }
+            System.exit(0);
+        }
     }
 
     private static void humanEnumShow() {
