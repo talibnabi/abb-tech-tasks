@@ -2,8 +2,6 @@ package project.model.pet;
 
 import project.model.enumeration.Species;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 public class Dog extends Pet implements Unpleasant {

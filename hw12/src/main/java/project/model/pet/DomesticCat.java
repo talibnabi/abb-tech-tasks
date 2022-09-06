@@ -2,30 +2,27 @@ package project.model.pet;
 
 import project.model.enumeration.Species;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
-public class Dog extends Pet implements Unpleasant {
-    public Dog() {
-        super.setSpecies(Species.DOG);
+public class DomesticCat extends Pet implements Unpleasant {
+    public DomesticCat() {
+        super.setSpecies(Species.DOMESTICCAT);
     }
 
-    public Dog(String nickname) {
+    public DomesticCat(String nickname) {
         super(nickname);
-        super.setSpecies(Species.DOG);
+        super.setSpecies(Species.DOMESTICCAT);
     }
 
-    public Dog(String nickname, Integer age, Integer trickLevel1, Set<String> habits) {
+    public DomesticCat(String nickname, Integer age, Integer trickLevel1, Set<String> habits) {
         super(nickname, age, trickLevel1, habits);
-        super.setSpecies(Species.DOG);
+        super.setSpecies(Species.DOMESTICCAT);
     }
 
     @Override
     public void respond() {
         System.out.println("Hello, owner. I am " + getNickname() + ". I miss you!");
     }
-
 
     @Override
     public void foul() {
