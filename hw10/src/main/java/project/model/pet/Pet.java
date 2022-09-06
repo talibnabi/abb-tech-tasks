@@ -1,6 +1,6 @@
-package project.allPet;
+package project.model.pet;
 
-import project.allEnum.Species;
+import project.model.enumeration.Species;
 
 import java.util.Objects;
 import java.util.Set;

@@ -1,10 +1,9 @@
-package project.allHuman;
+package project.model.human;
 
-import project.allPet.Pet;
+import project.model.human.Human;
+import project.model.pet.Pet;
 
 import java.text.ParseException;
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 public final class Woman extends Human {

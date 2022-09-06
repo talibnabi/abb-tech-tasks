@@ -1,6 +1,9 @@
-package project.allPet;
+package project.pet;
 
 import org.testng.annotations.Test;
+import project.model.pet.Dog;
+import project.model.pet.Pet;
+
 import java.util.HashSet;
 
 import static org.junit.Assert.assertEquals;

@@ -1,10 +1,8 @@
-package project.allHuman;
+package project.model.human;
 
-import project.main.Family;
-import project.allPet.Pet;
+import project.model.pet.Pet;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;

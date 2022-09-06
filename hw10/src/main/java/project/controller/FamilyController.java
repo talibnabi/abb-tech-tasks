@@ -1,15 +1,13 @@
-package project.dao.controller;
+package project.controller;
 
-import project.allHuman.*;
-import project.allPet.Pet;
-import project.dao.service.FamilyService;
-import project.main.Family;
+import project.human.*;
+import project.model.human.Human;
+import project.model.pet.Pet;
+import project.service.FamilyService;
+import project.model.human.Family;
 
 import java.text.ParseException;
 import java.util.List;
-
-import static project.util.FamilyUtil.date;
-import static project.util.FamilyUtil.random;
 
 public class FamilyController {
     private final FamilyService familyService;

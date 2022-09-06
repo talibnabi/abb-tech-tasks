@@ -1,10 +1,11 @@
-package project.dao.service;
+package project.service;
 
-import project.allHuman.*;
-import project.allPet.Pet;
+import project.human.*;
+import project.model.human.*;
+import project.model.pet.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
-import project.main.Family;
+import project.model.human.Family;
 
 import java.text.ParseException;
 import java.util.HashSet;

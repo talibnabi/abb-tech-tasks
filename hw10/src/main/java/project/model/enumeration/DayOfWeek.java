@@ -1,4 +1,4 @@
-package project.allEnum;
+package project.model.enumeration;
 
 public enum DayOfWeek {
     MONDAY(),
