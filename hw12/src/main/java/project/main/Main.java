@@ -2,14 +2,22 @@ package project.main;
 
 
 import project.model.enumeration.DayOfWeek;
+import project.model.human.Family;
 import project.model.human.Human;
+import project.model.human.Man;
 
 import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-
+        Human human = new Man();
+        human.setName("Anar");
+        human.setSurname("Anar");
+        human.setFamily(new Family(new Human(), new Human()));
+        human.setIq(23);
+        human.setBirthDate("12/2/2001");
+        System.out.println(human);
     }
 
     private static void humanEnumShow() {

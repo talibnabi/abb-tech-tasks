@@ -77,8 +77,9 @@ public class Human {
         return birthDate;
     }
 
-    public void setBirthDate(long birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(String birthDate) throws ParseException {
+        Date date = sdf.parse(birthDate);
+        this.birthDate = date.getTime();
     }
 
     public Integer getIq() {

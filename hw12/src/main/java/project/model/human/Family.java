@@ -186,6 +186,10 @@ public class Family implements HumanCreator {
     }
 
     public String prettyFormat() {
-        return null;
+        return "family:\n"
+                + "mother: " + this.mother.prettyFormat() + "\n" +
+                "father: " + this.father.prettyFormat() + "\n" +
+                "children:\n" +
+                children.toString();
     }
 }
