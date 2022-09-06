@@ -1,12 +1,56 @@
 package project.util;
 
+import project.model.human.Family;
 import project.model.human.Human;
 
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.List;
 
+import static project.util.FamilyUtil.familyController;
 import static project.util.FamilyUtil.scanner;
 
 public class MenuUtil {
+    public static void createNewFamily() throws ParseException {
+        Human mother = mother();
+        Human father = father();
+        familyController.createNewFamily(mother, father);
+    }
+
+    public static void countFamiliesWithMemberNumber() {
+        System.out.println("Enter number: ");
+        int numberCount = scanner.nextInt();
+        List<Family> families2 = familyController.countFamiliesWithMemberNumber(numberCount);
+        families2.forEach(System.out::println);
+    }
+
+    public static void getFamiliesLessThan() {
+        System.out.println("Enter number: ");
+        int numberLess = scanner.nextInt();
+        List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
+        families1.forEach(System.out::println);
+    }
+
+    public static void getFamiliesBiggerThan() {
+        System.out.println("Enter number: ");
+        int numberBig = scanner.nextInt();
+        List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
+        families.forEach(System.out::println);
+    }
+
+    public static void displayAllFamilies() {
+        familyController.displayAllFamilies();
+    }
+
+    public static void createFamilyUtil() throws ParseException {
+        Human alisa = new Human("Alisa", "Aliqummatov", "12/02/2001", 15, new HashMap<>());
+        Human shirali = new Human("shirali", "Aliqummatov", "11/02/2001", 100, new HashMap<>());
+        Human tahmina = new Human("Tahmina", "Muzaffar", "10/02/2001", 99, new HashMap<>());
+        Human hunar = new Human("Hunar", "Muzaffar", "11/02/1996", 88, new HashMap<>());
+        familyController.createNewFamily(alisa, shirali);
+        familyController.createNewFamily(tahmina, hunar);
+    }
+
     public static Human mother() throws ParseException {
         System.out.println("Enter mother's name: ");
         String motherName = scanner.next();

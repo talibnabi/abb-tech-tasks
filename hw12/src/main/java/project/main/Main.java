@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 
+import static project.util.FamilyUtil.familyController;
 import static project.util.FamilyUtil.scanner;
-import static project.util.MenuUtil.father;
-import static project.util.MenuUtil.mother;
+import static project.util.MenuUtil.*;
 
 
 public class Main {
@@ -25,47 +25,30 @@ public class Main {
     }
 
     private static void selectedMenu() throws ParseException {
-        FamilyController familyController = new FamilyController(new FamilyService(new CollectionFamilyDao()));
         while (true) {
             System.out.println(Menu.menu());
             String selectedItem = scanner.next();
             switch (selectedItem) {
                 case "1":
-                    Human alisa = new Human("Alisa", "Aliqummatov", "12/02/2001", 15, new HashMap<>());
-                    Human shirali = new Human("shirali", "Aliqummatov", "11/02/2001", 100, new HashMap<>());
-
-                    Human tahmina = new Human("Tahmina", "Muzaffar", "10/02/2001", 99, new HashMap<>());
-                    Human hunar = new Human("Hunar", "Muzaffar", "11/02/1996", 88, new HashMap<>());
-                    familyController.createNewFamily(alisa, shirali);
-                    familyController.createNewFamily(tahmina, hunar);
+                    createFamilyUtil();
                     break;
                 case "2":
-                    familyController.displayAllFamilies();
+                    displayAllFamilies();
                     break;
                 case "3":
-                    System.out.println("Enter number: ");
-                    int numberBig = scanner.nextInt();
-                    List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
-                    families.forEach(System.out::println);
+                    getFamiliesBiggerThan();
                     break;
                 case "4":
-                    System.out.println("Enter number: ");
-                    int numberLess = scanner.nextInt();
-                    List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
-                    families1.forEach(System.out::println);
+                    getFamiliesLessThan();
                     break;
                 case "5":
-                    System.out.println("Enter number: ");
-                    int numberCount = scanner.nextInt();
-                    List<Family> families2 = familyController.countFamiliesWithMemberNumber(numberCount);
-                    families2.forEach(System.out::println);
+                    countFamiliesWithMemberNumber();
                     break;
                 case "6":
-                    Human mother = mother();
-                    Human father = father();
-                    familyController.createNewFamily(mother, father);
+                    createNewFamily();
                     break;
                 case "7":
+
                     break;
                 case "8":
                     break;
