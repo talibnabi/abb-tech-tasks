@@ -1,6 +1,7 @@
 package project.main;
 
 
+import project.controller.FamilyController;
 import project.model.enumeration.Species;
 import project.model.human.Family;
 import project.model.human.Human;
@@ -17,9 +18,11 @@ import static project.main.Menu.*;
 
 public class Main {
     public static void main(String[] args) throws Throwable {
+
         showMenu();
 //        prettyExample();
     }
+
 
     private static void prettyExample() throws ParseException {
         Human tahmina = new Human("Tahmina", "Muzaffar", "10/02/2001", 99, new HashMap<>());
