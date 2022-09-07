@@ -5,6 +5,7 @@ import project.model.pet.Pet;
 import project.service.FamilyService;
 import project.model.human.Family;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -35,23 +36,23 @@ public class FamilyController {
         return this.familyService.countFamiliesWithMemberNumber(size);
     }
 
-    public void createNewFamily(Human mother, Human father) {
+    public void createNewFamily(Human mother, Human father) throws FileNotFoundException {
         this.familyService.createNewFamily(mother, father);
     }
 
-    public void deleteFamilyByIndex(int index) {
+    public void deleteFamilyByIndex(int index) throws FileNotFoundException {
         this.familyService.deleteFamilyByIndex(index);
     }
 
-    public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
-        return this.familyService.bornChild(family, masculine, feminine);
+    public void bornChild(Family family, String masculine, String feminine) throws ParseException, FileNotFoundException {
+        this.familyService.bornChild(family, masculine, feminine);
     }
 
-    public Family adoptChild(Family family, Human child) {
-        return this.familyService.adoptChild(family, child);
+    public void adoptChild(Family family, Human child) throws FileNotFoundException {
+        this.familyService.adoptChild(family, child);
     }
 
-    public void deleteAllChildrenOlderThen(int age) {
+    public void deleteAllChildrenOlderThen(int age) throws FileNotFoundException {
         this.familyService.deleteAllChildrenOlderThen(age);
     }
 
@@ -67,7 +68,7 @@ public class FamilyController {
         return this.familyService.getPets(index);
     }
 
-    public void addPet(int index, Pet pet) {
+    public void addPet(int index, Pet pet) throws FileNotFoundException {
         this.familyService.addPet(index, pet);
     }
 }

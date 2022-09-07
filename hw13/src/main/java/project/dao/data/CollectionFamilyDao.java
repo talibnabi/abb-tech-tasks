@@ -15,13 +15,13 @@ public class CollectionFamilyDao implements FamilyDao {
 
     @Override
     public List<Family> getAllFamilies() {
-        return this.families;
+        return this.dataSource.getFamilies();
     }
 
     @Override
     public Family getFamilyByIndex(int index) {
         try {
-            return this.families.get(index);
+            return this.dataSource.getFamilies().get(index);
         } catch (Exception exception) {
             exception.printStackTrace();
             return null;
@@ -31,7 +31,7 @@ public class CollectionFamilyDao implements FamilyDao {
     @Override
     public boolean deleteFamily(int index) {
         try {
-            this.families.remove(index);
+            this.dataSource.getFamilies().remove(index);
             return true;
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -42,7 +42,7 @@ public class CollectionFamilyDao implements FamilyDao {
     @Override
     public boolean deleteFamily(Family family) {
         try {
-            this.families.remove(family);
+            this.dataSource.getFamilies().remove(family);
             return true;
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -52,10 +52,10 @@ public class CollectionFamilyDao implements FamilyDao {
 
     @Override
     public Family saveFamily(Family family) {
-        if (this.families.contains(family)) {
-            this.families.set(this.families.indexOf(family), family);
+        if (this.dataSource.getFamilies().contains(family)) {
+            this.dataSource.getFamilies().add(this.dataSource.getFamilies().indexOf(family), family);
         } else {
-            this.families.add(family);
+            this.dataSource.getFamilies().add(family);
         }
         return family;
     }
