@@ -55,4 +55,11 @@ public class CollectionFamilyDao implements FamilyDao {
         }
         return family;
     }
+
+    @Override
+    public void loadData(List<Family> families) {
+
+    }
+
+
 }
