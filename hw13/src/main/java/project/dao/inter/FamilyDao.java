@@ -2,6 +2,7 @@ package project.dao.inter;
 
 import project.model.human.Family;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public interface FamilyDao {
@@ -14,5 +15,5 @@ public interface FamilyDao {
     boolean deleteFamily(Family family);
 
     Family saveFamily(Family family);
-    void loadData(List<Family> families);
+    void loadData(List<Family> families) throws FileNotFoundException;
 }

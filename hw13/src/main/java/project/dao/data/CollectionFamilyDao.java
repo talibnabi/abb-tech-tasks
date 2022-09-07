@@ -1,13 +1,17 @@
 package project.dao.data;
 
 import project.dao.inter.FamilyDao;
+import project.datasource.DataSource;
 import project.model.human.Family;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CollectionFamilyDao implements FamilyDao {
     private final List<Family> families = new ArrayList<>();
+    private final DataSource dataSource = new DataSource();
+
 
     @Override
     public List<Family> getAllFamilies() {
@@ -57,9 +61,8 @@ public class CollectionFamilyDao implements FamilyDao {
     }
 
     @Override
-    public void loadData(List<Family> families) {
-
+    public void loadData(List<Family> families) throws FileNotFoundException {
+        dataSource.setFamilies(families);
+        dataSource.writeFamilyToFile();
     }
-
-
 }

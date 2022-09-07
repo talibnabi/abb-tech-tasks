@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/dao/inter/FamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/dao/inter/FamilyDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/datasource/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/datasource/DataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662540850755</updated>
-      <workItem from="1662540852376" duration="2539000" />
+      <workItem from="1662540852376" duration="3493000" />
     </task>
     <servers />
   </component>

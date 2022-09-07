@@ -30,4 +30,12 @@ public class DataSource {
         }
         return families;
     }
+
+    public List<Family> getFamilies() {
+        return families;
+    }
+
+    public void setFamilies(List<Family> families) {
+        this.families = families;
+    }
 }
