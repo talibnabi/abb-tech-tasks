@@ -1,4 +1,4 @@
-package project.model.human;
+package project.model.inter;
 
 import java.text.ParseException;
 

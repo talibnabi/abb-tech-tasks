@@ -2,8 +2,8 @@ package project.main;
 
 import project.exception.FamilyOverflowException;
 
-import project.model.human.Family;
-import project.model.human.Human;
+import project.model.impl.human.Family;
+import project.model.impl.human.Human;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -135,7 +135,7 @@ public class Menu {
             int numberBig = scanner.nextInt();
             List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
             families.forEach(System.out::println);
-        } catch (FamilyOverflowException familyOverflowException) {
+        } catch (Exception exception) {
             System.out.println("Exception");
         }
     }

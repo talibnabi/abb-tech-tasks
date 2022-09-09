@@ -1,6 +1,6 @@
 package project.dao.inter;
 
-import project.model.human.Family;
+import project.model.impl.human.Family;
 
 import java.util.List;
 

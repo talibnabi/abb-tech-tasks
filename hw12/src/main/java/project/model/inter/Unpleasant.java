@@ -1,4 +1,4 @@
-package project.model.pet;
+package project.model.inter;
 
 public interface Unpleasant {
     void foul();

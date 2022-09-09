@@ -1,6 +1,6 @@
-package project.model.human;
+package project.model.impl.human;
 
-import project.model.pet.Pet;
+import project.model.impl.pet.Pet;
 
 import java.text.ParseException;
 import java.util.Calendar;

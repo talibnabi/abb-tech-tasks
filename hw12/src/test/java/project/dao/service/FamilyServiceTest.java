@@ -1,10 +1,10 @@
 package project.dao.service;
 
 import org.testng.annotations.Test;
-import project.model.human.Human;
-import project.model.pet.Pet;
+import project.model.impl.human.Human;
+import project.model.impl.pet.Pet;
 import project.dao.data.CollectionFamilyDao;
-import project.model.human.Family;
+import project.model.impl.human.Family;
 import project.service.FamilyService;
 
 import java.util.List;

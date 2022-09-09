@@ -1,4 +1,4 @@
-package project.model.pet;
+package project.model.impl.pet;
 
 import project.model.enumeration.Species;
 

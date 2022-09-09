@@ -1,4 +1,4 @@
-package project.model.human;
+package project.model.impl.human;
 
 
 import java.util.List;

@@ -2,10 +2,10 @@ package project.main;
 
 
 import project.model.enumeration.Species;
-import project.model.human.Family;
-import project.model.human.Human;
-import project.model.pet.Dog;
-import project.model.pet.Pet;
+import project.model.impl.human.Family;
+import project.model.impl.human.Human;
+import project.model.impl.pet.Dog;
+import project.model.impl.pet.Pet;
 
 import java.text.ParseException;
 import java.util.HashMap;

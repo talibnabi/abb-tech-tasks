@@ -1,7 +1,7 @@
 package project.dao.data;
 
 import project.dao.inter.FamilyDao;
-import project.model.human.Family;
+import project.model.impl.human.Family;
 
 import java.util.ArrayList;
 import java.util.List;

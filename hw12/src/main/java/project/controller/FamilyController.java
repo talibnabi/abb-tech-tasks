@@ -1,12 +1,15 @@
 package project.controller;
 
-import project.model.human.Human;
-import project.model.pet.Pet;
+import project.exception.FamilyOverflowException;
+import project.model.impl.human.Human;
+import project.model.impl.pet.Pet;
 import project.service.FamilyService;
-import project.model.human.Family;
+import project.model.impl.human.Family;
 
 import java.text.ParseException;
 import java.util.List;
+
+import static project.util.FamilyUtil.checkFamily;
 
 public class FamilyController {
     private final FamilyService familyService;
@@ -44,10 +47,17 @@ public class FamilyController {
     }
 
     public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
-        return this.familyService.bornChild(family, masculine, feminine);
+        try {
+            checkFamily(family);
+            return this.familyService.bornChild(family, masculine, feminine);
+        } catch (FamilyOverflowException overflowException) {
+            System.out.println("Family count is bigger.");
+           return family;
+        }
     }
 
     public Family adoptChild(Family family, Human child) {
+        checkFamily(family);
         return this.familyService.adoptChild(family, child);
     }
 
