@@ -6,6 +6,7 @@ import project.model.inter.Pet;
 import project.service.FamilyService;
 import project.model.impl.human.Family;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -82,7 +83,7 @@ public class FamilyController {
         return this.familyService.getPets(index);
     }
 
-    public void addPet(int index, Pet pet) {
+    public void addPet(int index, Pet pet) throws FileNotFoundException {
         this.familyService.addPet(index, pet);
     }
 }

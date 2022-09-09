@@ -6,6 +6,7 @@ import project.model.inter.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
@@ -90,37 +91,39 @@ public class FamilyService {
 
     public void deleteAllChildrenOlderThen(int age) {
         int currentYear = date.getYear() + 1900;
-        for (Family family : this.familyDao
-                .getAllFamilies()
+        for (Family family : this.dataSource
+                .getFamilies()
                 .stream()
                 .filter(family ->
                         family
                                 .getChildren()
                                 .removeIf(human -> (currentYear - human.getBirthDate()) > age))
                 .toList()) {
-            this.familyDao.saveFamily(family);
+            this.dataSource.saveFamily(family);
         }
     }
 
     public int count() {
-        return this.familyDao.getAllFamilies().size();
+        return this.dataSource.getFamilies().size();
     }
 
     public Family getFamilyById(int index) {
-        return this.familyDao.getAllFamilies().get(index);
+        return this.dataSource.getFamilies().get(index);
     }
 
     public List<Pet> getPets(int index) {
         try {
-            return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
+            return this.dataSource.getFamilies().get(index).getPets().stream().toList();
         } catch (Exception exception) {
             exception.printStackTrace();
             return null;
         }
     }
 
-    public void addPet(int index, Pet pet) {
-        this.familyDao.getAllFamilies().get(index).getPets().add(pet);
-        this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
+    public void addPet(int index, Pet pet) throws FileNotFoundException {
+        this.dataSource.getFamilies().get(index).getPets().add(pet);
+        Family family = this.dataSource.getFamilies().get(index);
+        this.dataSource.getFamilies().add(family);
+        this.dataSource.writeFamilyToFile();
     }
 }

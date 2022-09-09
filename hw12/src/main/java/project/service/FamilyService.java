@@ -28,7 +28,7 @@ public class FamilyService {
                 .getAllFamilies()
                 .forEach(family ->
                         System.out.printf("%d %s \n",
-                                getAllFamilies().indexOf(family) + 1, family));
+                                getAllFamilies().indexOf(family) + 1, family.prettyFormat()));
     }
 
     public List<Family> getFamiliesBiggerThan(int size) {

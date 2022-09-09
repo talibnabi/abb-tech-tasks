@@ -127,7 +127,7 @@ public class Menu {
         System.out.println("Enter number: ");
         int numberLess = scanner.nextInt();
         List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
-        families1.forEach(System.out::println);
+        families1.forEach(family -> System.out.println(family.prettyFormat()));
     }
 
     public static void getFamiliesBiggerThan() {
@@ -135,7 +135,7 @@ public class Menu {
             System.out.println("Enter number: ");
             int numberBig = scanner.nextInt();
             List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
-            families.forEach(System.out::println);
+            families.forEach(family -> System.out.println(family.prettyFormat()));
         } catch (Exception exception) {
             System.out.println("Exception");
         }
