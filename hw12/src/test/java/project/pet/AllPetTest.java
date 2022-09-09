@@ -2,7 +2,7 @@ package project.pet;
 
 import org.testng.annotations.Test;
 import project.model.impl.pet.Dog;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 
 import java.util.HashSet;
 

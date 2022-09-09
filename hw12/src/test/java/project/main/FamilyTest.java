@@ -8,7 +8,7 @@ import project.model.impl.human.Human;
 import project.model.impl.human.Man;
 import project.model.impl.human.Woman;
 import project.model.impl.pet.Dog;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

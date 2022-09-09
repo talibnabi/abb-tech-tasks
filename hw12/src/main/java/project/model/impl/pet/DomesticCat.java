@@ -1,6 +1,7 @@
 package project.model.impl.pet;
 
 import project.model.enumeration.Species;
+import project.model.inter.Pet;
 import project.model.inter.Unpleasant;
 
 import java.util.Set;

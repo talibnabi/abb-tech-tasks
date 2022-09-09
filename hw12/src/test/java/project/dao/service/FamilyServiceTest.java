@@ -2,7 +2,7 @@ package project.dao.service;
 
 import org.testng.annotations.Test;
 import project.model.impl.human.Human;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.model.impl.human.Family;
 import project.service.FamilyService;

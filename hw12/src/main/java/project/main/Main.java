@@ -5,7 +5,7 @@ import project.model.enumeration.Species;
 import project.model.impl.human.Family;
 import project.model.impl.human.Human;
 import project.model.impl.pet.Dog;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 
 import java.text.ParseException;
 import java.util.HashMap;

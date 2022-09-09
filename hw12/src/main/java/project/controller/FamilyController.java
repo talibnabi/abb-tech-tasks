@@ -2,7 +2,7 @@ package project.controller;
 
 import project.exception.FamilyOverflowException;
 import project.model.impl.human.Human;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 import project.service.FamilyService;
 import project.model.impl.human.Family;
 

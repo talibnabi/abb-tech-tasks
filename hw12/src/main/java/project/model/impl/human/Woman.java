@@ -1,7 +1,6 @@
 package project.model.impl.human;
 
-import project.model.impl.human.Human;
-import project.model.impl.pet.Pet;
+import project.model.inter.Pet;
 
 import java.text.ParseException;
 import java.util.Map;
