@@ -1,5 +1,6 @@
 package project.service;
 
+import project.datasource.DataSource;
 import project.model.impl.human.*;
 import project.model.inter.Pet;
 import project.dao.data.CollectionFamilyDao;
@@ -14,42 +15,43 @@ import static project.util.FamilyUtil.random;
 
 public class FamilyService {
     private final FamilyDao familyDao;
+    private DataSource dataSource;
 
     public FamilyService(CollectionFamilyDao collectionFamilyDao) {
         this.familyDao = collectionFamilyDao;
     }
 
     public List<Family> getAllFamilies() {
-        return this.familyDao.getAllFamilies();
+        return this.dataSource.getFamilies();
     }
 
     public void displayAllFamilies() {
-        this.familyDao
-                .getAllFamilies()
+        this.dataSource
+                .getFamilies()
                 .forEach(family ->
                         System.out.printf("%d %s \n",
                                 getAllFamilies().indexOf(family) + 1, family));
     }
 
     public List<Family> getFamiliesBiggerThan(int size) {
-        return this.familyDao
-                .getAllFamilies()
+        return this.dataSource
+                .getFamilies()
                 .stream()
                 .filter(family -> family.countFamily() > size)
                 .toList();
     }
 
     public List<Family> getFamiliesLessThan(int size) {
-        return this.familyDao
-                .getAllFamilies()
+        return this.dataSource
+                .getFamilies()
                 .stream()
                 .filter(family -> family.countFamily() < size)
                 .toList();
     }
 
     public List<Family> countFamiliesWithMemberNumber(int size) {
-        return this.familyDao
-                .getAllFamilies()
+        return this.dataSource
+                .getFamilies()
                 .stream()
                 .filter(family -> family.countFamily() == size)
                 .toList();
@@ -58,7 +60,7 @@ public class FamilyService {
     public void createNewFamily(Human mother, Human father) {
         Family family = new Family(mother, father);
         family.setPets(new HashSet<>());
-        this.familyDao.saveFamily(family);
+        this.dataSource.setFamilies(family);
     }
 
     public void deleteFamilyByIndex(int index) {
