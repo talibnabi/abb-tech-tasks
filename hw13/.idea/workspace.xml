@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +45,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Workspace/abbTech/hw13"
   }
 }]]></component>
   <component name="RunManager">
@@ -79,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662540850755</updated>
       <workItem from="1662540852376" duration="9763000" />
+      <workItem from="1662721379908" duration="452000" />
     </task>
     <servers />
   </component>
