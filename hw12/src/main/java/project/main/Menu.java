@@ -53,9 +53,11 @@ public class Menu {
             switch (selectedItemForEdit) {
                 case "1":
                     bornChild();
+                    edit();
                     break;
                 case "2":
                     adoptChild();
+                    edit();
                     break;
                 case "3":
                     check = false;
@@ -195,6 +197,7 @@ public class Menu {
             return new Human();
         }
     }
+
     public static StringBuilder menuAppend() {
         StringBuilder stringBuilder = new StringBuilder();
         System.out.println(symbol);

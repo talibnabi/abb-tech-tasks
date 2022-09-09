@@ -15,8 +15,8 @@ import static project.main.Menu.*;
 
 public class Main{
     public static void main(String[] args) throws Throwable {
-//        showMenu();
-        prettyExample();
+        showMenu();
+//        prettyExample();
     }
 
     private static void prettyExample() throws ParseException {

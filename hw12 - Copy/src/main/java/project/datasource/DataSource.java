@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataSource {
-    private Family family;
+    private List<Family> families = new ArrayList<>();
 
     public void writeFamilyToFile() throws FileNotFoundException {
         String fileName = "family.bin";
         File file = new File(fileName);
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true))) {
-            objectOutputStream.writeObject(family);
+            objectOutputStream.writeObject(families.get(0));
         } catch (Exception ignored) {
             throw new FileNotFoundException("File not found.");
         }
@@ -27,21 +27,20 @@ public class DataSource {
     public List<Family> readFamilyFromFile() throws FileNotFoundException {
         String fileName = "family.bin";
         File file = new File(fileName);
-        List<Family> f
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))) {
-            family = (Family) objectInputStream.readObject();
+            families = (List<Family>) objectInputStream.readObject();
 
         } catch (Exception ignored) {
             throw new FileNotFoundException("File not found.");
         }
-        return family;
+        return families;
     }
 
-    public Family getFamily() {
-        return family;
+    public List<Family> getFamilies() {
+        return families;
     }
 
-    public void setFamily(Family family) {
-        this.family = family;
+    public void setFamilies(List<Family> families) {
+        this.families = families;
     }
 }
