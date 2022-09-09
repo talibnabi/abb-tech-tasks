@@ -15,7 +15,7 @@ import java.util.Set;
 import static project.main.Menu.*;
 
 
-public class Main {
+public class Main{
     public static void main(String[] args) throws Throwable {
         showMenu();
 //        prettyExample();
