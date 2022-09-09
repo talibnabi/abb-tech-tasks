@@ -1,5 +1,6 @@
 package project.main;
 
+import project.exception.FamilyOverflowException;
 
 import project.model.impl.human.Family;
 import project.model.impl.human.Human;
@@ -166,7 +167,7 @@ public class Menu {
             int motherBirthDay = scanner.nextInt();
             System.out.println("Enter mother's iq: ");
             int motherIq = scanner.nextInt();
-            String birth = motherBirthDay + "/" + motherBirthMonth + "/" + motherBirthYear;
+            String birth = String.valueOf(motherBirthDay) + "/" + String.valueOf(motherBirthMonth) + "/" + String.valueOf(motherBirthYear);
             return new Human(motherName, motherLastName, birth, motherIq);
         } catch (Exception exception) {
             System.out.println("Pls enter correct value.");
