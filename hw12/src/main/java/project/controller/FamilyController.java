@@ -52,13 +52,18 @@ public class FamilyController {
             return this.familyService.bornChild(family, masculine, feminine);
         } catch (FamilyOverflowException overflowException) {
             System.out.println("Family count is bigger.");
-           return family;
+            return family;
         }
     }
 
     public Family adoptChild(Family family, Human child) {
-        checkFamily(family);
-        return this.familyService.adoptChild(family, child);
+        try {
+            checkFamily(family);
+            return this.familyService.adoptChild(family, child);
+        } catch (FamilyOverflowException overflowException) {
+            System.out.println("Family count is bigger.");
+            return family;
+        }
     }
 
     public void deleteAllChildrenOlderThen(int age) {
