@@ -6,11 +6,12 @@ import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
 
-import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
+//import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
 import static project.util.FamilyUtil.date;
 import static project.util.FamilyUtil.random;
 
@@ -124,11 +125,11 @@ public class FamilyService {
         this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
     }
 
-    public List<Family> loadData() throws Exception {
-        return familyDao.loadData();
+    public void loadData() throws Exception {
+        familyDao.loadData();
     }
 
-    public void saveData() throws FileNotFoundException {
+    public void saveData() throws IOException {
         familyDao.saveData();
     }
 }

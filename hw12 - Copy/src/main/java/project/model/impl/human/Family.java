@@ -3,13 +3,14 @@ package project.model.impl.human;
 import project.model.inter.HumanCreator;
 import project.model.inter.Pet;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.*;
 
 import static project.util.FamilyUtil.random;
 
 
-public class Family implements HumanCreator {
+public class Family implements HumanCreator , Serializable {
     private Human mother;
     private Human father;
     private List<Human> children;

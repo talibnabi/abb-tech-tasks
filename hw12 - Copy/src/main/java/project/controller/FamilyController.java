@@ -7,6 +7,7 @@ import project.service.FamilyService;
 import project.model.impl.human.Family;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -90,9 +91,9 @@ public class FamilyController {
     }
 
     public void loadData() throws Exception {
-        System.out.println(familyService.loadData());
+        familyService.loadData();
     }
-    public void saveData() throws FileNotFoundException {
+    public void saveData() throws IOException {
         familyService.saveData();
     }
 }

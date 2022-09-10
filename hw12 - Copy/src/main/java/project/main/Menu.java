@@ -5,6 +5,7 @@ import project.model.impl.human.Family;
 import project.model.impl.human.Human;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -40,7 +41,7 @@ public class Menu {
             }
         }
     }
-    public static void saveData() throws FileNotFoundException {
+    public static void saveData() throws IOException {
         familyController.saveData();
     }
 

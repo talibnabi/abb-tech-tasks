@@ -3,6 +3,7 @@ package project.model.impl.human;
 import project.model.inter.Pet;
 
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.Map;
 

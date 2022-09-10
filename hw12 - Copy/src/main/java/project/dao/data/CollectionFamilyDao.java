@@ -1,17 +1,19 @@
 package project.dao.data;
 
 import project.dao.inter.FamilyDao;
-import project.db.read.ReadFamilyFromFile;
 import project.model.impl.human.Family;
 
-import java.io.FileNotFoundException;
+import java.io.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import static project.db.DataSource.families;
-import static project.db.read.ReadFamilyFromFile.*;
-import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
+//import static project.db.DataSource.families;
+//import static project.db.read.ReadFamilyFromFile.*;
+//import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
 
 public class CollectionFamilyDao implements FamilyDao {
+    public static List<Family> families = new ArrayList<>();
 
     @Override
     public List<Family> getAllFamilies() {
@@ -61,13 +63,22 @@ public class CollectionFamilyDao implements FamilyDao {
     }
 
     @Override
-    public List<Family> loadData() throws Exception {
-        return readFamilyFromFile();
+    public void loadData() throws Exception {
+        FileInputStream fin = new FileInputStream("families.bin");
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        families = (List<Family>) ois.readObject();
+        System.out.println(families);
+        ois.close();
+        fin.close();
     }
 
     @Override
-    public void saveData() throws FileNotFoundException {
-        writeFamilyToFile();
+    public void saveData() throws IOException {
+        FileOutputStream fout = new FileOutputStream("families.bin");
+        ObjectOutputStream oos = new ObjectOutputStream(fout);
+        oos.writeObject(families);
+        oos.close();
+        fout.close();
     }
 
 }

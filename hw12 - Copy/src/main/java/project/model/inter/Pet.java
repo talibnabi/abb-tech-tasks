@@ -2,10 +2,11 @@ package project.model.inter;
 
 import project.model.enumeration.Species;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-public abstract class Pet {
+public abstract class Pet implements Serializable {
     private Species species;
     private String nickname;
     private Integer age;

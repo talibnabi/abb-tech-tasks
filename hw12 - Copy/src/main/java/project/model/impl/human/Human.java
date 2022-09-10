@@ -2,6 +2,7 @@ package project.model.impl.human;
 
 import project.model.inter.Pet;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,7 +11,7 @@ import java.util.Objects;
 
 import static project.util.FamilyUtil.sdf;
 
-public class Human {
+public class Human implements Serializable {
     private String name;
     private String surname;
     private long birthDate;
