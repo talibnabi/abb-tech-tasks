@@ -1,8 +1,8 @@
 package project.human;
 
 import org.testng.annotations.Test;
-import project.model.human.Family;
-import project.model.human.Human;
+import project.model.impl.human.Family;
+import project.model.impl.human.Human;
 
 import java.util.HashMap;
 

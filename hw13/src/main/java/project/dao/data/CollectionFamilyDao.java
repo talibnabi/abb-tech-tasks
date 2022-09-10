@@ -1,27 +1,29 @@
 package project.dao.data;
 
 import project.dao.inter.FamilyDao;
-import project.datasource.DataSource;
-import project.model.human.Family;
+import project.model.impl.human.Family;
 
-import java.io.FileNotFoundException;
+import java.io.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionFamilyDao implements FamilyDao {
-    private final List<Family> families = new ArrayList<>();
-    private final DataSource dataSource = new DataSource();
+//import static project.db.DataSource.families;
+//import static project.db.read.ReadFamilyFromFile.*;
+//import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
 
+public class CollectionFamilyDao implements FamilyDao {
+    public static List<Family> families = new ArrayList<>();
 
     @Override
     public List<Family> getAllFamilies() {
-        return this.dataSource.getFamilies();
+        return families;
     }
 
     @Override
     public Family getFamilyByIndex(int index) {
         try {
-            return this.dataSource.getFamilies().get(index);
+            return families.get(index);
         } catch (Exception exception) {
             exception.printStackTrace();
             return null;
@@ -31,7 +33,7 @@ public class CollectionFamilyDao implements FamilyDao {
     @Override
     public boolean deleteFamily(int index) {
         try {
-            this.dataSource.getFamilies().remove(index);
+            families.remove(index);
             return true;
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -42,7 +44,7 @@ public class CollectionFamilyDao implements FamilyDao {
     @Override
     public boolean deleteFamily(Family family) {
         try {
-            this.dataSource.getFamilies().remove(family);
+            families.remove(family);
             return true;
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -51,18 +53,32 @@ public class CollectionFamilyDao implements FamilyDao {
     }
 
     @Override
-    public Family saveFamily(Family family) {
-        if (this.dataSource.getFamilies().contains(family)) {
-            this.dataSource.getFamilies().add(this.dataSource.getFamilies().indexOf(family), family);
+    public Family saveFamily(Family family) throws FileNotFoundException {
+        if (families.contains(family)) {
+            families.set(families.indexOf(family), family);
         } else {
-            this.dataSource.getFamilies().add(family);
+            families.add(family);
         }
         return family;
     }
 
     @Override
-    public void loadData(List<Family> families) throws FileNotFoundException {
-        dataSource.setFamilies(families);
-        dataSource.writeFamilyToFile();
+    public void loadData() throws Exception {
+        FileInputStream fin = new FileInputStream("families.bin");
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        families = (List<Family>) ois.readObject();
+        System.out.println(families);
+        ois.close();
+        fin.close();
     }
+
+    @Override
+    public void saveData() throws IOException {
+        FileOutputStream fout = new FileOutputStream("families.bin");
+        ObjectOutputStream oos = new ObjectOutputStream(fout);
+        oos.writeObject(families);
+        oos.close();
+        fout.close();
+    }
+
 }

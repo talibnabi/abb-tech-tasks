@@ -3,12 +3,14 @@ package project.main;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
-import project.model.human.Family;
-import project.model.human.Human;
-import project.model.human.Man;
-import project.model.human.Woman;
-import project.model.pet.Dog;
-import project.model.pet.Pet;
+import project.model.impl.human.Family;
+import project.model.impl.human.Human;
+import project.model.impl.human.Man;
+import project.model.impl.human.Woman;
+import project.model.impl.pet.Dog;
+import project.model.inter.Pet;
+
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -41,10 +43,10 @@ public class FamilyTest {
     }
 
     @Test
-    void deleteChildTest() {
-        Man father = new Man("Anar", "Nasibov", 2001, 100,
+    void deleteChildTest() throws ParseException {
+        Man father = new Man("Anar", "Nasibov", "2001", 100,
                 null);
-        Woman mother = new Woman("Alisa", "Nasibov", 1999, 100,
+        Woman mother = new Woman("Alisa", "Nasibov", "1999", 100,
                 null);
 
         Dog dog = new Dog("Allahverdi", 2, 12, null);
@@ -60,10 +62,10 @@ public class FamilyTest {
     }
 
     @Test
-    void deleteChildTest2() {
-        Man father = new Man("Anar", "Nasibov", 2001, 100,
+    void deleteChildTest2() throws ParseException {
+        Man father = new Man("Anar", "Nasibov", "2001", 100,
                 null);
-        Woman mother = new Woman("Alisa", "Nasibov", 1999, 100,
+        Woman mother = new Woman("Alisa", "Nasibov", "1999", 100,
                 null);
 
         Dog dog = new Dog("Allahverdi", 2, 12, null);
@@ -83,10 +85,10 @@ public class FamilyTest {
     }
 
     @Test
-    void addChildTest() {
-        Man father = new Man("Anar", "Nasibov", 2001, 100,
+    void addChildTest() throws ParseException {
+        Man father = new Man("Anar", "Nasibov", "2001", 100,
                 null);
-        Woman mother = new Woman("Alisa", "Nasibov", 1999, 100,
+        Woman mother = new Woman("Alisa", "Nasibov", "1999", 100,
                 null);
 
         Family family1 = new Family(father, mother);

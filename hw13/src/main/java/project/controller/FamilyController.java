@@ -1,13 +1,17 @@
 package project.controller;
 
-import project.model.human.Human;
-import project.model.pet.Pet;
+import project.exception.FamilyOverflowException;
+import project.model.impl.human.Human;
+import project.model.inter.Pet;
 import project.service.FamilyService;
-import project.model.human.Family;
+import project.model.impl.human.Family;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
+
+import static project.util.FamilyUtil.checkFamily;
 
 public class FamilyController {
     private final FamilyService familyService;
@@ -44,12 +48,26 @@ public class FamilyController {
         this.familyService.deleteFamilyByIndex(index);
     }
 
-    public void bornChild(Family family, String masculine, String feminine) throws ParseException, FileNotFoundException {
-        this.familyService.bornChild(family, masculine, feminine);
+    public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
+        try {
+            checkFamily(family);
+            return this.familyService.bornChild(family, masculine, feminine);
+        } catch (FamilyOverflowException | FileNotFoundException overflowException) {
+            System.out.println("Family count is bigger.");
+            return family;
+        }
     }
 
-    public void adoptChild(Family family, Human child) throws FileNotFoundException {
-        this.familyService.adoptChild(family, child);
+    public Family adoptChild(Family family, Human child) {
+        try {
+            checkFamily(family);
+            return this.familyService.adoptChild(family, child);
+        } catch (FamilyOverflowException overflowException) {
+            System.out.println("Family count is bigger.");
+            return family;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void deleteAllChildrenOlderThen(int age) throws FileNotFoundException {
@@ -70,5 +88,12 @@ public class FamilyController {
 
     public void addPet(int index, Pet pet) throws FileNotFoundException {
         this.familyService.addPet(index, pet);
+    }
+
+    public void loadData() throws Exception {
+        familyService.loadData();
+    }
+    public void saveData() throws IOException {
+        familyService.saveData();
     }
 }

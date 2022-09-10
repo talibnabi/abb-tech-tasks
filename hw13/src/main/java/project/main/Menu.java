@@ -1,11 +1,11 @@
 package project.main;
 
-import project.exception.FamilyOverflowException;
 
-import project.model.human.Family;
-import project.model.human.Human;
+import project.model.impl.human.Family;
+import project.model.impl.human.Human;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -16,11 +16,11 @@ import static project.util.FamilyUtil.scanner;
 import static project.util.TextUtil.*;
 
 public class Menu {
-    public static void showMenu() throws ParseException, FileNotFoundException {
+    public static void showMenu() throws Exception {
         menu();
     }
 
-    public static void menu() throws ParseException, FileNotFoundException {
+    public static void menu() throws Exception {
         while (true) {
             System.out.println(menuAppend());
             String selectedItem = scanner.next();
@@ -34,10 +34,19 @@ public class Menu {
                 case "7" -> deleteFamilyByIndex();
                 case "8" -> edit();
                 case "9" -> deleteAllChildrenOlderThen();
-                case "10" -> System.exit(0);
+                case "10" -> loadData();
+                case "11" -> saveData();
+                case "12" -> System.exit(0);
                 default -> System.out.println("Pls enter correct value.");
             }
         }
+    }
+    public static void saveData() throws IOException {
+        familyController.saveData();
+    }
+
+    public static void loadData() throws Exception {
+        familyController.loadData();
     }
 
     public static void deleteAllChildrenOlderThen() throws FileNotFoundException {
@@ -47,7 +56,7 @@ public class Menu {
         System.out.println("Removed.");
     }
 
-    public static void edit() throws ParseException, FileNotFoundException {
+    public static void edit() throws Exception {
         System.out.println(forEdit());
         String selectedItemForEdit = scanner.next();
         boolean check = true;
@@ -55,9 +64,11 @@ public class Menu {
             switch (selectedItemForEdit) {
                 case "1":
                     bornChild();
+                    edit();
                     break;
                 case "2":
                     adoptChild();
+                    edit();
                     break;
                 case "3":
                     check = false;
@@ -127,7 +138,7 @@ public class Menu {
         System.out.println("Enter number: ");
         int numberLess = scanner.nextInt();
         List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
-        families1.forEach(System.out::println);
+        families1.forEach(family -> System.out.println(family.prettyFormat()));
     }
 
     public static void getFamiliesBiggerThan() {
@@ -135,8 +146,8 @@ public class Menu {
             System.out.println("Enter number: ");
             int numberBig = scanner.nextInt();
             List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
-            families.forEach(System.out::println);
-        } catch (FamilyOverflowException familyOverflowException) {
+            families.forEach(family -> System.out.println(family.prettyFormat()));
+        } catch (Exception exception) {
             System.out.println("Exception");
         }
     }
@@ -168,7 +179,7 @@ public class Menu {
             int motherBirthDay = scanner.nextInt();
             System.out.println("Enter mother's iq: ");
             int motherIq = scanner.nextInt();
-            String birth = String.valueOf(motherBirthDay) + "/" + String.valueOf(motherBirthMonth) + "/" + String.valueOf(motherBirthYear);
+            String birth = motherBirthDay + "/" + motherBirthMonth + "/" + motherBirthYear;
             return new Human(motherName, motherLastName, birth, motherIq);
         } catch (Exception exception) {
             System.out.println("Pls enter correct value.");
@@ -197,6 +208,7 @@ public class Menu {
             return new Human();
         }
     }
+
     public static StringBuilder menuAppend() {
         StringBuilder stringBuilder = new StringBuilder();
         System.out.println(symbol);
@@ -209,6 +221,8 @@ public class Menu {
         stringBuilder.append(text7);
         stringBuilder.append(text8);
         stringBuilder.append(text9);
+        stringBuilder.append(textLoad);
+        stringBuilder.append(saveData);
         stringBuilder.append(text10);
         stringBuilder.append(questionText1);
         return stringBuilder;

@@ -4,29 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../hw12 - Copy/families.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/controller/FamilyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/controller/FamilyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/dao/data/CollectionFamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/dao/data/CollectionFamilyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/dao/inter/FamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/dao/inter/FamilyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/read/ReadFamilyFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/read/ReadFamilyFromFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/write/WriteFamilyToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/db/write/WriteFamilyToFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/main/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Family.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/impl/human/Man.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/inter/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/model/inter/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/service/FamilyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/service/FamilyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/controller/FamilyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/controller/FamilyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/dao/data/CollectionFamilyDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/dao/data/CollectionFamilyDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/dao/inter/FamilyDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/dao/inter/FamilyDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/db/DataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/db/read/ReadFamilyFromFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/db/write/WriteFamilyToFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/main/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/main/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/service/FamilyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/target/classes/project/service/FamilyService.class" afterDir="false" />
+    <list default="true" id="168d07db-8f8a-41d2-9cab-52e55da8fe9a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/families.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controller/FamilyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controller/FamilyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/dao/inter/FamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/dao/inter/FamilyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/read/ReadFamilyFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/read/ReadFamilyFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/write/WriteFamilyToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/write/WriteFamilyToFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/main/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Family.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/model/impl/human/Man.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/inter/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/model/inter/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/FamilyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/FamilyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/controller/FamilyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/controller/FamilyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/dao/data/CollectionFamilyDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/dao/data/CollectionFamilyDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/dao/inter/FamilyDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/dao/inter/FamilyDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/db/DataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/db/read/ReadFamilyFromFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/db/write/WriteFamilyToFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/main/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/main/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/service/FamilyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/FamilyService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -54,7 +56,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2EQvunkrEo11OB6oVX5qOTAI444" />
+  <component name="ProjectId" id="2Csvp1NwzN5dtuZdoFxVAmVX7Im" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -70,16 +72,35 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/abbTech/hw13&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/abbTech/hw13&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\abbTech\hw6\src\main\java" />
+      <recent name="C:\Workspace\abbTech\hw6\src\main\java\alive" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\abbTech\hw12 - Copy\src\main\java\project\db" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="project.main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main" />
+      <recent name="family" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.main.Main" />
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="project.main.*" />
+          <option name="PATTERN" value="project.model.inter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,23 +108,115 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AllHumanTest.equalsHumanTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.human.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.allHuman" />
+      <option name="MAIN_CLASS_NAME" value="project.human.AllHumanTest" />
+      <option name="METHOD_NAME" value="equalsHumanTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllHumanTest.hashCodeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.human.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.allHuman" />
+      <option name="MAIN_CLASS_NAME" value="project.human.AllHumanTest" />
+      <option name="METHOD_NAME" value="hashCodeTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllPetTest.equalsHumanTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.pet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.allPet" />
+      <option name="MAIN_CLASS_NAME" value="project.pet.AllPetTest" />
+      <option name="METHOD_NAME" value="equalsHumanTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllPetTest.hashCodeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hw8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.pet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.allPet" />
+      <option name="MAIN_CLASS_NAME" value="project.pet.AllPetTest" />
+      <option name="METHOD_NAME" value="hashCodeTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="TestNG.AllPetTest.equalsHumanTest" />
+        <item itemvalue="TestNG.AllPetTest.hashCodeTest" />
+        <item itemvalue="TestNG.AllHumanTest.equalsHumanTest" />
+        <item itemvalue="TestNG.AllHumanTest.hashCodeTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="" />
-      <created>1662540850755</created>
+      <changelist id="168d07db-8f8a-41d2-9cab-52e55da8fe9a" name="Changes" comment="" />
+      <created>1659604290470</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1662540850755</updated>
-      <workItem from="1662540852376" duration="9763000" />
-      <workItem from="1662721379908" duration="1846000" />
-      <workItem from="1662812943746" duration="1350000" />
+      <updated>1659604290470</updated>
+      <workItem from="1659604292105" duration="6038000" />
+      <workItem from="1659626851472" duration="1408000" />
+      <workItem from="1659629123170" duration="5010000" />
+      <workItem from="1659686200530" duration="773000" />
+      <workItem from="1659831867514" duration="214000" />
+      <workItem from="1659852321738" duration="906000" />
+      <workItem from="1659870684398" duration="6033000" />
+      <workItem from="1659913671939" duration="369000" />
+      <workItem from="1660197880767" duration="15500000" />
+      <workItem from="1660230260925" duration="3944000" />
+      <workItem from="1660636474948" duration="5151000" />
+      <workItem from="1660643727319" duration="744000" />
+      <workItem from="1660645575066" duration="5047000" />
+      <workItem from="1661967203897" duration="4649000" />
+      <workItem from="1662020768719" duration="71000" />
+      <workItem from="1662539961270" duration="940000" />
+      <workItem from="1662654549458" duration="1499000" />
+      <workItem from="1662719907292" duration="7547000" />
+      <workItem from="1662802364477" duration="1256000" />
     </task>
     <servers />
   </component>
