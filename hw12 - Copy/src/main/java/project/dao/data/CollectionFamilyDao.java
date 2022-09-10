@@ -55,9 +55,4 @@ public class CollectionFamilyDao implements FamilyDao {
         }
         return family;
     }
-
-    @Override
-    public boolean loadData(List<Family> families) {
-        return false;
-    }
 }

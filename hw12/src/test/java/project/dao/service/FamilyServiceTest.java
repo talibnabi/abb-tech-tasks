@@ -7,6 +7,7 @@ import project.dao.data.CollectionFamilyDao;
 import project.model.impl.human.Family;
 import project.service.FamilyService;
 
+import java.text.ParseException;
 import java.util.List;
 
 public class FamilyServiceTest {
@@ -61,7 +62,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void bornChildTest() {
+    void bornChildTest() throws ParseException {
         Human mother = new Human();
         mother.setIq(10);
         Human father = new Human();

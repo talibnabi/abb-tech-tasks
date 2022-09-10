@@ -1,12 +1,10 @@
 package project.service;
 
-import project.datasource.DataSource;
 import project.model.impl.human.*;
 import project.model.inter.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 
-import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
@@ -16,43 +14,42 @@ import static project.util.FamilyUtil.random;
 
 public class FamilyService {
     private final FamilyDao familyDao;
-    private DataSource dataSource;
 
     public FamilyService(CollectionFamilyDao collectionFamilyDao) {
         this.familyDao = collectionFamilyDao;
     }
 
     public List<Family> getAllFamilies() {
-        return this.dataSource.getFamilies();
+        return this.familyDao.getAllFamilies();
     }
 
     public void displayAllFamilies() {
-        this.dataSource
-                .getFamilies()
+        this.familyDao
+                .getAllFamilies()
                 .forEach(family ->
                         System.out.printf("%d %s \n",
-                                getAllFamilies().indexOf(family) + 1, family));
+                                getAllFamilies().indexOf(family) + 1, family.prettyFormat()));
     }
 
     public List<Family> getFamiliesBiggerThan(int size) {
-        return this.dataSource
-                .getFamilies()
+        return this.familyDao
+                .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() > size)
                 .toList();
     }
 
     public List<Family> getFamiliesLessThan(int size) {
-        return this.dataSource
-                .getFamilies()
+        return this.familyDao
+                .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() < size)
                 .toList();
     }
 
     public List<Family> countFamiliesWithMemberNumber(int size) {
-        return this.dataSource
-                .getFamilies()
+        return this.familyDao
+                .getAllFamilies()
                 .stream()
                 .filter(family -> family.countFamily() == size)
                 .toList();
@@ -61,7 +58,7 @@ public class FamilyService {
     public void createNewFamily(Human mother, Human father) {
         Family family = new Family(mother, father);
         family.setPets(new HashSet<>());
-        this.dataSource.setFamilies(family);
+        this.familyDao.saveFamily(family);
     }
 
     public void deleteFamilyByIndex(int index) {
@@ -91,39 +88,37 @@ public class FamilyService {
 
     public void deleteAllChildrenOlderThen(int age) {
         int currentYear = date.getYear() + 1900;
-        for (Family family : this.dataSource
-                .getFamilies()
+        for (Family family : this.familyDao
+                .getAllFamilies()
                 .stream()
                 .filter(family ->
                         family
                                 .getChildren()
                                 .removeIf(human -> (currentYear - human.getBirthDate()) > age))
                 .toList()) {
-            this.dataSource.saveFamily(family);
+            this.familyDao.saveFamily(family);
         }
     }
 
     public int count() {
-        return this.dataSource.getFamilies().size();
+        return this.familyDao.getAllFamilies().size();
     }
 
     public Family getFamilyById(int index) {
-        return this.dataSource.getFamilies().get(index);
+        return this.familyDao.getAllFamilies().get(index);
     }
 
     public List<Pet> getPets(int index) {
         try {
-            return this.dataSource.getFamilies().get(index).getPets().stream().toList();
+            return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
         } catch (Exception exception) {
             exception.printStackTrace();
             return null;
         }
     }
 
-    public void addPet(int index, Pet pet) throws FileNotFoundException {
-        this.dataSource.getFamilies().get(index).getPets().add(pet);
-        Family family = this.dataSource.getFamilies().get(index);
-        this.dataSource.getFamilies().add(family);
-        this.dataSource.writeFamilyToFile();
+    public void addPet(int index, Pet pet) {
+        this.familyDao.getAllFamilies().get(index).getPets().add(pet);
+        this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
     }
 }

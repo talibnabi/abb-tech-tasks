@@ -14,6 +14,4 @@ public interface FamilyDao {
     boolean deleteFamily(Family family);
 
     Family saveFamily(Family family);
-
-    boolean loadData(List<Family> families);
 }

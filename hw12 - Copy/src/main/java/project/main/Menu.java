@@ -1,6 +1,5 @@
 package project.main;
 
-import project.exception.FamilyOverflowException;
 
 import project.model.impl.human.Family;
 import project.model.impl.human.Human;
@@ -54,9 +53,11 @@ public class Menu {
             switch (selectedItemForEdit) {
                 case "1":
                     bornChild();
+                    edit();
                     break;
                 case "2":
                     adoptChild();
+                    edit();
                     break;
                 case "3":
                     check = false;
@@ -126,7 +127,7 @@ public class Menu {
         System.out.println("Enter number: ");
         int numberLess = scanner.nextInt();
         List<Family> families1 = familyController.getFamiliesLessThan(numberLess);
-        families1.forEach(System.out::println);
+        families1.forEach(family -> System.out.println(family.prettyFormat()));
     }
 
     public static void getFamiliesBiggerThan() {
@@ -134,7 +135,7 @@ public class Menu {
             System.out.println("Enter number: ");
             int numberBig = scanner.nextInt();
             List<Family> families = familyController.getFamiliesBiggerThan(numberBig);
-            families.forEach(System.out::println);
+            families.forEach(family -> System.out.println(family.prettyFormat()));
         } catch (Exception exception) {
             System.out.println("Exception");
         }
@@ -167,7 +168,7 @@ public class Menu {
             int motherBirthDay = scanner.nextInt();
             System.out.println("Enter mother's iq: ");
             int motherIq = scanner.nextInt();
-            String birth = String.valueOf(motherBirthDay) + "/" + String.valueOf(motherBirthMonth) + "/" + String.valueOf(motherBirthYear);
+            String birth = motherBirthDay + "/" + motherBirthMonth + "/" + motherBirthYear;
             return new Human(motherName, motherLastName, birth, motherIq);
         } catch (Exception exception) {
             System.out.println("Pls enter correct value.");
@@ -196,6 +197,7 @@ public class Menu {
             return new Human();
         }
     }
+
     public static StringBuilder menuAppend() {
         StringBuilder stringBuilder = new StringBuilder();
         System.out.println(symbol);
