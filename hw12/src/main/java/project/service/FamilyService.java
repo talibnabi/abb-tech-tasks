@@ -110,7 +110,7 @@ public class FamilyService {
 
     public List<Pet> getPets(int index) {
         try {
-            return this.familyDao.getAllFamilies().get(index).getPets().stream().toList();
+            return this.familyDao.getFamilyByIndex(index).getPets().stream().toList();
         } catch (Exception exception) {
             exception.printStackTrace();
             return null;
@@ -118,7 +118,7 @@ public class FamilyService {
     }
 
     public void addPet(int index, Pet pet) {
-        this.familyDao.getAllFamilies().get(index).getPets().add(pet);
+        this.familyDao.getFamilyByIndex(index).getPets().add(pet);
         this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
     }
 }

@@ -25,13 +25,11 @@ public class CollectionFamilyDao implements FamilyDao {
     }
 
     @Override
-    public boolean deleteFamily(int index) {
+    public void deleteFamily(int index) {
         try {
             this.families.remove(index);
-            return true;
         } catch (Exception exception) {
             exception.printStackTrace();
-            return false;
         }
     }
 
