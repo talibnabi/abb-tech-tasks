@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/controller/FamilyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/controller/FamilyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/service/FamilyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/src/main/java/project/service/FamilyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12/src/main/java/project/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12/src/main/java/project/main/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw12/src/main/java/project/service/FamilyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12/src/main/java/project/service/FamilyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
