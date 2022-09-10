@@ -6,6 +6,7 @@ import project.model.inter.Pet;
 import project.service.FamilyService;
 import project.model.impl.human.Family;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -38,11 +39,11 @@ public class FamilyController {
         return this.familyService.countFamiliesWithMemberNumber(size);
     }
 
-    public void createNewFamily(Human mother, Human father) {
+    public void createNewFamily(Human mother, Human father) throws FileNotFoundException {
         this.familyService.createNewFamily(mother, father);
     }
 
-    public void deleteFamilyByIndex(int index) {
+    public void deleteFamilyByIndex(int index) throws FileNotFoundException {
         this.familyService.deleteFamilyByIndex(index);
     }
 
@@ -50,7 +51,7 @@ public class FamilyController {
         try {
             checkFamily(family);
             return this.familyService.bornChild(family, masculine, feminine);
-        } catch (FamilyOverflowException overflowException) {
+        } catch (FamilyOverflowException | FileNotFoundException overflowException) {
             System.out.println("Family count is bigger.");
             return family;
         }
@@ -63,10 +64,12 @@ public class FamilyController {
         } catch (FamilyOverflowException overflowException) {
             System.out.println("Family count is bigger.");
             return family;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public void deleteAllChildrenOlderThen(int age) {
+    public void deleteAllChildrenOlderThen(int age) throws FileNotFoundException {
         this.familyService.deleteAllChildrenOlderThen(age);
     }
 
@@ -82,7 +85,14 @@ public class FamilyController {
         return this.familyService.getPets(index);
     }
 
-    public void addPet(int index, Pet pet) {
+    public void addPet(int index, Pet pet) throws FileNotFoundException {
         this.familyService.addPet(index, pet);
+    }
+
+    public void loadData() throws Exception {
+        System.out.println(familyService.loadData());
+    }
+    public void saveData() throws FileNotFoundException {
+        familyService.saveData();
     }
 }

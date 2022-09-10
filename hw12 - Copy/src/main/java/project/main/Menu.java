@@ -4,6 +4,7 @@ package project.main;
 import project.model.impl.human.Family;
 import project.model.impl.human.Human;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -14,11 +15,11 @@ import static project.util.FamilyUtil.scanner;
 import static project.util.TextUtil.*;
 
 public class Menu {
-    public static void showMenu() throws ParseException {
+    public static void showMenu() throws Exception {
         menu();
     }
 
-    public static void menu() throws ParseException {
+    public static void menu() throws Exception {
         while (true) {
             System.out.println(menuAppend());
             String selectedItem = scanner.next();
@@ -32,20 +33,29 @@ public class Menu {
                 case "7" -> deleteFamilyByIndex();
                 case "8" -> edit();
                 case "9" -> deleteAllChildrenOlderThen();
-                case "10" -> System.exit(0);
+                case "10" -> loadData();
+                case "11" -> saveData();
+                case "12" -> System.exit(0);
                 default -> System.out.println("Pls enter correct value.");
             }
         }
     }
+    public static void saveData() throws FileNotFoundException {
+        familyController.saveData();
+    }
 
-    public static void deleteAllChildrenOlderThen() {
+    public static void loadData() throws Exception {
+        familyController.loadData();
+    }
+
+    public static void deleteAllChildrenOlderThen() throws FileNotFoundException {
         System.out.println("Enter age: ");
         int age = scanner.nextInt();
         familyController.deleteAllChildrenOlderThen(age);
         System.out.println("Removed.");
     }
 
-    public static void edit() throws ParseException {
+    public static void edit() throws Exception {
         System.out.println(forEdit());
         String selectedItemForEdit = scanner.next();
         boolean check = true;
@@ -103,14 +113,14 @@ public class Menu {
         }
     }
 
-    public static void deleteFamilyByIndex() {
+    public static void deleteFamilyByIndex() throws FileNotFoundException {
         System.out.println("Enter number: ");
         int index = scanner.nextInt();
         familyController.deleteFamilyByIndex(index);
         System.out.println("Deleted.");
     }
 
-    public static void createNewFamily() throws ParseException {
+    public static void createNewFamily() throws ParseException, FileNotFoundException {
         Human mother = mother();
         Human father = father();
         familyController.createNewFamily(father, mother);
@@ -145,7 +155,7 @@ public class Menu {
         familyController.displayAllFamilies();
     }
 
-    public static void createFamilyUtil() throws ParseException {
+    public static void createFamilyUtil() throws ParseException, FileNotFoundException {
         Human alisa = new Human("Alisa", "Aliqummatov", "12/02/2001", 15, new HashMap<>());
         Human shirali = new Human("shirali", "Aliqummatov", "11/02/2001", 100, new HashMap<>());
         Human tahmina = new Human("Tahmina", "Muzaffar", "10/02/2001", 99, new HashMap<>());
@@ -210,6 +220,8 @@ public class Menu {
         stringBuilder.append(text7);
         stringBuilder.append(text8);
         stringBuilder.append(text9);
+        stringBuilder.append(textLoad);
+        stringBuilder.append(saveData);
         stringBuilder.append(text10);
         stringBuilder.append(questionText1);
         return stringBuilder;

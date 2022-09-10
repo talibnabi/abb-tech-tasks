@@ -5,10 +5,12 @@ import project.model.inter.Pet;
 import project.dao.data.CollectionFamilyDao;
 import project.dao.inter.FamilyDao;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
 
+import static project.db.write.WriteFamilyToFile.writeFamilyToFile;
 import static project.util.FamilyUtil.date;
 import static project.util.FamilyUtil.random;
 
@@ -55,17 +57,17 @@ public class FamilyService {
                 .toList();
     }
 
-    public void createNewFamily(Human mother, Human father) {
+    public void createNewFamily(Human mother, Human father) throws FileNotFoundException {
         Family family = new Family(mother, father);
         family.setPets(new HashSet<>());
         this.familyDao.saveFamily(family);
     }
 
-    public void deleteFamilyByIndex(int index) {
+    public void deleteFamilyByIndex(int index) throws FileNotFoundException {
         this.familyDao.deleteFamily(index);
     }
 
-    public Family bornChild(Family family, String masculine, String feminine) throws ParseException {
+    public Family bornChild(Family family, String masculine, String feminine) throws ParseException, FileNotFoundException {
         int randomNumForSex = random.nextInt(2) + 1;
         int randomNum = random.nextInt(100) + 1;
         int iq = (family.getMother().getIq() + family.getFather().getIq()) / 2;
@@ -81,12 +83,12 @@ public class FamilyService {
         return this.familyDao.saveFamily(family);
     }
 
-    public Family adoptChild(Family family, Human child) {
+    public Family adoptChild(Family family, Human child) throws FileNotFoundException {
         family.addChild(child);
         return this.familyDao.saveFamily(family);
     }
 
-    public void deleteAllChildrenOlderThen(int age) {
+    public void deleteAllChildrenOlderThen(int age) throws FileNotFoundException {
         int currentYear = date.getYear() + 1900;
         for (Family family : this.familyDao
                 .getAllFamilies()
@@ -117,8 +119,16 @@ public class FamilyService {
         }
     }
 
-    public void addPet(int index, Pet pet) {
+    public void addPet(int index, Pet pet) throws FileNotFoundException {
         this.familyDao.getAllFamilies().get(index).getPets().add(pet);
         this.familyDao.saveFamily(this.familyDao.getAllFamilies().get(index));
+    }
+
+    public List<Family> loadData() throws Exception {
+        return familyDao.loadData();
+    }
+
+    public void saveData() throws FileNotFoundException {
+        familyDao.saveData();
     }
 }

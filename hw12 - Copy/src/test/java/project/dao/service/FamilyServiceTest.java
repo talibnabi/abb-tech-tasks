@@ -7,13 +7,15 @@ import project.dao.data.CollectionFamilyDao;
 import project.model.impl.human.Family;
 import project.service.FamilyService;
 
+import java.io.FileNotFoundException;
+import java.text.ParseException;
 import java.util.List;
 
 public class FamilyServiceTest {
     private static final FamilyService familyService = new FamilyService(new CollectionFamilyDao());
 
     @Test
-    void getAllFamiliesTest() {
+    void getAllFamiliesTest() throws FileNotFoundException {
         Human mother = new Human();
         Human father = new Human();
         familyService.createNewFamily(mother, father);
@@ -45,14 +47,14 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void createNewFamilyTest() {
+    void createNewFamilyTest() throws FileNotFoundException {
         Human mother = new Human();
         Human father = new Human();
         familyService.createNewFamily(mother, father);
     }
 
     @Test
-    void deleteFamilyByIndexTest() {
+    void deleteFamilyByIndexTest() throws FileNotFoundException {
         FamilyService familyService = new FamilyService(new CollectionFamilyDao());
         Human mother = new Human();
         Human father = new Human();
@@ -61,7 +63,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void bornChildTest() {
+    void bornChildTest() throws FileNotFoundException, ParseException {
         Human mother = new Human();
         mother.setIq(10);
         Human father = new Human();
@@ -71,7 +73,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void adoptChildTest() {
+    void adoptChildTest() throws FileNotFoundException {
         Human mother = new Human();
         Human father = new Human();
         Human child = new Human();
@@ -80,7 +82,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void deleteAllChildrenOlderThenTest() {
+    void deleteAllChildrenOlderThenTest() throws FileNotFoundException {
         familyService.deleteAllChildrenOlderThen(32);
     }
 
@@ -91,7 +93,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void getFamilyByIdTest() {
+    void getFamilyByIdTest() throws FileNotFoundException {
         Human father = new Human();
         Human mother = new Human();
         familyService.createNewFamily(mother, father);
@@ -100,7 +102,7 @@ public class FamilyServiceTest {
     }
 
     @Test
-    void getPetsTest() {
+    void getPetsTest() throws FileNotFoundException {
         Human father = new Human();
         Human mother = new Human();
         familyService.createNewFamily(mother, father);
