@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c096083-ea4e-44cd-98e3-4f602c90c7b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/dao/data/CollectionFamilyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw12 - Copy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw12 - Copy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/read/ReadFamilyFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/read/ReadFamilyFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/db/write/WriteFamilyToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/db/write/WriteFamilyToFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/db/read/ReadFamilyFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/db/read/ReadFamilyFromFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/db/write/WriteFamilyToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/db/write/WriteFamilyToFile.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -4,7 +4,6 @@ import java.io.*;
 
 import static project.db.DataSource.families;
 
-//import static project.db.DataSource.families;
 
 public class WriteFamilyToFile {
 

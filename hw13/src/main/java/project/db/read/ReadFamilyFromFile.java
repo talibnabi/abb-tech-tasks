@@ -7,7 +7,6 @@ import java.util.List;
 
 import static project.db.DataSource.families;
 
-
 public class ReadFamilyFromFile {
 
 
