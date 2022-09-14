@@ -1,4 +1,4 @@
-package entity;
+package model.enumeration;
 
 
 import static util.OptionalUtil.*;
@@ -19,4 +19,5 @@ public enum Airline {
     public String getIATACode() {
         return IATACode;
     }
+
 }
