@@ -1,11 +1,7 @@
 package entity;
 
-import static util.AirlineUtil.CONTINENTAL_AIRLINES_IATACode;
-import static util.AirlineUtil.CARGO_ITALIA_IATACode;
-import static util.AirlineUtil.DELTA_AIR_LINES_IATACode;
-import static util.AirlineUtil.AMERICAN_AIRLINES_IATACode;
-import static util.AirlineUtil.NORTHWEST_AIRLINES_IATACode;
-import static util.AirlineUtil.FEDEX_IATACode;
+
+import static util.OptionalUtil.*;
 
 public enum Airline {
     AMERICAN_AIRLINES(AMERICAN_AIRLINES_IATACode),
