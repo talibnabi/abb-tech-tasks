@@ -1,6 +1,14 @@
 package util;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+
 public class OptionalUtil {
+    public static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public static final SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+
+
     public static final String AMERICAN_AIRLINES_IATACode = "AA";
     public static final String CARGO_ITALIA_IATACode = "2G";
     public static final String CONTINENTAL_AIRLINES_IATACode = "CO";

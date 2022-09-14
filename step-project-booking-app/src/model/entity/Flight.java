@@ -5,10 +5,16 @@ import model.enumeration.Airport;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
+import static util.OptionalUtil.dateFormat;
+import static util.OptionalUtil.sdf;
 
 public class Flight implements Serializable {
     @Serial
@@ -17,17 +23,23 @@ public class Flight implements Serializable {
     private final Airline airline;
     private final Airport fromAirport;
     private final Airport toAirport;
-    private final LocalDateTime localDateTime;
+    private final LocalDateTime dateTime;
+    private Date time = null;
     private int amountOfFreeSeats;
     private final List<Passenger> passengers;
 
-    public Flight(int id, Airline airline, Airport fromAirport, Airport toAirport, LocalDateTime localDateTime, int amountOfFreeSeats) {
+    public Flight(int id, Airline airline, Airport fromAirport, Airport toAirport, String dateTime, String time, int amountOfFreeSeats) {
         this.id = id;
         this.amountOfFreeSeats = amountOfFreeSeats;
         this.airline = airline;
         this.fromAirport = fromAirport;
         this.toAirport = toAirport;
-        this.localDateTime = localDateTime;
+        this.dateTime = LocalDateTime.from(LocalDate.parse(dateTime, dateFormat));
+        try {
+            this.time = sdf.parse(time);
+        } catch (ParseException e) {
+            System.out.println("Parse Exception.Please try again");
+        }
         this.passengers = new ArrayList<>();
     }
 
@@ -52,7 +64,19 @@ public class Flight implements Serializable {
     }
 
     public LocalDateTime getLocalDateTime() {
-        return localDateTime;
+        return dateTime;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        try {
+            this.time = sdf.parse(time);
+        } catch (ParseException e) {
+            System.out.println("Parse Exception.Please try again");
+        }
     }
 
     public List<Passenger> getPassengers() {
