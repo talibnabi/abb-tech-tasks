@@ -116,15 +116,15 @@ public class Flight implements Serializable {
                 toAirport.getAirportCountry(), airline.getAirlineName());
     }
 
-    public static void main(String[] args) {
-        Flight flight = new Flight(
-                Airline.AMERICAN_AIRLINES,
-                Airport.VILNIUS_AIRPORT,
-                Airport.BATNA_AIRPORT,
-                "02/12/2001",
-                "12:11:11", 12);
-        System.out.println(flight.toString());
-    }
+//    public static void main(String[] args) {
+//        Flight flight = new Flight(
+//                Airline.AMERICAN_AIRLINES,
+//                Airport.VILNIUS_AIRPORT,
+//                Airport.BATNA_AIRPORT,
+//                "02/12/2001",
+//                "12:11:11", 12);
+//        System.out.println(flight.toString());
+//    }
 
 
 }
