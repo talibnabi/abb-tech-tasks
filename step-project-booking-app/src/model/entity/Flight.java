@@ -45,7 +45,7 @@ public class Flight implements Serializable {
     }
 
     public int getAmountOfFreeSeats() {
-        return amountOfFreeSeats--;
+        return amountOfFreeSeats;
     }
 
     public Airline getAirline() {
@@ -77,7 +77,12 @@ public class Flight implements Serializable {
     }
 
     public void setPassengers(Passenger passenger) {
-        this.passengers.add(passenger);
+        if (amountOfFreeSeats > passengers.size()) {
+            passengers.add(passenger);
+            amountOfFreeSeats = amountOfFreeSeats - passengers.size();
+        } else {
+            amountOfFreeSeats = 0;
+        }
     }
 
     @Override
@@ -111,15 +116,15 @@ public class Flight implements Serializable {
                 toAirport.getAirportCountry(), airline.getAirlineName());
     }
 
-//    public static void main(String[] args) {
-//        Flight flight = new Flight(
-//                Airline.AMERICAN_AIRLINES,
-//                Airport.VILNIUS_AIRPORT,
-//                Airport.BATNA_AIRPORT,
-//                "02/12/2001",
-//                "12:11:11", 12);
-//        System.out.println(flight.toString());
-//    }
+    public static void main(String[] args) {
+        Flight flight = new Flight(
+                Airline.AMERICAN_AIRLINES,
+                Airport.VILNIUS_AIRPORT,
+                Airport.BATNA_AIRPORT,
+                "02/12/2001",
+                "12:11:11", 12);
+        System.out.println(flight.toString());
+    }
 
 
 }
