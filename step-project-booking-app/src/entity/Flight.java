@@ -9,13 +9,13 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
+import static util.FileUtil.*;
 import static util.OptionalUtil.dateFormat;
 
 public class Flight implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    private static int counter = 0;
-    private final int id;
+    private final int flightID = 0;
     private final Airline airline;
     private final Airport fromAirport;
     private final Airport toAirport;
@@ -30,7 +30,7 @@ public class Flight implements Serializable {
             String dateTime, String time,
             int amountOfFreeSeats
     ) {
-        this.id = counter++;
+        counterID(flight, flightID);
         this.amountOfFreeSeats = amountOfFreeSeats;
         this.airline = airline;
         this.fromAirport = fromAirport;
@@ -41,7 +41,7 @@ public class Flight implements Serializable {
     }
 
     public int getId() {
-        return id;
+        return flightID;
     }
 
     public int getAmountOfFreeSeats() {
@@ -111,20 +111,10 @@ public class Flight implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("| %s | %s | %s %s | %s ---> %s | %s", id, airline.getIATACode(),
+        return String.format("| %s | %s | %s %s | %s ---> %s | %s", flightID, airline.getIATACode(),
                 dateTime, time, fromAirport.getAirportCountry(),
                 toAirport.getAirportCountry(), airline.getAirlineName());
     }
-
-//    public static void main(String[] args) {
-//        Flight flight = new Flight(
-//                Airline.AMERICAN_AIRLINES,
-//                Airport.VILNIUS_AIRPORT,
-//                Airport.BATNA_AIRPORT,
-//                "02/12/2001",
-//                "12:11:11", 12);
-//        System.out.println(flight.toString());
-//    }
 
 
 }

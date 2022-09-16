@@ -11,28 +11,19 @@ public class Passenger implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private final int passengerId;
+    private final int passengerID = 0;
     private final String name;
     private final String surname;
 
     public Passenger(String name, String surname) {
-        if (checkFile(passenger)) {
-            passengerId = 0;
-        } else {
-            if (workingWithFileForID.readAllIndexFromFile(passenger).size() == 1
-                    && workingWithFileForID.readAllIndexFromFile(passenger).get(0) == 0) {
-                passengerId = 0;
-            } else {
-                passengerId = workingWithFileForID.readAllIndexFromFile(passenger).size();
-            }
-        }
-        Boolean write = workingWithFileForID.writeIndexToFile(passenger, this.passengerId);
+        counterID(passenger, passengerID);
+        Boolean write = workingWithFileForID.writeIndexToFile(passenger, this.passengerID);
         this.name = name;
         this.surname = surname;
     }
 
     public int getPassengerId() {
-        return passengerId;
+        return passengerID;
     }
 
     public String getName() {

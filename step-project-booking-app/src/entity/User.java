@@ -6,28 +6,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static util.FileUtil.*;
+import static util.FileUtil.booking;
+
 public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    private static int counter;
-    private final int userId;
+    private final int userID = 0;
     private final String username;
     private final String password;
     private final List<Booking> bookingList;
 
     public User(String username, String password) {
-        this.userId = counter++;
+        counterID(user,userID);
         this.username = username;
         this.password = password;
         this.bookingList = new ArrayList<>();
     }
 
-    public static int getCounter() {
-        return counter;
-    }
 
     public int getUserId() {
-        return userId;
+        return userID;
     }
 
     public String getUsername() {
@@ -66,11 +65,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("|ID: %s | Username: %s | Password: %s ", userId, username, password);
+        return String.format("|ID: %s | Username: %s | Password: %s ", userID, username, password);
     }
 
-//    public static void main(String[] args) {
-//        User user = new User("Alisa","Aslan");
-//        System.out.println(user.toString());
-//    }
 }

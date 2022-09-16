@@ -5,18 +5,19 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import static util.FileUtil.*;
+
 public class Booking implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    private static int counter = 0;
-    private final int bookingID;
+    private final int bookingID = 0;
     private final User user;
     private final Flight flight;
     private final Passenger passenger;
     private final LocalDate bookedDate;
 
     public Booking(User user, Passenger passenger, Flight flight) {
-        this.bookingID = counter++;
+        counterID(booking,bookingID);
         this.bookedDate = LocalDate.now();
         this.user = user;
         this.passenger = passenger;
