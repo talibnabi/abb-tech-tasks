@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Objects;
 
 import static util.FileUtil.*;
-import static util.FileUtil.booking;
 
 public class User implements Serializable {
     @Serial
