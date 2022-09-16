@@ -2,6 +2,7 @@ package entity;
 
 import enumeration.Airline;
 import enumeration.Airport;
+import enumeration.FileName;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -29,7 +30,7 @@ public class Flight implements Serializable {
             String dateTime, String time,
             int amountOfFreeSeats
     ) {
-        counterID(flight, flightID);
+        counterID(FileName.FLIGHT_ID.getFilePath(), flightID);
         this.amountOfFreeSeats = amountOfFreeSeats;
         this.airline = airline;
         this.fromAirport = fromAirport;

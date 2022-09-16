@@ -1,5 +1,7 @@
 package entity;
 
+import enumeration.FileName;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,7 +20,7 @@ public class Booking implements Serializable {
     private final LocalDate bookedDate;
 
     public Booking(User user, List<Passenger> passengers, Flight flight) {
-        counterID(booking, bookingID);
+        counterID(FileName.BOOKING_ID.getFilePath(), bookingID);
         this.bookedDate = LocalDate.now();
         this.user = user;
         if (flight.getAmountOfFreeSeats() > passengers.size()) {

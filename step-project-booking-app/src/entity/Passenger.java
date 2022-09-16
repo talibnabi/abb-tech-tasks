@@ -1,6 +1,8 @@
 package entity;
 
 
+import enumeration.FileName;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,7 +18,7 @@ public class Passenger implements Serializable {
     private final String surname;
 
     public Passenger(String name, String surname) {
-        counterID(passenger, passengerID);
+        counterID(FileName.PASSENGER_ID.getFilePath(), passengerID);
         this.name = name;
         this.surname = surname;
     }
