@@ -3,6 +3,7 @@ package dao.concretes;
 import dao.abstracts.DAO;
 import entity.Flight;
 
+import javax.swing.text.StyledEditorKit;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -13,17 +14,17 @@ public class FlightDAOManager implements DAO<Flight> {
     }
 
     @Override
-    public Optional<Flight> create(Flight data) {
-        return Optional.empty();
+    public Boolean create(Flight data) {
+        return true;
     }
 
     @Override
-    public Optional<Flight> deleteFromFile(int id) {
-        return Optional.empty();
+    public Boolean deleteFromFile(int id) {
+        return true;
     }
 
     @Override
-    public Optional<Flight> writeToFile() {
-        return Optional.empty();
+    public Boolean writeToFile() {
+        return true;
     }
 }

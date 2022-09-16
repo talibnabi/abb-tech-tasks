@@ -1,15 +1,17 @@
 package dao.abstracts;
 
+import enumeration.concretes.data.BookingDataSource;
+
 import java.util.Collection;
 import java.util.Optional;
 
 public interface DAO<T> {
     Optional<Collection<T>> getAll();
 
-    Optional<T> create(T data);
+    Boolean create(T data);
 
-    Optional<T> deleteFromFile(int id);
+    Boolean deleteFromFile(int id);
 
-    Optional<T> writeToFile();
+    Boolean writeToFile();
 
 }

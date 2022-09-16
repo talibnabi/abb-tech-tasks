@@ -13,17 +13,17 @@ public class UserDAOManager implements DAO<User> {
     }
 
     @Override
-    public Optional<User> create(User data) {
-        return Optional.empty();
+    public Boolean create(User data) {
+        return true;
     }
 
     @Override
-    public Optional<User> deleteFromFile(int id) {
-        return Optional.empty();
+    public Boolean deleteFromFile(int id) {
+        return true;
     }
 
     @Override
-    public Optional<User> writeToFile() {
-        return Optional.empty();
+    public Boolean writeToFile() {
+        return true;
     }
 }

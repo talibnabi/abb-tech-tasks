@@ -13,17 +13,17 @@ public class PassengerDAOManager implements DAO<Passenger> {
     }
 
     @Override
-    public Optional<Passenger> create(Passenger data) {
-        return Optional.empty();
+    public Boolean create(Passenger data) {
+        return true;
     }
 
     @Override
-    public Optional<Passenger> deleteFromFile(int id) {
-        return Optional.empty();
+    public Boolean deleteFromFile(int id) {
+        return true;
     }
 
     @Override
-    public Optional<Passenger> writeToFile() {
-        return Optional.empty();
+    public Boolean writeToFile() {
+        return true;
     }
 }
