@@ -22,7 +22,6 @@ public class Flight implements Serializable {
     private final LocalDate dateTime;
     private LocalTime time;
     private int amountOfFreeSeats;
-    private final List<Passenger> passengers;
 
     public Flight(
             Airline airline,
@@ -37,7 +36,7 @@ public class Flight implements Serializable {
         this.toAirport = toAirport;
         this.dateTime = LocalDate.parse(dateTime, dateFormat);
         this.time = LocalTime.parse(time);
-        this.passengers = new ArrayList<>();
+//        this.passengers = new ArrayList<>();
     }
 
     public int getId() {
@@ -72,18 +71,10 @@ public class Flight implements Serializable {
         this.time = LocalTime.parse(time);
     }
 
-    public List<Passenger> getPassengers() {
-        return passengers;
+    public void setAmountOfFreeSeats(int amountOfFreeSeats) {
+        this.amountOfFreeSeats = amountOfFreeSeats;
     }
 
-    public void setPassengers(Passenger passenger) {
-        if (amountOfFreeSeats > passengers.size()) {
-            passengers.add(passenger);
-            amountOfFreeSeats = amountOfFreeSeats - passengers.size();
-        } else {
-            amountOfFreeSeats = 0;
-        }
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -94,8 +85,8 @@ public class Flight implements Serializable {
                 && getAirline() == flight.getAirline()
                 && getFromAirport() == flight.getFromAirport()
                 && getToAirport() == flight.getToAirport()
-                && getLocalDate().equals(flight.getLocalDate())
-                && getPassengers().equals(flight.getPassengers());
+                && getLocalDate().equals(flight.getLocalDate());
+//                && getPassengers().equals(flight.getPassengers());
     }
 
     @Override
@@ -105,8 +96,8 @@ public class Flight implements Serializable {
                 getFromAirport(),
                 getToAirport(),
                 getLocalDate(),
-                getAmountOfFreeSeats(),
-                getPassengers());
+                getAmountOfFreeSeats());
+//                getPassengers());
     }
 
     @Override

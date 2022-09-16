@@ -3,6 +3,7 @@ package entity;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import static util.FileUtil.*;
@@ -13,16 +14,20 @@ public class Booking implements Serializable {
     private final int bookingID = 0;
     private final User user;
     private final Flight flight;
-    private final Passenger passenger;
+    private List<Passenger> passengers;
     private final LocalDate bookedDate;
 
-    public Booking(User user, Passenger passenger, Flight flight) {
-        counterID(booking,bookingID);
+    public Booking(User user, List<Passenger> passengers, Flight flight) {
+        counterID(booking, bookingID);
         this.bookedDate = LocalDate.now();
         this.user = user;
-        this.passenger = passenger;
+        if (flight.getAmountOfFreeSeats() > passengers.size()) {
+            this.passengers = passengers;
+            flight.setAmountOfFreeSeats(flight.getAmountOfFreeSeats() - passengers.size());
+        } else {
+            flight.setAmountOfFreeSeats(0);
+        }
         this.flight = flight;
-        this.flight.setPassengers(passenger);
         this.user.setBookingList(this);
     }
 
@@ -34,8 +39,8 @@ public class Booking implements Serializable {
         return user;
     }
 
-    public Passenger getPassenger() {
-        return passenger;
+    public List<Passenger> getPassenger() {
+        return passengers;
     }
 
     public Flight getFlight() {
