@@ -1,12 +1,11 @@
 package util;
 
-import file.abstracts.FileWorkingID;
-import file.concretes.WorkingWithFileForID;
+
+import static util.FileDAOUtil.workingWithFileForID;
 
 
 public class FileUtil {
-    public static final FileWorkingID workingWithFileForID = new WorkingWithFileForID();
-    
+
 
     public static Boolean checkFile(String filePath) {
         if (workingWithFileForID.readAllIndexFromFile(filePath).isEmpty()) {

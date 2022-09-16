@@ -9,12 +9,14 @@ import file.concretes.WorkingWithFile;
 import java.util.Collection;
 import java.util.Optional;
 
+import static util.FileDAOUtil.workingWithFileBooking;
+
+
 public class BookingDAOManager implements DAO<Booking> {
-    private final WorkingWithFile<Booking> workingWithFile = new WorkingWithFile<>();
 
     @Override
     public Optional<Collection<Booking>> getAll() {
-        return Optional.ofNullable(workingWithFile
+        return Optional.ofNullable(workingWithFileBooking
                 .readListFromFile(FilePathAccess
                         .BOOKING_DATA
                         .getFilePath()));
@@ -44,7 +46,7 @@ public class BookingDAOManager implements DAO<Booking> {
 
     @Override
     public Boolean writeToFile() {
-        return workingWithFile
+        return workingWithFileBooking
                 .writeListToFile(
                         FilePathAccess
                                 .BOOKING_DATA
