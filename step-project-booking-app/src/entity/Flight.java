@@ -1,7 +1,7 @@
-package model.entity;
+package entity;
 
-import model.enumeration.Airline;
-import model.enumeration.Airport;
+import enumeration.Airline;
+import enumeration.Airport;
 
 import java.io.Serial;
 import java.io.Serializable;

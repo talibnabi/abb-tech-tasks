@@ -1,4 +1,4 @@
-package model.enumeration;
+package enumeration;
 
 
 import static util.OptionalUtil.*;
