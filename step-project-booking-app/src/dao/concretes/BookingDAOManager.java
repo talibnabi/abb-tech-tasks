@@ -6,7 +6,7 @@ import entity.Booking;
 import java.util.Collection;
 import java.util.Optional;
 
-public class BookingManager implements DAO<Booking> {
+public class BookingDAOManager implements DAO<Booking> {
 
 
     @Override

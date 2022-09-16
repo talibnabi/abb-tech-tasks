@@ -1,6 +1,5 @@
 package dao.abstracts;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Optional;
 
