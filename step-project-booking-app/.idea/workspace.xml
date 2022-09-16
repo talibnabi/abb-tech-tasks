@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/db/booking.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/flight.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/user.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/step-project-booking-app/model/entity/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/step-project-booking-app/model/entity/Flight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/Example.java" beforeDir="false" />
-    </list>
+    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +101,7 @@
       <updated>1663148459258</updated>
       <workItem from="1663148460977" duration="7376000" />
       <workItem from="1663192428712" duration="6346000" />
-      <workItem from="1663204582242" duration="2498000" />
+      <workItem from="1663204582242" duration="2571000" />
     </task>
     <servers />
   </component>
