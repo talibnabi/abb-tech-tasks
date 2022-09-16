@@ -12,7 +12,7 @@ public class WorkingWithFileForID implements FileWorkingID {
         try (BufferedWriter oos = new BufferedWriter(new FileWriter(filePath))) {
             oos.write(String.valueOf(index));
             return true;
-        } catch (IOException e) {
+        } catch (Exception e) {
             return false;
         }
     }
@@ -26,7 +26,7 @@ public class WorkingWithFileForID implements FileWorkingID {
             while ((text = reader.readLine()) != null) {
                 idList.add(Integer.parseInt(text));
             }
-        } catch (IOException ignored) {
+        } catch (Exception ignored) {
 
         }
         return idList;

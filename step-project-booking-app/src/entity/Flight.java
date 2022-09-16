@@ -86,7 +86,6 @@ public class Flight implements Serializable {
                 && getFromAirport() == flight.getFromAirport()
                 && getToAirport() == flight.getToAirport()
                 && getLocalDate().equals(flight.getLocalDate());
-//                && getPassengers().equals(flight.getPassengers());
     }
 
     @Override
@@ -97,7 +96,6 @@ public class Flight implements Serializable {
                 getToAirport(),
                 getLocalDate(),
                 getAmountOfFreeSeats());
-//                getPassengers());
     }
 
     @Override

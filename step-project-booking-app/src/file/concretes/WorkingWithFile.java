@@ -22,7 +22,7 @@ public class WorkingWithFile<T> implements FileWorking<T> {
     public List<T> readListFromFile(String filePath) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
             return (List<T>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (Exception ignored) {
             return Collections.emptyList();
         }
     }
