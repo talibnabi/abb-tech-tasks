@@ -18,6 +18,6 @@ public enum UserDataSource implements DataSource<User> {
 
     @Override
     public Supplier<List<User>> constructor() {
-        return null;
+        return constructor;
     }
 }
