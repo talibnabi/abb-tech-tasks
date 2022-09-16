@@ -17,7 +17,6 @@ public class Passenger implements Serializable {
 
     public Passenger(String name, String surname) {
         counterID(passenger, passengerID);
-        Boolean write = workingWithFileForID.writeIndexToFile(passenger, this.passengerID);
         this.name = name;
         this.surname = surname;
     }
