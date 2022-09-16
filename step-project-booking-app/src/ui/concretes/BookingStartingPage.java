@@ -2,7 +2,7 @@ package ui.concretes;
 
 import ui.abstracts.Menu;
 
-public class BookingItemMenu implements Menu {
+public class BookingStartingPage implements Menu {
 
     @Override
     public String showInterface() {

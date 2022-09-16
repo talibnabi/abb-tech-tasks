@@ -3,7 +3,7 @@ package ui.concretes;
 
 import ui.abstracts.Menu;
 
-public class UserItemMenu implements Menu {
+public class UserStartingPage implements Menu {
 
     @Override
     public String showInterface() {
