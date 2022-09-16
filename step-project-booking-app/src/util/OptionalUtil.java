@@ -1,10 +1,9 @@
 package util;
 
-import util.abstracts.OptionalUtilImpl;
 
 import java.time.format.DateTimeFormatter;
 
-public class OptionalUtil implements OptionalUtilImpl {
+public class OptionalUtil{
 
 
     public static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
