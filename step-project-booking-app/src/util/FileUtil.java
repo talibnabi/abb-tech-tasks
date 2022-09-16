@@ -6,15 +6,7 @@ import file.concretes.WorkingWithFileForID;
 
 public class FileUtil {
     public static final FileWorkingID workingWithFileForID = new WorkingWithFileForID();
-
-    public static final String passenger = "./db/id/passengerID.txt";
-    public static final String flight = "./db/id/flightID.txt";
-    public static final String booking = "./db/id/bookingID.txt";
-    public static final String user = "./db/id/userID.txt";
-    public static final String bookingDATA = "./db/data/booking.bin";
-    public static final String flightDATA = "./db/data/flight.bin";
-    public static final String passengerDATA = "./db/data/passenger.bin";
-    public static final String userDATA = "./db/data/user.bin";
+    
 
     public static Boolean checkFile(String filePath) {
         if (workingWithFileForID.readAllIndexFromFile(filePath).isEmpty()) {

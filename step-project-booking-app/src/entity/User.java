@@ -1,6 +1,6 @@
 package entity;
 
-import enumeration.concretes.file.FileName;
+import enumeration.concretes.file.FilePathAccess;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -19,7 +19,7 @@ public class User implements Serializable {
     private final List<Booking> bookingList;
 
     public User(String username, String password) {
-        counterID(FileName.USER_ID.getFilePath(), userID);
+        counterID(FilePathAccess.USER_ID.getFilePath(), userID);
         this.username = username;
         this.password = password;
         this.bookingList = new ArrayList<>();

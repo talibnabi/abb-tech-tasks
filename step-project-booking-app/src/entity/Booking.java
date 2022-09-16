@@ -1,6 +1,6 @@
 package entity;
 
-import enumeration.concretes.file.FileName;
+import enumeration.concretes.file.FilePathAccess;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -20,7 +20,7 @@ public class Booking implements Serializable {
     private final LocalDate bookedDate;
 
     public Booking(User user, List<Passenger> passengers, Flight flight) {
-        counterID(FileName.BOOKING_ID.getFilePath(), bookingID);
+        counterID(FilePathAccess.BOOKING_ID.getFilePath(), bookingID);
         this.bookedDate = LocalDate.now();
         this.user = user;
         if (flight.getAmountOfFreeSeats() > passengers.size()) {

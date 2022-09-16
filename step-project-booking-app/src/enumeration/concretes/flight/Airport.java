@@ -1,7 +1,7 @@
 package enumeration.concretes.flight;
 
 
-import static util.OptionalUtil.*;
+import static util.EntityUtil.*;
 
 public enum Airport {
 

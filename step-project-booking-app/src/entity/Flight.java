@@ -2,7 +2,7 @@ package entity;
 
 import enumeration.concretes.flight.Airline;
 import enumeration.concretes.flight.Airport;
-import enumeration.concretes.file.FileName;
+import enumeration.concretes.file.FilePathAccess;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import java.time.LocalTime;
 import java.util.*;
 
 import static util.FileUtil.*;
-import static util.OptionalUtil.dateFormat;
+import static util.DateUtil.dateFormat;
 
 public class Flight implements Serializable {
     @Serial
@@ -30,7 +30,7 @@ public class Flight implements Serializable {
             String dateTime, String time,
             int amountOfFreeSeats
     ) {
-        counterID(FileName.FLIGHT_ID.getFilePath(), flightID);
+        counterID(FilePathAccess.FLIGHT_ID.getFilePath(), flightID);
         this.amountOfFreeSeats = amountOfFreeSeats;
         this.airline = airline;
         this.fromAirport = fromAirport;

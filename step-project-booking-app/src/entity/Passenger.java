@@ -1,7 +1,7 @@
 package entity;
 
 
-import enumeration.concretes.file.FileName;
+import enumeration.concretes.file.FilePathAccess;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -18,7 +18,7 @@ public class Passenger implements Serializable {
     private final String surname;
 
     public Passenger(String name, String surname) {
-        counterID(FileName.PASSENGER_ID.getFilePath(), passengerID);
+        counterID(FilePathAccess.PASSENGER_ID.getFilePath(), passengerID);
         this.name = name;
         this.surname = surname;
     }

@@ -1,7 +1,7 @@
 package enumeration.concretes.flight;
 
 
-import static util.OptionalUtil.*;
+import static util.EntityUtil.*;
 
 public enum Airline {
     AMERICAN_AIRLINES(AMERICAN_AIRLINES_IATACode, AMERICAN_AIRLINES_NAME),

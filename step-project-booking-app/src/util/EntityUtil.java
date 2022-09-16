@@ -1,14 +1,6 @@
 package util;
 
-
-import java.time.format.DateTimeFormatter;
-
-public class OptionalUtil{
-
-
-    public static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//    public static final SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-
+public class EntityUtil {
     public static final String AMERICAN_AIRLINES_NAME = "AMERICAN AIRLINES";
     public static final String CARGO_ITALIA_NAME = "CARGO ITALIA";
     public static final String CONTINENTAL_AIRLINES_NAME = "CONTINENTAL AIRLINES";
