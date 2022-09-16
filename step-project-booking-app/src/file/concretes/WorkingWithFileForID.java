@@ -1,6 +1,6 @@
-package db.file.concretes;
+package file.concretes;
 
-import db.file.abstracts.FileWorkingID;
+import file.abstracts.FileWorkingID;
 
 import java.io.*;
 import java.util.ArrayList;

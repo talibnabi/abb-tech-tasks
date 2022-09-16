@@ -1,6 +1,6 @@
-package db.file.concretes;
+package file.concretes;
 
-import db.file.abstracts.FileWorking;
+import file.abstracts.FileWorking;
 
 import java.io.*;
 

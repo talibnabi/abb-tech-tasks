@@ -1,4 +1,4 @@
-package db.file.abstracts;
+package file.abstracts;
 
 import java.util.List;
 
