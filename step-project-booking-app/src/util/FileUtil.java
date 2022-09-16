@@ -10,6 +10,10 @@ public class FileUtil {
     public static final String flight = "./db/id/flightID.txt";
     public static final String booking = "./db/id/bookingID.txt";
     public static final String user = "./db/id/userID.txt";
+    public static final String bookingDATA = "";
+    public static final String flightDATA = "";
+    public static final String passengerDATA = "";
+    public static final String userDATA = "";
 
     public static Boolean checkFile(String filePath) {
         if (workingWithFileForID.readAllIndexFromFile(filePath).isEmpty()) {
