@@ -1,4 +1,4 @@
-package enumeration;
+package enumeration.concretes.flight;
 
 
 import static util.OptionalUtil.*;

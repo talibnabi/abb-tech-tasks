@@ -1,7 +1,7 @@
 package entity;
 
 
-import enumeration.FileName;
+import enumeration.concretes.file.FileName;
 
 import java.io.Serial;
 import java.io.Serializable;

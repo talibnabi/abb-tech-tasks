@@ -1,8 +1,8 @@
 package entity;
 
-import enumeration.Airline;
-import enumeration.Airport;
-import enumeration.FileName;
+import enumeration.concretes.flight.Airline;
+import enumeration.concretes.flight.Airport;
+import enumeration.concretes.file.FileName;
 
 import java.io.Serial;
 import java.io.Serializable;
