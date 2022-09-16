@@ -1,7 +1,7 @@
-package console.concretes;
+package ui.concretes;
 
 
-import java.awt.*;
+import ui.abstracts.Menu;
 
 public class UserItemMenu implements Menu {
 

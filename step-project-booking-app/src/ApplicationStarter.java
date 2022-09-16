@@ -1,6 +1,7 @@
-import console.abstracts.Menu;
-import console.concretes.BookingItemMenu;
-import console.concretes.UserItemMenu;
+import ui.abstracts.Menu;
+import ui.concretes.BookingItemMenu;
+import ui.concretes.UserItemMenu;
+
 
 public class ApplicationStarter {
     public static void main(String[] args) {

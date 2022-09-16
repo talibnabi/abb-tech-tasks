@@ -1,4 +1,4 @@
-package console.abstracts;
+package ui.abstracts;
 
 public interface Menu {
     String showInterface();

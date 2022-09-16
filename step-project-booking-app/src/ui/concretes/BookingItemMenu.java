@@ -1,8 +1,6 @@
-package console.concretes;
+package ui.concretes;
 
-import console.abstracts.Menu;
-
-import java.awt.*;
+import ui.abstracts.Menu;
 
 public class BookingItemMenu implements Menu {
 
