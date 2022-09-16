@@ -14,6 +14,5 @@ public class WriteFamilyToFile {
         } catch (Exception ignored) {
 
         }
-
     }
 }

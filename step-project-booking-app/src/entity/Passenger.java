@@ -1,19 +1,32 @@
 package entity;
 
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+import static util.FileUtil.*;
+
 public class Passenger implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    private static int counter = 0;
+
     private final int passengerId;
     private final String name;
     private final String surname;
 
     public Passenger(String name, String surname) {
-        this.passengerId = counter++;
+        if (checkFile(passenger)) {
+            passengerId = 0;
+        } else {
+            if (workingWithFileForID.readAllIndexFromFile(passenger).size() == 1
+                    && workingWithFileForID.readAllIndexFromFile(passenger).get(0) == 0) {
+                passengerId = 0;
+            } else {
+                passengerId = workingWithFileForID.readAllIndexFromFile(passenger).size();
+            }
+        }
+        Boolean write = workingWithFileForID.writeIndexToFile(passenger, this.passengerId);
         this.name = name;
         this.surname = surname;
     }
